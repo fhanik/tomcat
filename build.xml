@@ -425,6 +425,26 @@
     <exclude name="org/apache/catalina/ssi/**" />
   </patternset>
 
+  <patternset id="files.catalina.graal">
+    <include name="**/AprLifecycleListener.class"/>
+    <include name="org/apache/catalina/**"/>
+    <include name="org/apache/naming/**" />
+
+    <!-- Graal Specific Removals -->
+    <exclude name="org/apache/tomcat/**/Apr*.class"/>
+    <exclude name="**/AjpApr*.class"/>
+    <exclude name="**/Http11Apr*.class"/>
+    <exclude name="org/apache/tomcat/**/*Nio2*.class"/>
+    <exclude name="**/AjpNio2*.class"/>
+    <exclude name="**/Http11Nio2*.class"/>
+
+    <!-- Modules -->
+    <exclude name="org/apache/catalina/ant/**" />
+    <exclude name="org/apache/catalina/ha/**" />
+    <exclude name="org/apache/catalina/tribes/**" />
+    <exclude name="org/apache/catalina/storeconfig/**" />
+  </patternset>
+
   <patternset id="files.catalina-tribes">
     <include name="org/apache/catalina/tribes/**" />
   </patternset>
@@ -474,7 +494,7 @@
   <!-- Pattern sets for embedded JARs -->
   <!-- Every standard pattern set above should be included in an embedded JAR -->
   <patternset id="files.tomcat-embed-core" >
-    <patternset refid="files.catalina" />
+    <patternset refid="files.catalina.graal" />
     <patternset refid="files.servlet-api" />
     <patternset refid="files.jaspic-api" />
     <patternset refid="files.tomcat-api" />
