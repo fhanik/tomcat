@@ -453,6 +453,7 @@
     <include name="org/apache/jk/**" />
     <include name="org/apache/tomcat/util/**" />
     <exclude name="org/apache/tomcat/util/net/openssl/**"/>
+    <exclude name="org/apache/tomcat/util/digester/**"/>
   </patternset>
 
   <patternset id="files.catalina-tribes">
