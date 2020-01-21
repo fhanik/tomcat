@@ -35,14 +35,12 @@ import org.apache.coyote.AbstractProtocol;
 import org.apache.coyote.Adapter;
 import org.apache.coyote.ProtocolHandler;
 import org.apache.coyote.UpgradeProtocol;
-import org.apache.coyote.ajp.AbstractAjpProtocol;
 import org.apache.coyote.http11.AbstractHttp11JsseProtocol;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.apache.tomcat.util.IntrospectionUtils;
 import org.apache.tomcat.util.buf.B2CConverter;
 import org.apache.tomcat.util.net.SSLHostConfig;
-import org.apache.tomcat.util.net.openssl.OpenSSLImplementation;
 import org.apache.tomcat.util.res.StringManager;
 
 
@@ -992,13 +990,6 @@ public class Connector extends LifecycleMBeanBase  {
         }
         if (AprLifecycleListener.isAprAvailable() && AprLifecycleListener.getUseOpenSSL() &&
                 protocolHandler instanceof AbstractHttp11JsseProtocol) {
-            AbstractHttp11JsseProtocol<?> jsseProtocolHandler =
-                    (AbstractHttp11JsseProtocol<?>) protocolHandler;
-            if (jsseProtocolHandler.isSSLEnabled() &&
-                    jsseProtocolHandler.getSslImplementationName() == null) {
-                // OpenSSL is compatible with the JSSE configuration, so use it if APR is available
-                jsseProtocolHandler.setSslImplementationName(OpenSSLImplementation.class.getName());
-            }
         }
 
         try {
