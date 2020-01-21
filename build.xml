@@ -434,15 +434,24 @@
     <exclude name="org/apache/tomcat/**/Apr*.class"/>
     <exclude name="**/AjpApr*.class"/>
     <exclude name="**/Http11Apr*.class"/>
+    <exclude name="**/Ajp*.class"/>
+    <exclude name="**/AbstractAjpProtocol.class"/>
     <exclude name="org/apache/tomcat/**/*Nio2*.class"/>
-    <exclude name="**/AjpNio2*.class"/>
     <exclude name="**/Http11Nio2*.class"/>
+    <exclude name="**/JniLifecycleListener.class"/>
 
     <!-- Modules -->
     <exclude name="org/apache/catalina/ant/**" />
     <exclude name="org/apache/catalina/ha/**" />
     <exclude name="org/apache/catalina/tribes/**" />
     <exclude name="org/apache/catalina/storeconfig/**" />
+  </patternset>
+
+  <patternset id="files.tomcat.graal">
+    <include name="org/apache/coyote/**" />
+    <include name="org/apache/tomcat/jni/**" />
+    <include name="org/apache/jk/**" />
+    <include name="org/apache/tomcat/util/**" />
   </patternset>
 
   <patternset id="files.catalina-tribes">
@@ -499,15 +508,7 @@
     <patternset refid="files.jaspic-api" />
     <patternset refid="files.tomcat-api" />
     <patternset refid="files.tomcat-juli" />
-    <!-- These pattern sets conflict so include files directly
-      <patternset refid="files.tomcat-coyote" />
-      <patternset refid="files.tomcat-util" />
-      <patternset refid="files.tomcat-util-scan" />
-    -->
-    <include name="org/apache/coyote/**" />
-    <include name="org/apache/tomcat/jni/**" />
-    <include name="org/apache/jk/**" />
-    <include name="org/apache/tomcat/util/**" />
+    <patternset refid="files.tomcat.graal"/>
   </patternset>
 
   <patternset id="files.tomcat-embed-jasper" >

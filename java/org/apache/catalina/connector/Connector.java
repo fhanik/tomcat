@@ -870,12 +870,7 @@ public class Connector extends LifecycleMBeanBase  {
      * @return a new Servlet response object
      */
     public Response createResponse() {
-        if (protocolHandler instanceof AbstractAjpProtocol<?>) {
-            int packetSize = ((AbstractAjpProtocol<?>) protocolHandler).getPacketSize();
-            return new Response(packetSize - org.apache.coyote.ajp.Constants.SEND_HEAD_LEN);
-        } else {
             return new Response();
-        }
     }
 
 
