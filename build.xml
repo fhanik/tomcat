@@ -451,7 +451,6 @@
 
   <patternset id="files.tomcat.graal">
     <include name="org/apache/coyote/**" />
-    <include name="org/apache/tomcat/jni/**" />
     <include name="org/apache/jk/**" />
     <include name="org/apache/tomcat/util/**" />
     <exclude name="org/apache/tomcat/util/net/openssl/**"/>
@@ -460,6 +459,7 @@
     <exclude name="org/apache/tomcat/util/digester/**"/>
     <exclude name="**/mbeans-descriptors.xml"/>
     <exclude name="org/apache/**/LocalStrings*.properties"/>
+    <exclude name="org/apache/tomcat/jni/**" />
   </patternset>
 
   <patternset id="files.catalina-tribes">
