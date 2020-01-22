@@ -40,7 +40,7 @@ public class SocketProperties {
      * -1 is unlimited
      * 0 is disabled
      */
-    protected int processorCache = 500;
+    protected int processorCache = 0;
 
     /**
      * Enable/disable poller event cache, this bounded cache stores
@@ -50,7 +50,7 @@ public class SocketProperties {
      * 0 is disabled
      * &gt;0 the max number of objects to keep in cache.
      */
-    protected int eventCache = 500;
+    protected int eventCache = 0;
 
     /**
      * Enable/disable direct buffers for the network buffers
@@ -94,14 +94,14 @@ public class SocketProperties {
      * -1 means unlimited cached, 0 means no cache
      * Default value is 500
      */
-    protected int bufferPool = 500;
+    protected int bufferPool = 0;
 
     /**
      * Buffer pool size in bytes to be cached
      * -1 means unlimited, 0 means no cache
      * Default value is 100MB (1024*1024*100 bytes)
      */
-    protected int bufferPoolSize = 1024*1024*100;
+    protected int bufferPoolSize = 0;
 
     /**
      * TCP_NO_DELAY option. JVM default used if not set.
