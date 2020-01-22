@@ -41,7 +41,7 @@ public class SocketProperties {
      * 0 is disabled
      * TODO: The default will be changed to 0 in Tomcat 10
      */
-    protected int processorCache = 500;
+    protected int processorCache = 0;
 
     /**
      * Enable/disable poller event cache, this bounded cache stores
@@ -52,7 +52,7 @@ public class SocketProperties {
      * &gt;0 the max number of objects to keep in cache.
      * TODO: The default will be changed to 0 in Tomcat 10
      */
-    protected int eventCache = 500;
+    protected int eventCache = 0;
 
     /**
      * Enable/disable direct buffers for the network buffers
@@ -101,7 +101,7 @@ public class SocketProperties {
      *   So the default value will be changed to a new default value like -2 to
      *   set a dynamic value based on bufferPoolSize in that case.
      */
-    protected int bufferPool = 500;
+    protected int bufferPool = 0;
 
     /**
      * Buffer pool size in bytes to be cached
@@ -115,7 +115,7 @@ public class SocketProperties {
      *     heap inf 1GB: 0
      *     heap sup 1GB: heap / 32
      */
-    protected int bufferPoolSize = 1024*1024*100;
+    protected int bufferPoolSize = 0;
 
     /**
      * TCP_NO_DELAY option. JVM default used if not set.

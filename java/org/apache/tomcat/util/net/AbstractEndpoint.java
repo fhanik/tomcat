@@ -670,7 +670,7 @@ public abstract class AbstractEndpoint<S,U> {
      */
     public abstract boolean isAlpnSupported();
 
-    private int minSpareThreads = 10;
+    private int minSpareThreads = 1;
     public void setMinSpareThreads(int minSpareThreads) {
         this.minSpareThreads = minSpareThreads;
         Executor executor = this.executor;
