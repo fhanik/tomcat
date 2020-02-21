@@ -335,6 +335,15 @@
     <exclude name="javax/servlet/jsp"/>
   </patternset>
 
+  <patternset id="files.servlet-api.graal">
+    <include name="javax/servlet/**" />
+    <include name="javax/servlet/annotation/**" />
+    <include name="javax/servlet/http/**" />
+<!--    <exclude name="javax/servlet/descriptor/**" />-->
+    <exclude name="javax/servlet/resources/**" />
+    <exclude name="javax/servlet/jsp"/>
+  </patternset>
+
   <patternset id="files.jsp-api">
     <include name="javax/servlet/jsp/**" />
   </patternset>
@@ -456,6 +465,7 @@
     <include name="org/apache/jk/**" />
     <include name="org/apache/tomcat/util/**" />
     <exclude name="org/apache/tomcat/util/net/openssl/**"/>
+    <exclude name="org/apache/tomcat/util/net/jsse/**"/>
     <exclude name="org/apache/tomcat/util/descriptor/tagplugin/**"/>
     <exclude name="org/apache/tomcat/util/descriptor/tld/**"/>
     <exclude name="org/apache/tomcat/util/digester/**"/>
@@ -515,7 +525,7 @@
   <!-- Every standard pattern set above should be included in an embedded JAR -->
   <patternset id="files.tomcat-embed-core" >
     <patternset refid="files.catalina.graal" />
-    <patternset refid="files.servlet-api" />
+    <patternset refid="files.servlet-api.graal" />
     <patternset refid="files.jaspic-api" />
     <patternset refid="files.tomcat-api" />
     <patternset refid="files.tomcat-juli" />
