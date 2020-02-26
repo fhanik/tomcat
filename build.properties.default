@@ -27,7 +27,7 @@ version.major=9
 version.minor=0
 version.build=32
 version.patch=0
-version.suffix=-dev
+version.suffix=-graal-mod
 
 # ----- Source control flags -----
 git.branch=master
