@@ -464,8 +464,8 @@
     <include name="org/apache/coyote/**" />
     <include name="org/apache/jk/**" />
     <include name="org/apache/tomcat/util/**" />
-    <exclude name="org/apache/tomcat/util/net/openssl/**"/>
-    <exclude name="org/apache/tomcat/util/net/jsse/**"/>
+<!--tomcat/ssl    <exclude name="org/apache/tomcat/util/net/openssl/**"/>-->
+<!--tomcat/ssl    <exclude name="org/apache/tomcat/util/net/jsse/**"/>-->
     <exclude name="org/apache/tomcat/util/descriptor/tagplugin/**"/>
     <exclude name="org/apache/tomcat/util/descriptor/tld/**"/>
     <exclude name="org/apache/tomcat/util/digester/**"/>
