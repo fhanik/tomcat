@@ -22,7 +22,7 @@ public class TestAbstractHttp11Protocol {
 
     @Test
     public void testGetSslProtocol() {
-        Http11Nio2Protocol protocol = new Http11Nio2Protocol();
+        Http11NioProtocol protocol = new Http11NioProtocol();
         protocol.getSSLProtocol();
     }
 }
