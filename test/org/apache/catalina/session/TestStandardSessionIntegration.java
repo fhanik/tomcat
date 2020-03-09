@@ -16,23 +16,20 @@
  */
 package org.apache.catalina.session;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import org.apache.catalina.Context;
+import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.startup.TomcatBaseTest;
+import org.apache.tomcat.util.buf.ByteChunk;
+import org.junit.Assert;
+import org.junit.Test;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.junit.Assert;
-import org.junit.Test;
-
-import org.apache.catalina.Context;
-import org.apache.catalina.ha.tcp.SimpleTcpCluster;
-import org.apache.catalina.startup.Tomcat;
-import org.apache.catalina.startup.TomcatBaseTest;
-import org.apache.tomcat.util.buf.ByteChunk;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class TestStandardSessionIntegration extends TomcatBaseTest {
 
@@ -59,11 +56,7 @@ public class TestStandardSessionIntegration extends TomcatBaseTest {
         Tomcat.addServlet(ctx, "bug56578", new Bug56578Servlet());
         ctx.addServletMappingDecoded("/bug56578", "bug56578");
 
-        if (useClustering) {
-            tomcat.getEngine().setCluster(new SimpleTcpCluster());
-            ctx.setDistributable(true);
-            ctx.setManager(ctx.getCluster().createManager(""));
-        }
+
         tomcat.start();
 
         ByteChunk res = getUrl("http://localhost:" + getPort() + "/bug56578");

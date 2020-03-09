@@ -44,7 +44,6 @@ import org.apache.catalina.authenticator.AuthenticatorBase;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.core.StandardHost;
-import org.apache.catalina.ha.context.ReplicatedContext;
 import org.apache.tomcat.util.MultiThrowable;
 import org.apache.tomcat.util.buf.ByteChunk;
 import org.apache.tomcat.util.descriptor.web.ContextEnvironment;
@@ -451,39 +450,7 @@ public class TestTomcat extends TomcatBaseTest {
         }
     }
 
-    @Test
-    public void testGetCustomContextPerAddWebappWithNullHost() {
-        Tomcat tomcat = getTomcatInstance();
-        Host host = tomcat.getHost();
-        if (host instanceof StandardHost) {
-            ((StandardHost) host).setContextClass(ReplicatedContext.class
-                    .getName());
-        }
 
-        File appFile = new File("test/deployment/context.war");
-        Context context = tomcat.addWebapp(null, "/test",
-                appFile.getAbsolutePath());
-
-        Assert.assertEquals(ReplicatedContext.class.getName(), context.getClass()
-                .getName());
-    }
-
-    @Test
-    public void testGetCustomContextPerAddWebappWithHost() {
-        Tomcat tomcat = getTomcatInstance();
-        Host host = tomcat.getHost();
-        if (host instanceof StandardHost) {
-            ((StandardHost) host).setContextClass(ReplicatedContext.class
-                    .getName());
-        }
-
-        File appFile = new File("test/deployment/context.war");
-        Context context = tomcat.addWebapp(host, "/test",
-                appFile.getAbsolutePath());
-
-        Assert.assertEquals(ReplicatedContext.class.getName(), context.getClass()
-                .getName());
-    }
 
         @Test
     public void testGetDefaultContextPerAddContext() {
@@ -511,20 +478,7 @@ public class TestTomcat extends TomcatBaseTest {
         }
     }
 
-    @Test
-    public void testGetCustomContextPerAddContextWithHost() {
-        Tomcat tomcat = getTomcatInstance();
-        Host host = tomcat.getHost();
-        if (host instanceof StandardHost) {
-            ((StandardHost) host).setContextClass(ReplicatedContext.class
-                    .getName());
-        }
-
-        // No file system docBase required
-        Context ctx = tomcat.addContext(host, "", null);
-        Assert.assertEquals(ReplicatedContext.class.getName(), ctx.getClass()
-                .getName());
-    }
+    
 
     @Test
     public void testCustomContextConfig() throws Exception {
