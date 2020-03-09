@@ -35,7 +35,7 @@ import org.apache.coyote.AbstractProtocol;
 import org.apache.coyote.Adapter;
 import org.apache.coyote.ProtocolHandler;
 import org.apache.coyote.UpgradeProtocol;
-import org.apache.coyote.http11.AbstractHttp11JsseProtocol;
+import org.apache.coyote.http11.Http11NioProtocol;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.apache.tomcat.util.IntrospectionUtils;
@@ -76,37 +76,11 @@ public class Connector extends LifecycleMBeanBase  {
 
 
     public Connector(String protocol) {
-        boolean aprConnector = AprLifecycleListener.isAprAvailable() &&
-                AprLifecycleListener.getUseAprConnector();
-
-        if ("HTTP/1.1".equals(protocol) || protocol == null) {
-            if (aprConnector) {
-                protocolHandlerClassName = "org.apache.coyote.http11.Http11AprProtocol";
-            } else {
-                protocolHandlerClassName = "org.apache.coyote.http11.Http11NioProtocol";
-            }
-        } else if ("AJP/1.3".equals(protocol)) {
-            if (aprConnector) {
-                protocolHandlerClassName = "org.apache.coyote.ajp.AjpAprProtocol";
-            } else {
-                protocolHandlerClassName = "org.apache.coyote.ajp.AjpNioProtocol";
-            }
-        } else {
-            protocolHandlerClassName = protocol;
-        }
-
-        // Instantiate protocol handler
-        ProtocolHandler p = null;
-        try {
-            Class<?> clazz = Class.forName(protocolHandlerClassName);
-            p = (ProtocolHandler) clazz.getConstructor().newInstance();
-        } catch (Exception e) {
-            log.error(sm.getString(
-                    "coyoteConnector.protocolHandlerInstantiationFailed"), e);
-        } finally {
-            this.protocolHandler = p;
-        }
-
+        this(new Http11NioProtocol());
+    }
+    public Connector(ProtocolHandler handler) {
+       this.protocolHandler = handler;
+       this.protocolHandlerClassName = handler.getClass().getName();
         // Default for Connector depends on this system property
         setThrowOnFailure(Boolean.getBoolean("org.apache.catalina.startup.EXIT_ON_INIT_FAILURE"));
     }
@@ -978,18 +952,6 @@ public class Connector extends LifecycleMBeanBase  {
         // Make sure parseBodyMethodsSet has a default
         if (null == parseBodyMethodsSet) {
             setParseBodyMethods(getParseBodyMethods());
-        }
-
-        if (protocolHandler.isAprRequired() && !AprLifecycleListener.isInstanceCreated()) {
-            throw new LifecycleException(sm.getString("coyoteConnector.protocolHandlerNoAprListener",
-                    getProtocolHandlerClassName()));
-        }
-        if (protocolHandler.isAprRequired() && !AprLifecycleListener.isAprAvailable()) {
-            throw new LifecycleException(sm.getString("coyoteConnector.protocolHandlerNoAprLibrary",
-                    getProtocolHandlerClassName()));
-        }
-        if (AprLifecycleListener.isAprAvailable() && AprLifecycleListener.getUseOpenSSL() &&
-                protocolHandler instanceof AbstractHttp11JsseProtocol) {
         }
 
         try {
