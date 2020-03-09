@@ -1633,7 +1633,6 @@ public class ContextConfig implements LifecycleListener {
 
     private void convertJsp(ServletDef servletDef,
             Map<String,String> jspInitParams) {
-        servletDef.setServletClass(org.apache.catalina.core.Constants.JSP_SERVLET_CLASS);
         String jspFile = servletDef.getJspFile();
         if ((jspFile != null) && !jspFile.startsWith("/")) {
             if (context.isServlet22()) {

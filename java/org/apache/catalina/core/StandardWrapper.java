@@ -216,11 +216,6 @@ public class StandardWrapper extends ContainerBase
     protected long unloadDelay = 2000;
 
 
-    /**
-     * True if this StandardWrapper is for the JspServlet
-     */
-    protected boolean isJspServlet;
-
 
     /**
      * The ObjectName of the JSP monitoring mbean
@@ -335,16 +330,7 @@ public class StandardWrapper extends ContainerBase
     @Override
     public int getLoadOnStartup() {
 
-        if (isJspServlet && loadOnStartup < 0) {
-            /*
-             * JspServlet must always be preloaded, because its instance is
-             * used during registerJMX (when registering the JSP
-             * monitoring mbean)
-             */
-             return Integer.MAX_VALUE;
-        } else {
             return this.loadOnStartup;
-        }
     }
 
 
@@ -483,9 +469,6 @@ public class StandardWrapper extends ContainerBase
         this.servletClass = servletClass;
         support.firePropertyChange("servletClass", oldServletClass,
                                    this.servletClass);
-        if (Constants.JSP_SERVLET_CLASS.equals(servletClass)) {
-            isJspServlet = true;
-        }
     }
 
 
@@ -558,29 +541,24 @@ public class StandardWrapper extends ContainerBase
         Set<String> allow = new HashSet<>();
         allow.add("OPTIONS");
 
-        if (isJspServlet) {
-            allow.add("GET");
-            allow.add("HEAD");
-            allow.add("POST");
-        } else {
-            allow.add("TRACE");
+        allow.add("TRACE");
 
-            Method[] methods = getAllDeclaredMethods(servletClazz);
-            for (int i=0; methods != null && i<methods.length; i++) {
-                Method m = methods[i];
+        Method[] methods = getAllDeclaredMethods(servletClazz);
+        for (int i=0; methods != null && i<methods.length; i++) {
+            Method m = methods[i];
 
-                if (m.getName().equals("doGet")) {
-                    allow.add("GET");
-                    allow.add("HEAD");
-                } else if (m.getName().equals("doPost")) {
-                    allow.add("POST");
-                } else if (m.getName().equals("doPut")) {
-                    allow.add("PUT");
-                } else if (m.getName().equals("doDelete")) {
-                    allow.add("DELETE");
-                }
+            if (m.getName().equals("doGet")) {
+                allow.add("GET");
+                allow.add("HEAD");
+            } else if (m.getName().equals("doPost")) {
+                allow.add("POST");
+            } else if (m.getName().equals("doPut")) {
+                allow.add("PUT");
+            } else if (m.getName().equals("doDelete")) {
+                allow.add("DELETE");
             }
         }
+
 
         String[] methodNames = new String[allow.size()];
         return allow.toArray(methodNames);
@@ -986,25 +964,6 @@ public class StandardWrapper extends ContainerBase
             initServlet(instance);
         }
 
-        if (isJspServlet) {
-            StringBuilder oname = new StringBuilder(getDomain());
-
-            oname.append(":type=JspMonitor");
-
-            oname.append(getWebModuleKeyProperties());
-
-            oname.append(",name=");
-            oname.append(getName());
-
-            oname.append(getJ2EEKeyProperties());
-
-            try {
-                jspMonitorON = new ObjectName(oname.toString());
-                Registry.getRegistry(null, null).registerComponent(instance, jspMonitorON, null);
-            } catch (Exception ex) {
-                log.warn(sm.getString("standardWrapper.jspMonitorError", instance));
-            }
-        }
     }
 
 
@@ -1329,10 +1288,6 @@ public class StandardWrapper extends ContainerBase
         // Deregister the destroyed instance
         instance = null;
         instanceInitialized = false;
-
-        if (isJspServlet && jspMonitorON != null ) {
-            Registry.getRegistry(null, null).unregisterComponent(jspMonitorON);
-        }
 
         if (singleThreadModel && (instancePool != null)) {
             try {

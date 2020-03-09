@@ -1076,17 +1076,8 @@ public class Tomcat {
         servlet.setLoadOnStartup(1);
         servlet.setOverridable(true);
 
-        // JSP servlet (by class name - to avoid loading all deps)
-        servlet = addServlet(
-                ctx, "jsp", "org.apache.jasper.servlet.JspServlet");
-        servlet.addInitParameter("fork", "false");
-        servlet.setLoadOnStartup(3);
-        servlet.setOverridable(true);
-
         // Servlet mappings
         ctx.addServletMappingDecoded("/", "default");
-        ctx.addServletMappingDecoded("*.jsp", "jsp");
-        ctx.addServletMappingDecoded("*.jspx", "jsp");
 
         // Sessions
         ctx.setSessionTimeout(30);

@@ -34,7 +34,6 @@ import org.junit.Test;
 import org.apache.catalina.Context;
 import org.apache.catalina.Realm;
 import org.apache.catalina.core.StandardHost;
-import org.apache.catalina.realm.CombinedRealm;
 import org.apache.catalina.realm.NullRealm;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.startup.TomcatBaseTest;
@@ -165,10 +164,8 @@ public class TestRegistration extends TomcatBaseTest {
         }
         Context ctx = tomcat.addContext(contextName, contextDir.getAbsolutePath());
 
-        CombinedRealm combinedRealm = new CombinedRealm();
         Realm nullRealm = new NullRealm();
-        combinedRealm.addRealm(nullRealm);
-        ctx.setRealm(combinedRealm);
+        ctx.setRealm(nullRealm);
 
         tomcat.start();
 

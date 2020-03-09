@@ -37,11 +37,7 @@ import org.apache.catalina.core.StandardEngine;
 import org.apache.catalina.core.StandardHost;
 import org.apache.catalina.core.StandardService;
 import org.apache.catalina.loader.WebappLoader;
-import org.apache.catalina.realm.DataSourceRealm;
-import org.apache.catalina.realm.JDBCRealm;
-import org.apache.catalina.realm.JNDIRealm;
-import org.apache.catalina.realm.MemoryRealm;
-import org.apache.catalina.realm.UserDatabaseRealm;
+import org.apache.catalina.realm.NullRealm;
 import org.apache.catalina.session.StandardManager;
 import org.apache.catalina.startup.ContextConfig;
 import org.apache.catalina.startup.HostConfig;
@@ -223,14 +219,7 @@ public class MBeanFactory {
         String userRoleTable, String userTable) throws Exception {
 
         // Create a new DataSourceRealm instance
-        DataSourceRealm realm = new DataSourceRealm();
-        realm.setDataSourceName(dataSourceName);
-        realm.setRoleNameCol(roleNameCol);
-        realm.setUserCredCol(userCredCol);
-        realm.setUserNameCol(userNameCol);
-        realm.setUserRoleTable(userRoleTable);
-        realm.setUserTable(userTable);
-
+        Realm realm = new NullRealm();
         // Add the new instance to its parent component
         return addRealmToParent(parent, realm);
     }
@@ -339,15 +328,11 @@ public class MBeanFactory {
         String connectionName, String connectionPassword, String connectionURL)
         throws Exception {
 
-        // Create a new JDBCRealm instance
-        JDBCRealm realm = new JDBCRealm();
-        realm.setDriverName(driverName);
-        realm.setConnectionName(connectionName);
-        realm.setConnectionPassword(connectionPassword);
-        realm.setConnectionURL(connectionURL);
-
+        // Create a new DataSourceRealm instance
+        Realm realm = new NullRealm();
         // Add the new instance to its parent component
         return addRealmToParent(parent, realm);
+
     }
 
 
@@ -361,11 +346,11 @@ public class MBeanFactory {
      */
     public String createJNDIRealm(String parent) throws Exception {
 
-         // Create a new JNDIRealm instance
-        JNDIRealm realm = new JNDIRealm();
-
+        // Create a new DataSourceRealm instance
+        Realm realm = new NullRealm();
         // Add the new instance to its parent component
         return addRealmToParent(parent, realm);
+
     }
 
 
@@ -379,11 +364,11 @@ public class MBeanFactory {
      */
     public String createMemoryRealm(String parent) throws Exception {
 
-         // Create a new MemoryRealm instance
-        MemoryRealm realm = new MemoryRealm();
-
+        // Create a new DataSourceRealm instance
+        Realm realm = new NullRealm();
         // Add the new instance to its parent component
         return addRealmToParent(parent, realm);
+
     }
 
 
@@ -597,12 +582,11 @@ public class MBeanFactory {
     public String createUserDatabaseRealm(String parent, String resourceName)
         throws Exception {
 
-         // Create a new UserDatabaseRealm instance
-        UserDatabaseRealm realm = new UserDatabaseRealm();
-        realm.setResourceName(resourceName);
-
+        // Create a new DataSourceRealm instance
+        Realm realm = new NullRealm();
         // Add the new instance to its parent component
         return addRealmToParent(parent, realm);
+
     }
 
 

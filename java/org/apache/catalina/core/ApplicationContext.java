@@ -879,19 +879,13 @@ public class ApplicationContext implements ServletContext {
 
         Wrapper jspServlet = (Wrapper) context.findChild("jsp");
 
-        if (jspServlet == null) {
-            // No JSP servlet currently defined.
-            // Use default JSP Servlet class name
-            jspServletClassName = Constants.JSP_SERVLET_CLASS;
-        } else {
-            // JSP Servlet defined.
-            // Use same JSP Servlet class name
-            jspServletClassName = jspServlet.getServletClass();
-            // Use same init parameters
-            String[] params = jspServlet.findInitParameters();
-            for (String param : params) {
-                jspFileInitParams.put(param, jspServlet.findInitParameter(param));
-            }
+        // JSP Servlet defined.
+        // Use same JSP Servlet class name
+        jspServletClassName = jspServlet.getServletClass();
+        // Use same init parameters
+        String[] params = jspServlet.findInitParameters();
+        for (String param : params) {
+            jspFileInitParams.put(param, jspServlet.findInitParameter(param));
         }
 
         // Add init parameter to specify JSP file
