@@ -56,9 +56,6 @@ import org.apache.catalina.core.AprLifecycleListener;
 import org.apache.catalina.core.StandardServer;
 import org.apache.catalina.startup.TesterMapRealm;
 import org.apache.catalina.startup.Tomcat;
-import org.apache.tomcat.jni.Library;
-import org.apache.tomcat.jni.LibraryNotFoundError;
-import org.apache.tomcat.jni.SSL;
 import org.apache.tomcat.util.compat.JrePlatform;
 import org.apache.tomcat.util.descriptor.web.LoginConfig;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
@@ -97,14 +94,6 @@ public final class TesterSupport {
         boolean available = false;
         int version = 0;
         String err = "";
-        try {
-            Library.initialize(null);
-            available = true;
-            version = SSL.version();
-            Library.terminate();
-        } catch (Exception | LibraryNotFoundError ex) {
-            err = ex.getMessage();
-        }
         OPENSSL_AVAILABLE = available;
         OPENSSL_VERSION = version;
         OPENSSL_ERROR = err;
@@ -668,18 +657,9 @@ public final class TesterSupport {
             return Constants.SSL_PROTO_TLSv1_2;
         }
 
-        if (connector.getProtocolHandlerClassName().contains("Apr")) {
-            // APR connector so OpenSSL is used for TLS.
-            if (SSL.version() >= 0x1010100f) {
-                return Constants.SSL_PROTO_TLSv1_3;
-            } else {
-                return Constants.SSL_PROTO_TLSv1_2;
-            }
-        } else {
-            // NIO or NIO2. Tests do not use JSSE+OpenSSL so JSSE will be used.
-            // Due to check above, it is known that TLS 1.3 is available
-            return Constants.SSL_PROTO_TLSv1_3;
-        }
+        // NIO or NIO2. Tests do not use JSSE+OpenSSL so JSSE will be used.
+        // Due to check above, it is known that TLS 1.3 is available
+        return Constants.SSL_PROTO_TLSv1_3;
     }
 
 
