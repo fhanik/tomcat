@@ -66,7 +66,6 @@ public class TestNamingContext extends TomcatBaseTest {
         cr.setType("org.apache.naming.resources.TesterObject");
         cr.setProperty("factory", "org.apache.naming.resources.TesterFactory");
         cr.setSingleton(useSingletonResource);
-        ctx.getNamingResources().addResource(cr);
 
         // Map the test Servlet
         Bug49994Servlet bug49994Servlet = new Bug49994Servlet();
@@ -126,7 +125,6 @@ public class TestNamingContext extends TomcatBaseTest {
         cr.setName("list/foo");
         cr.setType("org.apache.naming.resources.TesterObject");
         cr.setProperty("factory", "org.apache.naming.resources.TesterFactory");
-        ctx.getNamingResources().addResource(cr);
 
         // Map the test Servlet
         Bug23950Servlet bug23950Servlet = new Bug23950Servlet();
@@ -178,7 +176,6 @@ public class TestNamingContext extends TomcatBaseTest {
         cr.setType("org.apache.naming.resources.TesterObject");
         cr.setProperty("factory", "org.apache.naming.factory.BeanFactory");
         cr.setProperty("foo", "value");
-        ctx.getNamingResources().addResource(cr);
 
         // Map the test Servlet
         Bug50351Servlet bug50351Servlet = new Bug50351Servlet();
@@ -294,7 +291,6 @@ public class TestNamingContext extends TomcatBaseTest {
         env.setName("boolean");
         env.setType(Boolean.class.getName());
         env.setValue("true");
-        ctx.getNamingResources().addEnvironment(env);
 
         // Map the test Servlet
         Bug52830Servlet bug52830Servlet = new Bug52830Servlet();
@@ -358,8 +354,5 @@ public class TestNamingContext extends TomcatBaseTest {
         Assert.assertEquals(HttpServletResponse.SC_OK, rc);
         Assert.assertTrue(bc.toString().contains("<p>10</p>"));
 
-        ContextEnvironment ce =
-                ctxt.getNamingResources().findEnvironment("bug53465");
-        Assert.assertEquals("Bug53465MappedName", ce.getProperty("mappedName"));
     }
 }

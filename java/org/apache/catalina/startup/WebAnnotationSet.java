@@ -340,7 +340,6 @@ public class WebAnnotationSet {
             resource.setProperty(MAPPED_NAME_PROPERTY, annotation.mappedName());
             resource.setLookupName(annotation.lookup());
 
-            context.getNamingResources().addEnvironment(resource);
 
         } else if (type.equals("javax.xml.rpc.Service")) {
 
@@ -353,7 +352,6 @@ public class WebAnnotationSet {
             service.setDescription(annotation.description());
             service.setLookupName(annotation.lookup());
 
-            context.getNamingResources().addService(service);
 
         } else if (type.equals("javax.sql.DataSource") ||
                 type.equals("javax.jms.ConnectionFactory") ||
@@ -382,7 +380,6 @@ public class WebAnnotationSet {
             resource.setDescription(annotation.description());
             resource.setLookupName(annotation.lookup());
 
-            context.getNamingResources().addResource(resource);
 
         } else if (type.equals("javax.jms.Queue") ||
                 type.equals("javax.jms.Topic")) {
@@ -396,7 +393,6 @@ public class WebAnnotationSet {
             resource.setDescription(annotation.description());
             resource.setLookupName(annotation.lookup());
 
-            context.getNamingResources().addMessageDestinationRef(resource);
 
         } else {
             /*
@@ -414,7 +410,6 @@ public class WebAnnotationSet {
             resource.setDescription(annotation.description());
             resource.setLookupName(annotation.lookup());
 
-            context.getNamingResources().addResourceEnvRef(resource);
         }
     }
 

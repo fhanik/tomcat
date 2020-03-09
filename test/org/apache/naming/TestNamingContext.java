@@ -56,7 +56,6 @@ public class TestNamingContext extends TomcatBaseTest {
         ce.setValue(DATA);
         ce.setType(DATA.getClass().getName());
 
-        tomcat.getServer().getGlobalNamingResources().addEnvironment(ce);
 
         // No link so still should be null
         obj = doLookup(webappInitial, COMP_ENV + "/" + LOCAL_NAME);
@@ -67,7 +66,6 @@ public class TestNamingContext extends TomcatBaseTest {
         crl.setGlobal(GLOBAL_NAME);
         crl.setName(LOCAL_NAME);
         crl.setType(DATA.getClass().getName());
-        ctx.getNamingResources().addResourceLink(crl);
 
         // Link exists so should be OK now
         obj = doLookup(webappInitial, COMP_ENV + "/" + LOCAL_NAME);
@@ -80,7 +78,6 @@ public class TestNamingContext extends TomcatBaseTest {
         Assert.assertEquals(DATA, obj);
 
         // Remove the link
-        ctx.getNamingResources().removeResourceLink(LOCAL_NAME);
 
         // No link so should be null
         obj = doLookup(webappInitial, COMP_ENV + "/" + LOCAL_NAME);

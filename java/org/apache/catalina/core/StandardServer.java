@@ -47,8 +47,6 @@ import org.apache.catalina.LifecycleException;
 import org.apache.catalina.LifecycleState;
 import org.apache.catalina.Server;
 import org.apache.catalina.Service;
-import org.apache.catalina.deploy.NamingResourcesImpl;
-import org.apache.catalina.mbeans.MBeanFactory;
 import org.apache.catalina.startup.Catalina;
 import org.apache.catalina.util.ExtensionValidator;
 import org.apache.catalina.util.LifecycleMBeanBase;
@@ -83,15 +81,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
 
         super();
 
-        globalNamingResources = new NamingResourcesImpl();
-        globalNamingResources.setContainer(this);
 
-        if (isUseNaming()) {
-            namingContextListener = new NamingContextListener();
-            addLifecycleListener(namingContextListener);
-        } else {
-            namingContextListener = null;
-        }
 
     }
 
@@ -105,16 +95,6 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
     private javax.naming.Context globalNamingContext = null;
 
 
-    /**
-     * Global naming resources.
-     */
-    private NamingResourcesImpl globalNamingResources = null;
-
-
-    /**
-     * The naming context listener for this web application.
-     */
-    private final NamingContextListener namingContextListener;
 
 
     /**
@@ -248,30 +228,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
     /**
      * Return the global naming resources.
      */
-    @Override
-    public NamingResourcesImpl getGlobalNamingResources() {
-        return this.globalNamingResources;
-    }
 
-
-    /**
-     * Set the global naming resources.
-     *
-     * @param globalNamingResources The new global naming resources
-     */
-    @Override
-    public void setGlobalNamingResources
-        (NamingResourcesImpl globalNamingResources) {
-
-        NamingResourcesImpl oldGlobalNamingResources =
-            this.globalNamingResources;
-        this.globalNamingResources = globalNamingResources;
-        this.globalNamingResources.setContainer(this);
-        support.firePropertyChange("globalNamingResources",
-                                   oldGlobalNamingResources,
-                                   this.globalNamingResources);
-
-    }
 
 
     /**
@@ -922,7 +879,6 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         fireLifecycleEvent(CONFIGURE_START_EVENT, null);
         setState(LifecycleState.STARTING);
 
-        globalNamingResources.start();
 
         // Start our defined Services
         synchronized (servicesLock) {
@@ -992,7 +948,6 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
             services[i].stop();
         }
 
-        globalNamingResources.stop();
 
         stopAwait();
     }
@@ -1016,13 +971,6 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         // will be registered under multiple names
         onameStringCache = register(new StringCache(), "type=StringCache");
 
-        // Register the MBeanFactory
-        MBeanFactory factory = new MBeanFactory();
-        factory.setContainer(this);
-        onameMBeanFactory = register(factory, "type=MBeanFactory");
-
-        // Register the naming resources
-        globalNamingResources.init();
 
         // Populate the extension validator with JARs from common and shared
         // class loaders
@@ -1064,8 +1012,6 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         for (int i = 0; i < services.length; i++) {
             services[i].destroy();
         }
-
-        globalNamingResources.destroy();
 
         unregister(onameMBeanFactory);
 

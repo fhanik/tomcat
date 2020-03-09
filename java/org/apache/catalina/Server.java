@@ -21,7 +21,6 @@ package org.apache.catalina;
 import java.io.File;
 import java.util.concurrent.ScheduledExecutorService;
 
-import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.catalina.startup.Catalina;
 
 /**
@@ -46,20 +45,6 @@ import org.apache.catalina.startup.Catalina;
 public interface Server extends Lifecycle {
 
     // ------------------------------------------------------------- Properties
-
-    /**
-     * @return the global naming resources.
-     */
-    public NamingResourcesImpl getGlobalNamingResources();
-
-
-    /**
-     * Set the global naming resources.
-     *
-     * @param globalNamingResources The new global naming resources
-     */
-    public void setGlobalNamingResources
-        (NamingResourcesImpl globalNamingResources);
 
 
     /**

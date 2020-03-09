@@ -276,7 +276,6 @@ public class TestTomcat extends TomcatBaseTest {
         environment.setType("java.lang.String");
         environment.setName(HelloWorldJndi.JNDI_ENV_NAME);
         environment.setValue("Tomcat User");
-        ctx.getNamingResources().addEnvironment(environment);
 
         Tomcat.addServlet(ctx, "jndiServlet", new HelloWorldJndi());
         ctx.addServletMappingDecoded("/", "jndiServlet");
@@ -304,13 +303,11 @@ public class TestTomcat extends TomcatBaseTest {
         environment.setType("java.lang.String");
         environment.setName("globalTest");
         environment.setValue("Tomcat User");
-        tomcat.getServer().getGlobalNamingResources().addEnvironment(environment);
 
         ContextResourceLink link = new ContextResourceLink();
         link.setGlobal("globalTest");
         link.setName(HelloWorldJndi.JNDI_ENV_NAME);
         link.setType("java.lang.String");
-        ctx.getNamingResources().addResourceLink(link);
 
         Tomcat.addServlet(ctx, "jndiServlet", new HelloWorldJndi());
         ctx.addServletMappingDecoded("/", "jndiServlet");

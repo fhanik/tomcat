@@ -28,7 +28,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletSecurityElement;
 import javax.servlet.descriptor.JspConfigDescriptor;
 
-import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.tomcat.ContextBind;
 import org.apache.tomcat.InstanceManager;
 import org.apache.tomcat.JarScanner;
@@ -452,20 +451,6 @@ public interface Context extends Container, ContextBind {
      * @param config The new login configuration
      */
     public void setLoginConfig(LoginConfig config);
-
-
-    /**
-     * @return the naming resources associated with this web application.
-     */
-    public NamingResourcesImpl getNamingResources();
-
-
-    /**
-     * Set the naming resources for this web application.
-     *
-     * @param namingResources The new naming resources
-     */
-    public void setNamingResources(NamingResourcesImpl namingResources);
 
 
     /**

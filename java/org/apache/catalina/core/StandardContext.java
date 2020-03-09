@@ -27,6 +27,7 @@ import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.EventListener;
 import java.util.HashMap;
@@ -98,7 +99,6 @@ import org.apache.catalina.Valve;
 import org.apache.catalina.WebResource;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.Wrapper;
-import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.catalina.loader.WebappLoader;
 import org.apache.catalina.session.StandardManager;
 import org.apache.catalina.util.CharsetMapper;
@@ -419,16 +419,6 @@ public class StandardContext extends ContainerBase
     private final ReadWriteLock managerLock = new ReentrantReadWriteLock();
 
 
-    /**
-     * The naming context listener for this web application.
-     */
-    private NamingContextListener namingContextListener = null;
-
-
-    /**
-     * The naming resources for this web application.
-     */
-    private NamingResourcesImpl namingResources = null;
 
     /**
      * The message destinations for this web application.
@@ -2005,70 +1995,6 @@ public class StandardContext extends ContainerBase
 
 
     /**
-     * @return the naming resources associated with this web application.
-     */
-    @Override
-    public NamingResourcesImpl getNamingResources() {
-        if (namingResources == null) {
-            setNamingResources(new NamingResourcesImpl());
-        }
-        return namingResources;
-    }
-
-
-    /**
-     * Set the naming resources for this web application.
-     *
-     * @param namingResources The new naming resources
-     */
-    @Override
-    public void setNamingResources(NamingResourcesImpl namingResources) {
-
-        // Process the property setting change
-        NamingResourcesImpl oldNamingResources = this.namingResources;
-        this.namingResources = namingResources;
-        if (namingResources != null) {
-            namingResources.setContainer(this);
-        }
-        support.firePropertyChange("namingResources",
-                                   oldNamingResources, this.namingResources);
-
-        if (getState() == LifecycleState.NEW ||
-                getState() == LifecycleState.INITIALIZING ||
-                getState() == LifecycleState.INITIALIZED) {
-            // NEW will occur if Context is defined in server.xml
-            // At this point getObjectKeyPropertiesNameOnly() will trigger an
-            // NPE.
-            // INITIALIZED will occur if the Context is defined in a context.xml
-            // file
-            // If started now, a second start will be attempted when the context
-            // starts
-
-            // In both cases, return and let context init the namingResources
-            // when it starts
-            return;
-        }
-
-        if (oldNamingResources != null) {
-            try {
-                oldNamingResources.stop();
-                oldNamingResources.destroy();
-            } catch (LifecycleException e) {
-                log.error(sm.getString("standardContext.namingResource.destroy.fail"), e);
-            }
-        }
-        if (namingResources != null) {
-            try {
-                namingResources.init();
-                namingResources.start();
-            } catch (LifecycleException e) {
-                log.error(sm.getString("standardContext.namingResource.init.fail"), e);
-            }
-        }
-    }
-
-
-    /**
      * @return the context path for this Context.
      */
     @Override
@@ -3066,7 +2992,7 @@ public class StandardContext extends ContainerBase
      */
     @Deprecated
     public void addMessageDestinationRef(MessageDestinationRef mdr) {
-        getNamingResources().addMessageDestinationRef(mdr);
+
     }
 
 
@@ -3471,7 +3397,7 @@ public class StandardContext extends ContainerBase
      */
     @Deprecated
     public MessageDestinationRef findMessageDestinationRef(String name) {
-        return getNamingResources().findMessageDestinationRef(name);
+        return null;
     }
 
 
@@ -3485,7 +3411,7 @@ public class StandardContext extends ContainerBase
      */
     @Deprecated
     public MessageDestinationRef[] findMessageDestinationRefs() {
-        return getNamingResources().findMessageDestinationRefs();
+        return new MessageDestinationRef[0];
     }
 
 
@@ -3979,7 +3905,6 @@ public class StandardContext extends ContainerBase
      */
     @Deprecated
     public void removeMessageDestinationRef(String name) {
-        getNamingResources().removeMessageDestinationRef(name);
     }
 
 
@@ -4910,11 +4835,7 @@ public class StandardContext extends ContainerBase
         setConfigured(false);
         boolean ok = true;
 
-        // Currently this is effectively a NO-OP but needs to be called to
-        // ensure the NamingResources follows the correct lifecycle
-        if (namingResources != null) {
-            namingResources.start();
-        }
+
 
         // Post work directory
         postWorkDirectory();
@@ -4972,13 +4893,7 @@ public class StandardContext extends ContainerBase
         }
 
         if (ok && isUseNaming()) {
-            if (getNamingContextListener() == null) {
-                NamingContextListener ncl = new NamingContextListener();
-                ncl.setName(getNamingContextName());
-                ncl.setExceptionOnFailedWrite(getJndiExceptionOnFailedWrite());
-                addLifecycleListener(ncl);
-                setNamingContextListener(ncl);
-            }
+
         }
 
         // Standard container startup
@@ -5247,39 +5162,9 @@ public class StandardContext extends ContainerBase
     @Override
     public InstanceManager createInstanceManager() {
         javax.naming.Context context = null;
-        if (isUseNaming() && getNamingContextListener() != null) {
-            context = getNamingContextListener().getEnvContext();
-        }
-        Map<String, Map<String, String>> injectionMap = buildInjectionMap(
-                getIgnoreAnnotations() ? new NamingResourcesImpl(): getNamingResources());
+        Map<String, Map<String, String>> injectionMap = Collections.emptyMap();
        return new DefaultInstanceManager(context, injectionMap,
                this, this.getClass().getClassLoader());
-    }
-
-    private Map<String, Map<String, String>> buildInjectionMap(NamingResourcesImpl namingResources) {
-        Map<String, Map<String, String>> injectionMap = new HashMap<>();
-        for (Injectable resource: namingResources.findLocalEjbs()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        for (Injectable resource: namingResources.findEjbs()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        for (Injectable resource: namingResources.findEnvironments()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        for (Injectable resource: namingResources.findMessageDestinationRefs()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        for (Injectable resource: namingResources.findResourceEnvRefs()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        for (Injectable resource: namingResources.findResources()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        for (Injectable resource: namingResources.findServices()) {
-            addInjectionTarget(resource, injectionMap);
-        }
-        return injectionMap;
     }
 
     private void addInjectionTarget(Injectable resource, Map<String, Map<String, String>> injectionMap) {
@@ -5402,13 +5287,6 @@ public class StandardContext extends ContainerBase
             if (log.isDebugEnabled())
                 log.debug("Processing standard container shutdown");
 
-            // JNDI resources are unbound in CONFIGURE_STOP_EVENT so stop
-            // naming resources before they are unbound since NamingResources
-            // does a JNDI lookup to retrieve the resource. This needs to be
-            // after the application has finished with the resource
-            if (namingResources != null) {
-                namingResources.stop();
-            }
 
             fireLifecycleEvent(Lifecycle.CONFIGURE_STOP_EVENT, null);
 
@@ -5494,10 +5372,6 @@ public class StandardContext extends ContainerBase
                 new Notification("j2ee.object.deleted", this.getObjectName(),
                                  sequenceNumber.getAndIncrement());
             broadcaster.sendNotification(notification);
-        }
-
-        if (namingResources != null) {
-            namingResources.destroy();
         }
 
         Loader loader = getLoader();
@@ -5853,26 +5727,6 @@ public class StandardContext extends ContainerBase
 
 
     /**
-     * Naming context listener accessor.
-     *
-     * @return the naming context listener associated with the webapp
-     */
-    public NamingContextListener getNamingContextListener() {
-        return namingContextListener;
-    }
-
-
-    /**
-     * Naming context listener setter.
-     *
-     * @param namingContextListener the new naming context listener
-     */
-    public void setNamingContextListener(NamingContextListener namingContextListener) {
-        this.namingContextListener = namingContextListener;
-    }
-
-
-    /**
      * @return the request processing paused flag for this Context.
      */
     @Override
@@ -6186,11 +6040,6 @@ public class StandardContext extends ContainerBase
     @Override
     protected void initInternal() throws LifecycleException {
         super.initInternal();
-
-        // Register the naming resources
-        if (namingResources != null) {
-            namingResources.init();
-        }
 
         // Send j2ee.object.created notification
         if (this.getObjectName() != null) {

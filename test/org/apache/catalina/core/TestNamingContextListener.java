@@ -58,7 +58,6 @@ public class TestNamingContextListener extends TomcatBaseTest {
         environment.setType(BUG49132_VALUE.getClass().getName());
         environment.setName(BUG49132_NAME);
         environment.setValue(BUG49132_VALUE);
-        ctx.getNamingResources().addEnvironment(environment);
 
         ctx.addApplicationListener(Bug49132Listener.class.getName());
 
@@ -100,13 +99,11 @@ public class TestNamingContextListener extends TomcatBaseTest {
         environmentA.setType(Bug54096EnvA.class.getName());
         environmentA.setName(BUG54096_NameA);
         environmentA.setValue(BUG54096_ValueA);
-        ctx.getNamingResources().addEnvironment(environmentA);
 
         ContextEnvironment environmentB = new ContextEnvironment();
         environmentB.setType(Bug54096EnvB.class.getName());
         environmentB.setName(BUG54096_NameB);
         environmentB.setValue(BUG54096_ValueB);
-        ctx.getNamingResources().addEnvironment(environmentB);
 
         ctx.addApplicationListener(Bug54096Listener.class.getName());
 

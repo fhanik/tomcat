@@ -196,9 +196,6 @@ public class ContextRuleSet implements RuleSet {
         digester.addObjectCreate(prefix + "Context/ResourceLink",
                 "org.apache.tomcat.util.descriptor.web.ContextResourceLink");
         digester.addSetProperties(prefix + "Context/ResourceLink");
-        digester.addRule(prefix + "Context/ResourceLink",
-                new SetNextNamingRule("addResourceLink",
-                        "org.apache.tomcat.util.descriptor.web.ContextResourceLink"));
 
         digester.addObjectCreate(prefix + "Context/Valve",
                                  null, // MUST be specified in the element

@@ -1266,15 +1266,6 @@ public class ContextConfig implements LifecycleListener {
                 webxml.getDenyUncoveredHttpMethods());
         context.setDisplayName(webxml.getDisplayName());
         context.setDistributable(webxml.isDistributable());
-        for (ContextLocalEjb ejbLocalRef : webxml.getEjbLocalRefs().values()) {
-            context.getNamingResources().addLocalEjb(ejbLocalRef);
-        }
-        for (ContextEjb ejbRef : webxml.getEjbRefs().values()) {
-            context.getNamingResources().addEjb(ejbRef);
-        }
-        for (ContextEnvironment environment : webxml.getEnvEntries().values()) {
-            context.getNamingResources().addEnvironment(environment);
-        }
         for (ErrorPage errorPage : webxml.getErrorPages().values()) {
             context.addErrorPage(errorPage);
         }
@@ -1300,10 +1291,6 @@ public class ContextConfig implements LifecycleListener {
         if (webxml.getLoginConfig() != null) {
             context.setLoginConfig(webxml.getLoginConfig());
         }
-        for (MessageDestinationRef mdr :
-                webxml.getMessageDestinationRefs().values()) {
-            context.getNamingResources().addMessageDestinationRef(mdr);
-        }
 
         // messageDestinations were ignored in Tomcat 6, so ignore here
 
@@ -1314,13 +1301,6 @@ public class ContextConfig implements LifecycleListener {
         }
         context.setRequestCharacterEncoding(webxml.getRequestCharacterEncoding());
         // Name is just used for ordering
-        for (ContextResourceEnvRef resource :
-                webxml.getResourceEnvRefs().values()) {
-            context.getNamingResources().addResourceEnvRef(resource);
-        }
-        for (ContextResource resource : webxml.getResourceRefs().values()) {
-            context.getNamingResources().addResource(resource);
-        }
         context.setResponseCharacterEncoding(webxml.getResponseCharacterEncoding());
         boolean allAuthenticatedUsersIsAppRole =
                 webxml.getSecurityRoles().contains(
@@ -1333,9 +1313,6 @@ public class ContextConfig implements LifecycleListener {
         }
         for (String role : webxml.getSecurityRoles()) {
             context.addSecurityRole(role);
-        }
-        for (ContextService service : webxml.getServiceRefs().values()) {
-            context.getNamingResources().addService(service);
         }
         for (ServletDef servlet : webxml.getServlets().values()) {
             Wrapper wrapper = context.createWrapper();

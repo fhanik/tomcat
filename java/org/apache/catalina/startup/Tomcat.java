@@ -58,7 +58,6 @@ import org.apache.catalina.Wrapper;
 import org.apache.catalina.authenticator.NonLoginAuthenticator;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.core.ContainerBase;
-import org.apache.catalina.core.NamingContextListener;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.core.StandardEngine;
 import org.apache.catalina.core.StandardHost;
@@ -1016,7 +1015,6 @@ public class Tomcat {
         // Make sure getServer() has been called as that is where naming is
         // disabled
         getServer();
-        server.addLifecycleListener(new NamingContextListener());
 
         System.setProperty("catalina.useNaming", "true");
 

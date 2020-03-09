@@ -49,7 +49,6 @@ import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
-import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.catalina.util.ContextName;
 import org.apache.catalina.util.LifecycleMBeanBase;
 import org.apache.juli.logging.Log;
@@ -400,11 +399,6 @@ public class FailedContext extends LifecycleMBeanBase implements Context {
     public LoginConfig getLoginConfig() { return null; }
     @Override
     public void setLoginConfig(LoginConfig config) { /* NO-OP */ }
-
-    @Override
-    public NamingResourcesImpl getNamingResources() { return null; }
-    @Override
-    public void setNamingResources(NamingResourcesImpl namingResources) { /* NO-OP */ }
 
     @Override
     public String getPublicId() { return null; }

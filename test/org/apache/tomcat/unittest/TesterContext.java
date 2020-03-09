@@ -51,7 +51,6 @@ import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
-import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.apache.tomcat.InstanceManager;
@@ -532,16 +531,6 @@ public class TesterContext implements Context {
 
     @Override
     public void setLoginConfig(LoginConfig config) {
-        // NO-OP
-    }
-
-    @Override
-    public NamingResourcesImpl getNamingResources() {
-        return null;
-    }
-
-    @Override
-    public void setNamingResources(NamingResourcesImpl namingResources) {
         // NO-OP
     }
 
