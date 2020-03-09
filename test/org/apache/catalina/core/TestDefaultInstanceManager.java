@@ -30,7 +30,6 @@ import org.apache.catalina.Wrapper;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.startup.TomcatBaseTest;
-import org.apache.jasper.servlet.JasperInitializer;
 import org.apache.tomcat.InstanceManager;
 
 
@@ -82,7 +81,7 @@ public class TestDefaultInstanceManager extends TomcatBaseTest {
         StandardContext ctxt = (StandardContext) tomcat.addContext(
                 null, "/test", appDir.getAbsolutePath());
 
-        ctxt.addServletContainerInitializer(new JasperInitializer(), null);
+//        ctxt.addServletContainerInitializer(new JasperInitializer(), null);
 
         // Configure the defaults and then tweak the JSP servlet settings
         // Note: Min value for maxLoadedJsps is 2
