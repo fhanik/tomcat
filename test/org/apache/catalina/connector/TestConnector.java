@@ -31,7 +31,6 @@ import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.servlets.DefaultServlet;
-import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.TesterServlet;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.startup.TomcatBaseTest;
@@ -157,19 +156,6 @@ public class TestConnector extends TomcatBaseTest {
     public void testTraceNotAllowedDefault() throws Exception {
         doTestTrace(new DefaultServlet(), false);
     }
-
-
-    @Test
-    public void testTraceAllowedWebDav() throws Exception {
-        doTestTrace(new WebdavServlet(), true);
-    }
-
-
-    @Test
-    public void testTraceNotAllowedWebDav() throws Exception {
-        doTestTrace(new WebdavServlet(), false);
-    }
-
 
     @Test
     public void testTraceAllowedCustom() throws Exception {
