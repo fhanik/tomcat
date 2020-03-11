@@ -434,10 +434,10 @@ public class ContextConfig implements LifecycleListener {
         contextAttrs.add("source");
         fakeAttributes.put(StandardContext.class, contextAttrs);
         digester.setFakeAttributes(fakeAttributes);
-        RuleSet contextRuleSet = new ContextRuleSet("", false);
-        digester.addRuleSet(contextRuleSet);
-        RuleSet namingRuleSet = new NamingRuleSet("Context/");
-        digester.addRuleSet(namingRuleSet);
+//        RuleSet contextRuleSet = new ContextRuleSet("", false);
+//        digester.addRuleSet(contextRuleSet);
+//        RuleSet namingRuleSet = new NamingRuleSet("Context/");
+//        digester.addRuleSet(namingRuleSet);
         return digester;
     }
 

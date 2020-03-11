@@ -405,12 +405,12 @@ public class Catalina {
                             "org.apache.coyote.UpgradeProtocol");
 
         // Add RuleSets for nested elements
-        digester.addRuleSet(new NamingRuleSet("Server/GlobalNamingResources/"));
-        digester.addRuleSet(new EngineRuleSet("Server/Service/"));
-        digester.addRuleSet(new HostRuleSet("Server/Service/Engine/"));
-        digester.addRuleSet(new ContextRuleSet("Server/Service/Engine/Host/"));
-        addClusterRuleSet(digester, "Server/Service/Engine/Host/Cluster/");
-        digester.addRuleSet(new NamingRuleSet("Server/Service/Engine/Host/Context/"));
+//        digester.addRuleSet(new NamingRuleSet("Server/GlobalNamingResources/"));
+//        digester.addRuleSet(new EngineRuleSet("Server/Service/"));
+//        digester.addRuleSet(new HostRuleSet("Server/Service/Engine/"));
+//        digester.addRuleSet(new ContextRuleSet("Server/Service/Engine/Host/"));
+//        addClusterRuleSet(digester, "Server/Service/Engine/Host/Cluster/");
+//        digester.addRuleSet(new NamingRuleSet("Server/Service/Engine/Host/Context/"));
 
         // When the 'engine' is found, set the parentClassLoader.
         digester.addRule("Server/Service/Engine",
