@@ -255,7 +255,7 @@ public class StandardEngine extends ContainerBase implements Engine {
 
         // Log our server identification information
         if (log.isInfoEnabled()) {
-            log.info(sm.getString("standardEngine.start", ServerInfo.getServerInfo()));
+            log.info(String.format("Starting Servlet Engine: %s", ServerInfo.getServerInfo()));
         }
 
         // Standard container startup
