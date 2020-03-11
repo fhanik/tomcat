@@ -1327,7 +1327,7 @@
   </target>
 
   <target name="examples-sources" description="Create examples sources"
-          unless="examples.sources.skip" >
+          if="examples.sources.dontskip" >
     <taskdef name="txt2html"
              classname="org.apache.tomcat.buildutil.Txt2Html"
              classpath="${tomcat.classes}" />
