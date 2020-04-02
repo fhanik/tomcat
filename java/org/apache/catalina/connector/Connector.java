@@ -71,7 +71,7 @@ public class Connector extends LifecycleMBeanBase  {
      * Defaults to using HTTP/1.1 NIO implementation.
      */
     public Connector() {
-        this("org.apache.coyote.http11.Http11NioProtocol");
+        this(new Http11NioProtocol());
     }
 
 
@@ -583,18 +583,7 @@ public class Connector extends LifecycleMBeanBase  {
      * @return the Coyote protocol handler in use.
      */
     public String getProtocol() {
-        if (("org.apache.coyote.http11.Http11NioProtocol".equals(getProtocolHandlerClassName()) &&
-                    (!AprLifecycleListener.isAprAvailable() || !AprLifecycleListener.getUseAprConnector())) ||
-                "org.apache.coyote.http11.Http11AprProtocol".equals(getProtocolHandlerClassName()) &&
-                    AprLifecycleListener.getUseAprConnector()) {
-            return "HTTP/1.1";
-        } else if (("org.apache.coyote.ajp.AjpNioProtocol".equals(getProtocolHandlerClassName()) &&
-                    (!AprLifecycleListener.isAprAvailable() || !AprLifecycleListener.getUseAprConnector())) ||
-                "org.apache.coyote.ajp.AjpAprProtocol".equals(getProtocolHandlerClassName()) &&
-                    AprLifecycleListener.getUseAprConnector()) {
-            return "AJP/1.3";
-        }
-        return getProtocolHandlerClassName();
+        return "HTTP/1.1";
     }
 
 
