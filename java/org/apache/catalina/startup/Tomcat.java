@@ -436,12 +436,25 @@ public class Tomcat {
      * @param source The configuration source
      */
     public void init(ConfigurationSource source) {
+        init(source, new String[0]);
+    }
+
+    /**
+     * Initialize the server given the specified configuration source.
+     * The server will be loaded according to the Tomcat configuration
+     * files contained in the source (server.xml, web.xml, context.xml,
+     * SSL certificates, etc).
+     * If no configuration source is specified, it will use the default
+     * locations for these files.
+     * @param source The configuration source
+     */
+    public void init(ConfigurationSource source, String[] startupArguments) {
         ConfigFileLoader.setSource(source);
         addDefaultWebXmlToWebapp = false;
         Catalina catalina = new Catalina();
         // Load the Catalina instance with the regular configuration files
         // from specified source
-        catalina.load();
+        catalina.load(startupArguments);
         // Retrieve and set the server
         server = catalina.getServer();
     }
