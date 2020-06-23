@@ -451,7 +451,7 @@
     <exclude name="**/Http11Nio2*.class"/>
     <exclude name="**/JniLifecycleListener.class"/>
     <exclude name="**/mbeans-descriptors.xml"/>
-    <exclude name="org/apache/**/LocalStrings*.properties"/>
+    <exclude name="org/apache/**/LocalStrings_*.properties"/>
     <exclude name="org/apache/catalina/manager/**" />
     <exclude name="org/apache/catalina/**/*RuleSet*.class" />
 
@@ -472,7 +472,7 @@
     <exclude name="org/apache/tomcat/util/descriptor/tld/**"/>
     <exclude name="org/apache/tomcat/util/digester/**"/>
     <exclude name="**/mbeans-descriptors.xml"/>
-    <exclude name="org/apache/**/LocalStrings*.properties"/>
+    <exclude name="org/apache/**/LocalStrings_*.properties"/>
     <exclude name="org/apache/tomcat/jni/**" />
     <exclude name="org/apache/tomcat/**/*RuleSet*.class" />
   </patternset>
@@ -749,7 +749,7 @@
       <filterset refid="version.filters"/>
       <fileset dir="java">
         <include name="**/*.properties"/>
-        <exclude name="**/LocalStrings*.properties"/>
+        <exclude name="**/LocalStrings_*.properties"/>
         <exclude name="**/Messages*.properties"/>
         <include name="**/*.dtd"/>
         <include name="**/*.tasks"/>
