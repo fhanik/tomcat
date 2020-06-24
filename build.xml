@@ -466,7 +466,8 @@
     <include name="org/apache/coyote/**" />
     <include name="org/apache/jk/**" />
     <include name="org/apache/tomcat/util/**" />
-    <exclude name="org/apache/tomcat/util/net/openssl/**"/>
+    <!-- Connector.java relies on this -->
+    <!-- <exclude name="org/apache/tomcat/util/net/openssl/**"/> -->
     <exclude name="org/apache/tomcat/util/net/jsse/**"/>
     <exclude name="org/apache/tomcat/util/descriptor/tagplugin/**"/>
     <exclude name="org/apache/tomcat/util/descriptor/tld/**"/>
