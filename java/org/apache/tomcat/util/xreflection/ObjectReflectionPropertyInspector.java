@@ -86,7 +86,7 @@ public class ObjectReflectionPropertyInspector {
             .collect(Collectors.toSet());
         generateCode(
             baseClasses,
-            "org.apache.tomcat.util.xreflection",
+            "org.apache.tomcat.util",
             new File("/development/pivotal/cloudfoundry/spring-projects/graal/tomcat/java"),
             "XReflectionIntrospectionUtils"
         );

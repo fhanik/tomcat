@@ -26,7 +26,6 @@ import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.apache.tomcat.util.res.StringManager;
 import org.apache.tomcat.util.security.PermissionCheck;
-import org.apache.tomcat.util.xreflection.XReflectionIntrospectionUtils;
 
 /**
  * Utils for introspection and reflection

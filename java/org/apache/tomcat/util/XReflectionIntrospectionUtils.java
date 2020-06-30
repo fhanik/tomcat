@@ -1,4 +1,4 @@
-package org.apache.tomcat.util.xreflection;
+package org.apache.tomcat.util;
 public class XReflectionIntrospectionUtils {
     public static java.net.InetAddress getInetAddress(String value) {
         try {
@@ -11,109 +11,109 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         while (checkThisClass != Object.class && result == null) {
             switch (checkThisClass.getName()) {
-                case "org.apache.tomcat.util.descriptor.web.ContextResource" : 
+                case "org.apache.tomcat.util.descriptor.web.ContextResource" :
                     result = getPropertyForOrgApacheTomcatUtilDescriptorWebContextResource(o, name);
                     break;
-                case "org.apache.tomcat.util.descriptor.web.ResourceBase" : 
+                case "org.apache.tomcat.util.descriptor.web.ResourceBase" :
                     result = getPropertyForOrgApacheTomcatUtilDescriptorWebResourceBase(o, name);
                     break;
-                case "org.apache.tomcat.util.modeler.ParameterInfo" : 
+                case "org.apache.tomcat.util.modeler.ParameterInfo" :
                     result = getPropertyForOrgApacheTomcatUtilModelerParameterInfo(o, name);
                     break;
-                case "org.apache.tomcat.util.modeler.OperationInfo" : 
+                case "org.apache.tomcat.util.modeler.OperationInfo" :
                     result = getPropertyForOrgApacheTomcatUtilModelerOperationInfo(o, name);
                     break;
-                case "org.apache.tomcat.util.modeler.AttributeInfo" : 
+                case "org.apache.tomcat.util.modeler.AttributeInfo" :
                     result = getPropertyForOrgApacheTomcatUtilModelerAttributeInfo(o, name);
                     break;
-                case "org.apache.tomcat.util.modeler.FeatureInfo" : 
+                case "org.apache.tomcat.util.modeler.FeatureInfo" :
                     result = getPropertyForOrgApacheTomcatUtilModelerFeatureInfo(o, name);
                     break;
-                case "org.apache.catalina.core.AprLifecycleListener" : 
+                case "org.apache.catalina.core.AprLifecycleListener" :
                     result = getPropertyForOrgApacheCatalinaCoreAprLifecycleListener(o, name);
                     break;
-                case "org.apache.tomcat.util.modeler.ManagedBean" : 
+                case "org.apache.tomcat.util.modeler.ManagedBean" :
                     result = getPropertyForOrgApacheTomcatUtilModelerManagedBean(o, name);
                     break;
-                case "org.apache.catalina.filters.RestCsrfPreventionFilter" : 
+                case "org.apache.catalina.filters.RestCsrfPreventionFilter" :
                     result = getPropertyForOrgApacheCatalinaFiltersRestCsrfPreventionFilter(o, name);
                     break;
-                case "org.apache.catalina.filters.AddDefaultCharsetFilter" : 
+                case "org.apache.catalina.filters.AddDefaultCharsetFilter" :
                     result = getPropertyForOrgApacheCatalinaFiltersAddDefaultCharsetFilter(o, name);
                     break;
-                case "org.apache.catalina.connector.Connector" : 
+                case "org.apache.catalina.connector.Connector" :
                     result = getPropertyForOrgApacheCatalinaConnectorConnector(o, name);
                     break;
-                case "org.apache.catalina.valves.AccessLogValve" : 
+                case "org.apache.catalina.valves.AccessLogValve" :
                     result = getPropertyForOrgApacheCatalinaValvesAccessLogValve(o, name);
                     break;
-                case "org.apache.catalina.core.StandardServer" : 
+                case "org.apache.catalina.core.StandardServer" :
                     result = getPropertyForOrgApacheCatalinaCoreStandardServer(o, name);
                     break;
-                case "org.apache.catalina.realm.UserDatabaseRealm" : 
+                case "org.apache.catalina.realm.UserDatabaseRealm" :
                     result = getPropertyForOrgApacheCatalinaRealmUserDatabaseRealm(o, name);
                     break;
-                case "org.apache.catalina.core.StandardService" : 
+                case "org.apache.catalina.core.StandardService" :
                     result = getPropertyForOrgApacheCatalinaCoreStandardService(o, name);
                     break;
-                case "org.apache.catalina.core.StandardContext" : 
+                case "org.apache.catalina.core.StandardContext" :
                     result = getPropertyForOrgApacheCatalinaCoreStandardContext(o, name);
                     break;
-                case "org.apache.catalina.core.StandardHost" : 
+                case "org.apache.catalina.core.StandardHost" :
                     result = getPropertyForOrgApacheCatalinaCoreStandardHost(o, name);
                     break;
-                case "org.apache.catalina.core.StandardEngine" : 
+                case "org.apache.catalina.core.StandardEngine" :
                     result = getPropertyForOrgApacheCatalinaCoreStandardEngine(o, name);
                     break;
-                case "org.apache.catalina.loader.ParallelWebappClassLoader" : 
+                case "org.apache.catalina.loader.ParallelWebappClassLoader" :
                     result = getPropertyForOrgApacheCatalinaLoaderParallelWebappClassLoader(o, name);
                     break;
-                case "java.net.URLClassLoader" : 
+                case "java.net.URLClassLoader" :
                     result = getPropertyForJavaNetURLClassLoader(o, name);
                     break;
-                case "java.security.SecureClassLoader" : 
+                case "java.security.SecureClassLoader" :
                     result = getPropertyForJavaSecuritySecureClassLoader(o, name);
                     break;
-                case "org.apache.coyote.ajp.AjpNioProtocol" : 
+                case "org.apache.coyote.ajp.AjpNioProtocol" :
                     result = getPropertyForOrgApacheCoyoteAjpAjpNioProtocol(o, name);
                     break;
-                case "org.apache.coyote.ajp.AjpNio2Protocol" : 
+                case "org.apache.coyote.ajp.AjpNio2Protocol" :
                     result = getPropertyForOrgApacheCoyoteAjpAjpNio2Protocol(o, name);
                     break;
-                case "org.apache.coyote.ajp.AjpAprProtocol" : 
+                case "org.apache.coyote.ajp.AjpAprProtocol" :
                     result = getPropertyForOrgApacheCoyoteAjpAjpAprProtocol(o, name);
                     break;
-                case "org.apache.coyote.http11.Http11AprProtocol" : 
+                case "org.apache.coyote.http11.Http11AprProtocol" :
                     result = getPropertyForOrgApacheCoyoteHttp11Http11AprProtocol(o, name);
                     break;
-                case "org.apache.coyote.http11.Http11Nio2Protocol" : 
+                case "org.apache.coyote.http11.Http11Nio2Protocol" :
                     result = getPropertyForOrgApacheCoyoteHttp11Http11Nio2Protocol(o, name);
                     break;
-                case "org.apache.coyote.http11.Http11NioProtocol" : 
+                case "org.apache.coyote.http11.Http11NioProtocol" :
                     result = getPropertyForOrgApacheCoyoteHttp11Http11NioProtocol(o, name);
                     break;
-                case "org.apache.tomcat.util.net.SocketProperties" : 
+                case "org.apache.tomcat.util.net.SocketProperties" :
                     result = getPropertyForOrgApacheTomcatUtilNetSocketProperties(o, name);
                     break;
-                case "org.apache.tomcat.util.net.NioSelectorPool" : 
+                case "org.apache.tomcat.util.net.NioSelectorPool" :
                     result = getPropertyForOrgApacheTomcatUtilNetNioSelectorPool(o, name);
                     break;
-                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Property" : 
+                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Property" :
                     result = getPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProperty(o, name);
                     break;
-                case "org.apache.catalina.authenticator.jaspic.SimpleAuthConfigProvider" : 
+                case "org.apache.catalina.authenticator.jaspic.SimpleAuthConfigProvider" :
                     result = getPropertyForOrgApacheCatalinaAuthenticatorJaspicSimpleAuthConfigProvider(o, name);
                     break;
-                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Provider" : 
+                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Provider" :
                     result = getPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProvider(o, name);
                     break;
-                case "org.apache.tomcat.util.net.NioEndpoint" : 
+                case "org.apache.tomcat.util.net.NioEndpoint" :
                     result = getPropertyForOrgApacheTomcatUtilNetNioEndpoint(o, name);
                     break;
-                case "org.apache.tomcat.util.net.Nio2Endpoint" : 
+                case "org.apache.tomcat.util.net.Nio2Endpoint" :
                     result = getPropertyForOrgApacheTomcatUtilNetNio2Endpoint(o, name);
                     break;
-                case "org.apache.tomcat.util.net.AprEndpoint" : 
+                case "org.apache.tomcat.util.net.AprEndpoint" :
                     result = getPropertyForOrgApacheTomcatUtilNetAprEndpoint(o, name);
                     break;
             }
@@ -124,19 +124,19 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilDescriptorWebContextResource(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "scope" : 
+            case "scope" :
                 result = ((org.apache.tomcat.util.descriptor.web.ContextResource)o).getScope();
                 break;
-            case "closeMethod" : 
+            case "closeMethod" :
                 result = ((org.apache.tomcat.util.descriptor.web.ContextResource)o).getCloseMethod();
                 break;
-            case "closeMethodConfigured" : 
+            case "closeMethodConfigured" :
                 result = ((org.apache.tomcat.util.descriptor.web.ContextResource)o).getCloseMethodConfigured();
                 break;
-            case "auth" : 
+            case "auth" :
                 result = ((org.apache.tomcat.util.descriptor.web.ContextResource)o).getAuth();
                 break;
-            case "singleton" : 
+            case "singleton" :
                 result = ((org.apache.tomcat.util.descriptor.web.ContextResource)o).getSingleton();
                 break;
         }
@@ -150,16 +150,16 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilDescriptorWebResourceBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "lookupName" : 
+            case "lookupName" :
                 result = ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).getLookupName();
                 break;
-            case "description" : 
+            case "description" :
                 result = ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).getDescription();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).getName();
                 break;
-            case "type" : 
+            case "type" :
                 result = ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).getType();
                 break;
         }
@@ -187,13 +187,13 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilModelerOperationInfo(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "role" : 
+            case "role" :
                 result = ((org.apache.tomcat.util.modeler.OperationInfo)o).getRole();
                 break;
-            case "returnType" : 
+            case "returnType" :
                 result = ((org.apache.tomcat.util.modeler.OperationInfo)o).getReturnType();
                 break;
-            case "impact" : 
+            case "impact" :
                 result = ((org.apache.tomcat.util.modeler.OperationInfo)o).getImpact();
                 break;
         }
@@ -208,14 +208,14 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getWriteable method found on this class
-            case "getMethod" : 
+            case "getMethod" :
                 result = ((org.apache.tomcat.util.modeler.AttributeInfo)o).getGetMethod();
                 break;
-            case "setMethod" : 
+            case "setMethod" :
                 result = ((org.apache.tomcat.util.modeler.AttributeInfo)o).getSetMethod();
                 break;
             //no getReadable method found on this class
-            case "displayName" : 
+            case "displayName" :
                 result = ((org.apache.tomcat.util.modeler.AttributeInfo)o).getDisplayName();
                 break;
             //no getIs method found on this class
@@ -230,13 +230,13 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilModelerFeatureInfo(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "type" : 
+            case "type" :
                 result = ((org.apache.tomcat.util.modeler.FeatureInfo)o).getType();
                 break;
-            case "description" : 
+            case "description" :
                 result = ((org.apache.tomcat.util.modeler.FeatureInfo)o).getDescription();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.tomcat.util.modeler.FeatureInfo)o).getName();
                 break;
         }
@@ -253,24 +253,24 @@ public class XReflectionIntrospectionUtils {
             //no getInstanceCreated method found on this class
             //no getAprInitialized method found on this class
             //no getAprAvailable method found on this class
-            case "FIPSMode" : 
+            case "FIPSMode" :
                 result = ((org.apache.catalina.core.AprLifecycleListener)o).getFIPSMode();
                 break;
-            case "SSLRandomSeed" : 
+            case "SSLRandomSeed" :
                 result = ((org.apache.catalina.core.AprLifecycleListener)o).getSSLRandomSeed();
                 break;
-            case "FIPSModeActive" : 
+            case "FIPSModeActive" :
                 result = ((org.apache.catalina.core.AprLifecycleListener)o).isFIPSModeActive();
                 break;
-            case "useOpenSSL" : 
+            case "useOpenSSL" :
                 result = ((org.apache.catalina.core.AprLifecycleListener)o).getUseOpenSSL();
                 break;
             //no getSslInitialized method found on this class
             //no getFipsModeActive method found on this class
-            case "useAprConnector" : 
+            case "useAprConnector" :
                 result = ((org.apache.catalina.core.AprLifecycleListener)o).getUseAprConnector();
                 break;
-            case "SSLEngine" : 
+            case "SSLEngine" :
                 result = ((org.apache.catalina.core.AprLifecycleListener)o).getSSLEngine();
                 break;
         }
@@ -284,22 +284,22 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilModelerManagedBean(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "className" : 
+            case "className" :
                 result = ((org.apache.tomcat.util.modeler.ManagedBean)o).getClassName();
                 break;
-            case "domain" : 
+            case "domain" :
                 result = ((org.apache.tomcat.util.modeler.ManagedBean)o).getDomain();
                 break;
-            case "type" : 
+            case "type" :
                 result = ((org.apache.tomcat.util.modeler.ManagedBean)o).getType();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.tomcat.util.modeler.ManagedBean)o).getName();
                 break;
-            case "group" : 
+            case "group" :
                 result = ((org.apache.tomcat.util.modeler.ManagedBean)o).getGroup();
                 break;
-            case "description" : 
+            case "description" :
                 result = ((org.apache.tomcat.util.modeler.ManagedBean)o).getDescription();
                 break;
         }
@@ -313,7 +313,7 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaFiltersRestCsrfPreventionFilter(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "pathsAcceptingParams" : 
+            case "pathsAcceptingParams" :
                 result = ((org.apache.catalina.filters.RestCsrfPreventionFilter)o).getPathsAcceptingParams();
                 break;
             //no getPathsDelimiter method found on this class
@@ -328,7 +328,7 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaFiltersCsrfPreventionFilterBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "denyStatus" : 
+            case "denyStatus" :
                 result = ((org.apache.catalina.filters.CsrfPreventionFilterBase)o).getDenyStatus();
                 break;
             //no getRandomClass method found on this class
@@ -368,87 +368,87 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaConnectorConnector(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "asyncTimeout" : 
+            case "asyncTimeout" :
                 result = ((org.apache.catalina.connector.Connector)o).getAsyncTimeout();
                 break;
-            case "discardFacades" : 
+            case "discardFacades" :
                 result = ((org.apache.catalina.connector.Connector)o).getDiscardFacades();
                 break;
-            case "useBodyEncodingForURI" : 
+            case "useBodyEncodingForURI" :
                 result = ((org.apache.catalina.connector.Connector)o).getUseBodyEncodingForURI();
                 break;
-            case "enableLookups" : 
+            case "enableLookups" :
                 result = ((org.apache.catalina.connector.Connector)o).getEnableLookups();
                 break;
-            case "localPort" : 
+            case "localPort" :
                 result = ((org.apache.catalina.connector.Connector)o).getLocalPort();
                 break;
-            case "parseBodyMethods" : 
+            case "parseBodyMethods" :
                 result = ((org.apache.catalina.connector.Connector)o).getParseBodyMethods();
                 break;
             //no getObjectNameKeyProperties method found on this class
-            case "maxParameterCount" : 
+            case "maxParameterCount" :
                 result = ((org.apache.catalina.connector.Connector)o).getMaxParameterCount();
                 break;
-            case "allowTrace" : 
+            case "allowTrace" :
                 result = ((org.apache.catalina.connector.Connector)o).getAllowTrace();
                 break;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 result = ((org.apache.catalina.connector.Connector)o).getPortWithOffset();
                 break;
-            case "redirectPort" : 
+            case "redirectPort" :
                 result = ((org.apache.catalina.connector.Connector)o).getRedirectPort();
                 break;
-            case "URIEncoding" : 
+            case "URIEncoding" :
                 result = ((org.apache.catalina.connector.Connector)o).getURIEncoding();
                 break;
-            case "protocol" : 
+            case "protocol" :
                 result = ((org.apache.catalina.connector.Connector)o).getProtocol();
                 break;
-            case "maxSavePostSize" : 
+            case "maxSavePostSize" :
                 result = ((org.apache.catalina.connector.Connector)o).getMaxSavePostSize();
                 break;
-            case "useIPVHosts" : 
+            case "useIPVHosts" :
                 result = ((org.apache.catalina.connector.Connector)o).getUseIPVHosts();
                 break;
-            case "protocolHandlerClassName" : 
+            case "protocolHandlerClassName" :
                 result = ((org.apache.catalina.connector.Connector)o).getProtocolHandlerClassName();
                 break;
-            case "encodedSolidusHandling" : 
+            case "encodedSolidusHandling" :
                 result = ((org.apache.catalina.connector.Connector)o).getEncodedSolidusHandling();
                 break;
             //no getDomainInternal method found on this class
-            case "maxPostSize" : 
+            case "maxPostSize" :
                 result = ((org.apache.catalina.connector.Connector)o).getMaxPostSize();
                 break;
-            case "scheme" : 
+            case "scheme" :
                 result = ((org.apache.catalina.connector.Connector)o).getScheme();
                 break;
-            case "secure" : 
+            case "secure" :
                 result = ((org.apache.catalina.connector.Connector)o).getSecure();
                 break;
-            case "proxyName" : 
+            case "proxyName" :
                 result = ((org.apache.catalina.connector.Connector)o).getProxyName();
                 break;
-            case "maxCookieCount" : 
+            case "maxCookieCount" :
                 result = ((org.apache.catalina.connector.Connector)o).getMaxCookieCount();
                 break;
-            case "proxyPort" : 
+            case "proxyPort" :
                 result = ((org.apache.catalina.connector.Connector)o).getProxyPort();
                 break;
-            case "portOffset" : 
+            case "portOffset" :
                 result = ((org.apache.catalina.connector.Connector)o).getPortOffset();
                 break;
-            case "xpoweredBy" : 
+            case "xpoweredBy" :
                 result = ((org.apache.catalina.connector.Connector)o).getXpoweredBy();
                 break;
-            case "executorName" : 
+            case "executorName" :
                 result = ((org.apache.catalina.connector.Connector)o).getExecutorName();
                 break;
-            case "port" : 
+            case "port" :
                 result = ((org.apache.catalina.connector.Connector)o).getPort();
                 break;
-            case "redirectPortWithOffset" : 
+            case "redirectPortWithOffset" :
                 result = ((org.apache.catalina.connector.Connector)o).getRedirectPortWithOffset();
                 break;
         }
@@ -466,28 +466,28 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getRotatable method found on this class
-            case "prefix" : 
+            case "prefix" :
                 result = ((org.apache.catalina.valves.AccessLogValve)o).getPrefix();
                 break;
             //no getCheckForOldLogs method found on this class
             //no getCheckExists method found on this class
             //no getBuffered method found on this class
             //no getRotationLastChecked method found on this class
-            case "suffix" : 
+            case "suffix" :
                 result = ((org.apache.catalina.valves.AccessLogValve)o).getSuffix();
                 break;
-            case "directory" : 
+            case "directory" :
                 result = ((org.apache.catalina.valves.AccessLogValve)o).getDirectory();
                 break;
-            case "encoding" : 
+            case "encoding" :
                 result = ((org.apache.catalina.valves.AccessLogValve)o).getEncoding();
                 break;
             //no getDateStamp method found on this class
-            case "maxDays" : 
+            case "maxDays" :
                 result = ((org.apache.catalina.valves.AccessLogValve)o).getMaxDays();
                 break;
             //no getRenameOnRotate method found on this class
-            case "fileDateFormat" : 
+            case "fileDateFormat" :
                 result = ((org.apache.catalina.valves.AccessLogValve)o).getFileDateFormat();
                 break;
         }
@@ -501,33 +501,33 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaValvesAbstractAccessLogValve(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "locale" : 
+            case "locale" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getLocale();
                 break;
-            case "conditionUnless" : 
+            case "conditionUnless" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getConditionUnless();
                 break;
-            case "requestAttributesEnabled" : 
+            case "requestAttributesEnabled" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getRequestAttributesEnabled();
                 break;
-            case "enabled" : 
+            case "enabled" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getEnabled();
                 break;
             //no getTlsAttributeRequired method found on this class
-            case "condition" : 
+            case "condition" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getCondition();
                 break;
-            case "maxLogMessageBufferSize" : 
+            case "maxLogMessageBufferSize" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getMaxLogMessageBufferSize();
                 break;
-            case "ipv6Canonical" : 
+            case "ipv6Canonical" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getIpv6Canonical();
                 break;
             //no getLocaleName method found on this class
-            case "pattern" : 
+            case "pattern" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getPattern();
                 break;
-            case "conditionIf" : 
+            case "conditionIf" :
                 result = ((org.apache.catalina.valves.AbstractAccessLogValve)o).getConditionIf();
                 break;
         }
@@ -541,11 +541,11 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaValvesValveBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "domainInternal" : 
+            case "domainInternal" :
                 result = ((org.apache.catalina.valves.ValveBase)o).getDomainInternal();
                 break;
             //no getAsyncSupported method found on this class
-            case "objectNameKeyProperties" : 
+            case "objectNameKeyProperties" :
                 result = ((org.apache.catalina.valves.ValveBase)o).getObjectNameKeyProperties();
                 break;
         }
@@ -559,40 +559,40 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaCoreStandardServer(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "periodicEventDelay" : 
+            case "periodicEventDelay" :
                 result = ((org.apache.catalina.core.StandardServer)o).getPeriodicEventDelay();
                 break;
             //no getDomainInternal method found on this class
-            case "portOffset" : 
+            case "portOffset" :
                 result = ((org.apache.catalina.core.StandardServer)o).getPortOffset();
                 break;
-            case "utilityThreads" : 
+            case "utilityThreads" :
                 result = ((org.apache.catalina.core.StandardServer)o).getUtilityThreads();
                 break;
             //no getStopAwait method found on this class
-            case "serverBuilt" : 
+            case "serverBuilt" :
                 result = ((org.apache.catalina.core.StandardServer)o).getServerBuilt();
                 break;
-            case "serverNumber" : 
+            case "serverNumber" :
                 result = ((org.apache.catalina.core.StandardServer)o).getServerNumber();
                 break;
-            case "serverInfo" : 
+            case "serverInfo" :
                 result = ((org.apache.catalina.core.StandardServer)o).getServerInfo();
                 break;
-            case "port" : 
+            case "port" :
                 result = ((org.apache.catalina.core.StandardServer)o).getPort();
                 break;
-            case "shutdown" : 
+            case "shutdown" :
                 result = ((org.apache.catalina.core.StandardServer)o).getShutdown();
                 break;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 result = ((org.apache.catalina.core.StandardServer)o).getPortWithOffset();
                 break;
             //no getObjectNameKeyProperties method found on this class
-            case "address" : 
+            case "address" :
                 result = ((org.apache.catalina.core.StandardServer)o).getAddress();
                 break;
-            case "utilityThreadsAsDaemon" : 
+            case "utilityThreadsAsDaemon" :
                 result = ((org.apache.catalina.core.StandardServer)o).getUtilityThreadsAsDaemon();
                 break;
         }
@@ -606,7 +606,7 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaRealmUserDatabaseRealm(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "resourceName" : 
+            case "resourceName" :
                 result = ((org.apache.catalina.realm.UserDatabaseRealm)o).getResourceName();
                 break;
         }
@@ -620,27 +620,27 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaRealmRealmBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "objectNameKeyProperties" : 
+            case "objectNameKeyProperties" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getObjectNameKeyProperties();
                 break;
             //no getStripRealmForGss method found on this class
-            case "domainInternal" : 
+            case "domainInternal" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getDomainInternal();
                 break;
-            case "allRolesMode" : 
+            case "allRolesMode" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getAllRolesMode();
                 break;
-            case "x509UsernameRetrieverClassName" : 
+            case "x509UsernameRetrieverClassName" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getX509UsernameRetrieverClassName();
                 break;
-            case "transportGuaranteeRedirectStatus" : 
+            case "transportGuaranteeRedirectStatus" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getTransportGuaranteeRedirectStatus();
                 break;
             //no getRealmSuffix method found on this class
-            case "validate" : 
+            case "validate" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getValidate();
                 break;
-            case "realmPath" : 
+            case "realmPath" :
                 result = ((org.apache.catalina.realm.RealmBase)o).getRealmPath();
                 break;
         }
@@ -655,10 +655,10 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getDomainInternal method found on this class
-            case "objectNameKeyProperties" : 
+            case "objectNameKeyProperties" :
                 result = ((org.apache.catalina.core.StandardService)o).getObjectNameKeyProperties();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.catalina.core.StandardService)o).getName();
                 break;
         }
@@ -672,261 +672,261 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaCoreStandardContext(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "charsetMapperClass" : 
+            case "charsetMapperClass" :
                 result = ((org.apache.catalina.core.StandardContext)o).getCharsetMapperClass();
                 break;
-            case "skipMemoryLeakChecksOnJvmShutdown" : 
+            case "skipMemoryLeakChecksOnJvmShutdown" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSkipMemoryLeakChecksOnJvmShutdown();
                 break;
-            case "server" : 
+            case "server" :
                 result = ((org.apache.catalina.core.StandardContext)o).getServer();
                 break;
-            case "docBase" : 
+            case "docBase" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDocBase();
                 break;
-            case "allowMultipleLeadingForwardSlashInPath" : 
+            case "allowMultipleLeadingForwardSlashInPath" :
                 result = ((org.apache.catalina.core.StandardContext)o).getAllowMultipleLeadingForwardSlashInPath();
                 break;
-            case "sendRedirectBody" : 
+            case "sendRedirectBody" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSendRedirectBody();
                 break;
-            case "defaultWebXml" : 
+            case "defaultWebXml" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDefaultWebXml();
                 break;
-            case "displayName" : 
+            case "displayName" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDisplayName();
                 break;
-            case "workPath" : 
+            case "workPath" :
                 result = ((org.apache.catalina.core.StandardContext)o).getWorkPath();
                 break;
-            case "reloadable" : 
+            case "reloadable" :
                 result = ((org.apache.catalina.core.StandardContext)o).getReloadable();
                 break;
-            case "effectiveMinorVersion" : 
+            case "effectiveMinorVersion" :
                 result = ((org.apache.catalina.core.StandardContext)o).getEffectiveMinorVersion();
                 break;
-            case "swallowOutput" : 
+            case "swallowOutput" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSwallowOutput();
                 break;
             //no getRequestEncoding method found on this class
-            case "cookies" : 
+            case "cookies" :
                 result = ((org.apache.catalina.core.StandardContext)o).getCookies();
                 break;
-            case "clearReferencesThreadLocals" : 
+            case "clearReferencesThreadLocals" :
                 result = ((org.apache.catalina.core.StandardContext)o).getClearReferencesThreadLocals();
                 break;
-            case "delegate" : 
+            case "delegate" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDelegate();
                 break;
-            case "mapperDirectoryRedirectEnabled" : 
+            case "mapperDirectoryRedirectEnabled" :
                 result = ((org.apache.catalina.core.StandardContext)o).getMapperDirectoryRedirectEnabled();
                 break;
             //no getServlet22 method found on this class
-            case "preemptiveAuthentication" : 
+            case "preemptiveAuthentication" :
                 result = ((org.apache.catalina.core.StandardContext)o).getPreemptiveAuthentication();
                 break;
-            case "wrapperClass" : 
+            case "wrapperClass" :
                 result = ((org.apache.catalina.core.StandardContext)o).getWrapperClass();
                 break;
-            case "minTime" : 
+            case "minTime" :
                 result = ((org.apache.catalina.core.StandardContext)o).getMinTime();
                 break;
-            case "requestCharacterEncoding" : 
+            case "requestCharacterEncoding" :
                 result = ((org.apache.catalina.core.StandardContext)o).getRequestCharacterEncoding();
                 break;
-            case "fireRequestListenersOnForwards" : 
+            case "fireRequestListenersOnForwards" :
                 result = ((org.apache.catalina.core.StandardContext)o).getFireRequestListenersOnForwards();
                 break;
-            case "override" : 
+            case "override" :
                 result = ((org.apache.catalina.core.StandardContext)o).getOverride();
                 break;
-            case "tldValidation" : 
+            case "tldValidation" :
                 result = ((org.apache.catalina.core.StandardContext)o).getTldValidation();
                 break;
-            case "workDir" : 
+            case "workDir" :
                 result = ((org.apache.catalina.core.StandardContext)o).getWorkDir();
                 break;
-            case "startTime" : 
+            case "startTime" :
                 result = ((org.apache.catalina.core.StandardContext)o).getStartTime();
                 break;
             //no getWebXmlValidation method found on this class
-            case "dispatchersUseEncodedPaths" : 
+            case "dispatchersUseEncodedPaths" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDispatchersUseEncodedPaths();
                 break;
-            case "allowCasualMultipartParsing" : 
+            case "allowCasualMultipartParsing" :
                 result = ((org.apache.catalina.core.StandardContext)o).getAllowCasualMultipartParsing();
                 break;
-            case "requestCount" : 
+            case "requestCount" :
                 result = ((org.apache.catalina.core.StandardContext)o).getRequestCount();
                 break;
-            case "addWebinfClassesResources" : 
+            case "addWebinfClassesResources" :
                 result = ((org.apache.catalina.core.StandardContext)o).getAddWebinfClassesResources();
                 break;
-            case "j2EEApplication" : 
+            case "j2EEApplication" :
                 result = ((org.apache.catalina.core.StandardContext)o).getJ2EEApplication();
                 break;
-            case "distributable" : 
+            case "distributable" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDistributable();
                 break;
-            case "mapperContextRootRedirectEnabled" : 
+            case "mapperContextRootRedirectEnabled" :
                 result = ((org.apache.catalina.core.StandardContext)o).getMapperContextRootRedirectEnabled();
                 break;
-            case "sessionCookiePath" : 
+            case "sessionCookiePath" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSessionCookiePath();
                 break;
-            case "sessionCookiePathUsesTrailingSlash" : 
+            case "sessionCookiePathUsesTrailingSlash" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSessionCookiePathUsesTrailingSlash();
                 break;
-            case "j2EEServer" : 
+            case "j2EEServer" :
                 result = ((org.apache.catalina.core.StandardContext)o).getJ2EEServer();
                 break;
-            case "startupTime" : 
+            case "startupTime" :
                 result = ((org.apache.catalina.core.StandardContext)o).getStartupTime();
                 break;
-            case "clearReferencesRmiTargets" : 
+            case "clearReferencesRmiTargets" :
                 result = ((org.apache.catalina.core.StandardContext)o).getClearReferencesRmiTargets();
                 break;
-            case "xmlNamespaceAware" : 
+            case "xmlNamespaceAware" :
                 result = ((org.apache.catalina.core.StandardContext)o).getXmlNamespaceAware();
                 break;
-            case "tldScanTime" : 
+            case "tldScanTime" :
                 result = ((org.apache.catalina.core.StandardContext)o).getTldScanTime();
                 break;
-            case "clearReferencesHttpClientKeepAliveThread" : 
+            case "clearReferencesHttpClientKeepAliveThread" :
                 result = ((org.apache.catalina.core.StandardContext)o).getClearReferencesHttpClientKeepAliveThread();
                 break;
-            case "inProgressAsyncCount" : 
+            case "inProgressAsyncCount" :
                 result = ((org.apache.catalina.core.StandardContext)o).getInProgressAsyncCount();
                 break;
-            case "validateClientProvidedNewSessionId" : 
+            case "validateClientProvidedNewSessionId" :
                 result = ((org.apache.catalina.core.StandardContext)o).getValidateClientProvidedNewSessionId();
                 break;
             //no getReplaceWelcomeFiles method found on this class
-            case "useRelativeRedirects" : 
+            case "useRelativeRedirects" :
                 result = ((org.apache.catalina.core.StandardContext)o).getUseRelativeRedirects();
                 break;
-            case "sessionCookieDomain" : 
+            case "sessionCookieDomain" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSessionCookieDomain();
                 break;
-            case "crossContext" : 
+            case "crossContext" :
                 result = ((org.apache.catalina.core.StandardContext)o).getCrossContext();
                 break;
-            case "sessionCookieName" : 
+            case "sessionCookieName" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSessionCookieName();
                 break;
-            case "defaultContextXml" : 
+            case "defaultContextXml" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDefaultContextXml();
                 break;
-            case "publicId" : 
+            case "publicId" :
                 result = ((org.apache.catalina.core.StandardContext)o).getPublicId();
                 break;
-            case "denyUncoveredHttpMethods" : 
+            case "denyUncoveredHttpMethods" :
                 result = ((org.apache.catalina.core.StandardContext)o).getDenyUncoveredHttpMethods();
                 break;
-            case "encodedPath" : 
+            case "encodedPath" :
                 result = ((org.apache.catalina.core.StandardContext)o).getEncodedPath();
                 break;
-            case "antiResourceLocking" : 
+            case "antiResourceLocking" :
                 result = ((org.apache.catalina.core.StandardContext)o).getAntiResourceLocking();
                 break;
-            case "paused" : 
+            case "paused" :
                 result = ((org.apache.catalina.core.StandardContext)o).getPaused();
                 break;
-            case "resourceOnlyServlets" : 
+            case "resourceOnlyServlets" :
                 result = ((org.apache.catalina.core.StandardContext)o).getResourceOnlyServlets();
                 break;
             //no getNamingContextName method found on this class
-            case "clearReferencesObjectStreamClassCaches" : 
+            case "clearReferencesObjectStreamClassCaches" :
                 result = ((org.apache.catalina.core.StandardContext)o).getClearReferencesObjectStreamClassCaches();
                 break;
             //no getUseNaming method found on this class
             //no getComputedFailCtxIfServletStartFails method found on this class
-            case "logEffectiveWebXml" : 
+            case "logEffectiveWebXml" :
                 result = ((org.apache.catalina.core.StandardContext)o).getLogEffectiveWebXml();
                 break;
-            case "originalDocBase" : 
+            case "originalDocBase" :
                 result = ((org.apache.catalina.core.StandardContext)o).getOriginalDocBase();
                 break;
-            case "path" : 
+            case "path" :
                 result = ((org.apache.catalina.core.StandardContext)o).getPath();
                 break;
-            case "useHttpOnly" : 
+            case "useHttpOnly" :
                 result = ((org.apache.catalina.core.StandardContext)o).getUseHttpOnly();
                 break;
-            case "clearReferencesStopTimerThreads" : 
+            case "clearReferencesStopTimerThreads" :
                 result = ((org.apache.catalina.core.StandardContext)o).getClearReferencesStopTimerThreads();
                 break;
-            case "responseCharacterEncoding" : 
+            case "responseCharacterEncoding" :
                 result = ((org.apache.catalina.core.StandardContext)o).getResponseCharacterEncoding();
                 break;
-            case "baseName" : 
+            case "baseName" :
                 result = ((org.apache.catalina.core.StandardContext)o).getBaseName();
                 break;
-            case "maxTime" : 
+            case "maxTime" :
                 result = ((org.apache.catalina.core.StandardContext)o).getMaxTime();
                 break;
-            case "errorCount" : 
+            case "errorCount" :
                 result = ((org.apache.catalina.core.StandardContext)o).getErrorCount();
                 break;
-            case "configured" : 
+            case "configured" :
                 result = ((org.apache.catalina.core.StandardContext)o).getConfigured();
                 break;
-            case "containerSciFilter" : 
+            case "containerSciFilter" :
                 result = ((org.apache.catalina.core.StandardContext)o).getContainerSciFilter();
                 break;
-            case "ignoreAnnotations" : 
+            case "ignoreAnnotations" :
                 result = ((org.apache.catalina.core.StandardContext)o).getIgnoreAnnotations();
                 break;
             //no getWebXmlNamespaceAware method found on this class
-            case "unloadDelay" : 
+            case "unloadDelay" :
                 result = ((org.apache.catalina.core.StandardContext)o).getUnloadDelay();
                 break;
             //no getResponseEncoding method found on this class
-            case "jndiExceptionOnFailedWrite" : 
+            case "jndiExceptionOnFailedWrite" :
                 result = ((org.apache.catalina.core.StandardContext)o).getJndiExceptionOnFailedWrite();
                 break;
             //no getObjectNameKeyProperties method found on this class
-            case "createUploadTargets" : 
+            case "createUploadTargets" :
                 result = ((org.apache.catalina.core.StandardContext)o).getCreateUploadTargets();
                 break;
-            case "processingTime" : 
+            case "processingTime" :
                 result = ((org.apache.catalina.core.StandardContext)o).getProcessingTime();
                 break;
-            case "clearReferencesStopThreads" : 
+            case "clearReferencesStopThreads" :
                 result = ((org.apache.catalina.core.StandardContext)o).getClearReferencesStopThreads();
                 break;
-            case "privileged" : 
+            case "privileged" :
                 result = ((org.apache.catalina.core.StandardContext)o).getPrivileged();
                 break;
             //no getWrapperClassName method found on this class
-            case "xmlValidation" : 
+            case "xmlValidation" :
                 result = ((org.apache.catalina.core.StandardContext)o).getXmlValidation();
                 break;
-            case "swallowAbortedUploads" : 
+            case "swallowAbortedUploads" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSwallowAbortedUploads();
                 break;
-            case "webappVersion" : 
+            case "webappVersion" :
                 result = ((org.apache.catalina.core.StandardContext)o).getWebappVersion();
                 break;
-            case "xmlBlockExternal" : 
+            case "xmlBlockExternal" :
                 result = ((org.apache.catalina.core.StandardContext)o).getXmlBlockExternal();
                 break;
-            case "copyXML" : 
+            case "copyXML" :
                 result = ((org.apache.catalina.core.StandardContext)o).getCopyXML();
                 break;
-            case "unpackWAR" : 
+            case "unpackWAR" :
                 result = ((org.apache.catalina.core.StandardContext)o).getUnpackWAR();
                 break;
-            case "sessionTimeout" : 
+            case "sessionTimeout" :
                 result = ((org.apache.catalina.core.StandardContext)o).getSessionTimeout();
                 break;
-            case "renewThreadsWhenStoppingContext" : 
+            case "renewThreadsWhenStoppingContext" :
                 result = ((org.apache.catalina.core.StandardContext)o).getRenewThreadsWhenStoppingContext();
                 break;
-            case "effectiveMajorVersion" : 
+            case "effectiveMajorVersion" :
                 result = ((org.apache.catalina.core.StandardContext)o).getEffectiveMajorVersion();
                 break;
-            case "altDDName" : 
+            case "altDDName" :
                 result = ((org.apache.catalina.core.StandardContext)o).getAltDDName();
                 break;
         }
@@ -940,44 +940,44 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaCoreStandardHost(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "deployOnStartup" : 
+            case "deployOnStartup" :
                 result = ((org.apache.catalina.core.StandardHost)o).getDeployOnStartup();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.catalina.core.StandardHost)o).getName();
                 break;
-            case "undeployOldVersions" : 
+            case "undeployOldVersions" :
                 result = ((org.apache.catalina.core.StandardHost)o).getUndeployOldVersions();
                 break;
             //no getDeployXML method found on this class
-            case "errorReportValveClass" : 
+            case "errorReportValveClass" :
                 result = ((org.apache.catalina.core.StandardHost)o).getErrorReportValveClass();
                 break;
-            case "deployIgnore" : 
+            case "deployIgnore" :
                 result = ((org.apache.catalina.core.StandardHost)o).getDeployIgnore();
                 break;
-            case "workDir" : 
+            case "workDir" :
                 result = ((org.apache.catalina.core.StandardHost)o).getWorkDir();
                 break;
-            case "xmlBase" : 
+            case "xmlBase" :
                 result = ((org.apache.catalina.core.StandardHost)o).getXmlBase();
                 break;
-            case "appBase" : 
+            case "appBase" :
                 result = ((org.apache.catalina.core.StandardHost)o).getAppBase();
                 break;
-            case "createDirs" : 
+            case "createDirs" :
                 result = ((org.apache.catalina.core.StandardHost)o).getCreateDirs();
                 break;
             //no getCopyXML method found on this class
-            case "autoDeploy" : 
+            case "autoDeploy" :
                 result = ((org.apache.catalina.core.StandardHost)o).getAutoDeploy();
                 break;
             //no getFailCtxIfServletStartFails method found on this class
             //no getObjectNameKeyProperties method found on this class
-            case "contextClass" : 
+            case "contextClass" :
                 result = ((org.apache.catalina.core.StandardHost)o).getContextClass();
                 break;
-            case "configClass" : 
+            case "configClass" :
                 result = ((org.apache.catalina.core.StandardHost)o).getConfigClass();
                 break;
             //no getUnpackWARs method found on this class
@@ -992,11 +992,11 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaCoreStandardEngine(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "defaultHost" : 
+            case "defaultHost" :
                 result = ((org.apache.catalina.core.StandardEngine)o).getDefaultHost();
                 break;
             //no getObjectNameKeyProperties method found on this class
-            case "jvmRoute" : 
+            case "jvmRoute" :
                 result = ((org.apache.catalina.core.StandardEngine)o).getJvmRoute();
                 break;
             //no getDomainInternal method found on this class
@@ -1012,24 +1012,24 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaCoreContainerBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "MBeanKeyProperties" : 
+            case "MBeanKeyProperties" :
                 result = ((org.apache.catalina.core.ContainerBase)o).getMBeanKeyProperties();
                 break;
-            case "logName" : 
+            case "logName" :
                 result = ((org.apache.catalina.core.ContainerBase)o).getLogName();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.catalina.core.ContainerBase)o).getName();
                 break;
             //no getAccessLogScanComplete method found on this class
             //no getDomainInternal method found on this class
-            case "startStopThreads" : 
+            case "startStopThreads" :
                 result = ((org.apache.catalina.core.ContainerBase)o).getStartStopThreads();
                 break;
-            case "backgroundProcessorDelay" : 
+            case "backgroundProcessorDelay" :
                 result = ((org.apache.catalina.core.ContainerBase)o).getBackgroundProcessorDelay();
                 break;
-            case "startChildren" : 
+            case "startChildren" :
                 result = ((org.apache.catalina.core.ContainerBase)o).getStartChildren();
                 break;
         }
@@ -1043,7 +1043,7 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaUtilLifecycleMBeanBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "domain" : 
+            case "domain" :
                 result = ((org.apache.catalina.util.LifecycleMBeanBase)o).getDomain();
                 break;
             //no getObjectNameKeyProperties method found on this class
@@ -1059,10 +1059,10 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaUtilLifecycleBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "throwOnFailure" : 
+            case "throwOnFailure" :
                 result = ((org.apache.catalina.util.LifecycleBase)o).getThrowOnFailure();
                 break;
-            case "stateName" : 
+            case "stateName" :
                 result = ((org.apache.catalina.util.LifecycleBase)o).getStateName();
                 break;
         }
@@ -1087,47 +1087,47 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaLoaderWebappClassLoaderBase(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "clearReferencesHttpClientKeepAliveThread" : 
+            case "clearReferencesHttpClientKeepAliveThread" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesHttpClientKeepAliveThread();
                 break;
-            case "hostName" : 
+            case "hostName" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getHostName();
                 break;
-            case "skipMemoryLeakChecksOnJvmShutdown" : 
+            case "skipMemoryLeakChecksOnJvmShutdown" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getSkipMemoryLeakChecksOnJvmShutdown();
                 break;
-            case "contextName" : 
+            case "contextName" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getContextName();
                 break;
-            case "clearReferencesObjectStreamClassCaches" : 
+            case "clearReferencesObjectStreamClassCaches" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesObjectStreamClassCaches();
                 break;
-            case "clearReferencesRmiTargets" : 
+            case "clearReferencesRmiTargets" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesRmiTargets();
                 break;
-            case "clearReferencesLogFactoryRelease" : 
+            case "clearReferencesLogFactoryRelease" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesLogFactoryRelease();
                 break;
-            case "clearReferencesThreadLocals" : 
+            case "clearReferencesThreadLocals" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesThreadLocals();
                 break;
-            case "clearReferencesStopThreads" : 
+            case "clearReferencesStopThreads" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesStopThreads();
                 break;
-            case "stateName" : 
+            case "stateName" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getStateName();
                 break;
-            case "serviceName" : 
+            case "serviceName" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getServiceName();
                 break;
-            case "delegate" : 
+            case "delegate" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getDelegate();
                 break;
-            case "webappName" : 
+            case "webappName" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getWebappName();
                 break;
             //no getHasExternalRepositories method found on this class
-            case "clearReferencesStopTimerThreads" : 
+            case "clearReferencesStopTimerThreads" :
                 result = ((org.apache.catalina.loader.WebappClassLoaderBase)o).getClearReferencesStopTimerThreads();
                 break;
         }
@@ -1200,7 +1200,7 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCoyoteAjpAjpAprProtocol(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "pollTime" : 
+            case "pollTime" :
                 result = ((org.apache.coyote.ajp.AjpAprProtocol)o).getPollTime();
                 break;
             //no getNamePrefix method found on this class
@@ -1217,27 +1217,27 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getSecret method found on this class
-            case "desiredBufferSize" : 
+            case "desiredBufferSize" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getDesiredBufferSize();
                 break;
-            case "tomcatAuthorization" : 
+            case "tomcatAuthorization" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getTomcatAuthorization();
                 break;
             //no getRequiredSecret method found on this class
-            case "ajpFlush" : 
+            case "ajpFlush" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getAjpFlush();
                 break;
-            case "secretRequired" : 
+            case "secretRequired" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getSecretRequired();
                 break;
             //no getProtocolName method found on this class
-            case "allowedRequestAttributesPattern" : 
+            case "allowedRequestAttributesPattern" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getAllowedRequestAttributesPattern();
                 break;
-            case "packetSize" : 
+            case "packetSize" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getPacketSize();
                 break;
-            case "tomcatAuthentication" : 
+            case "tomcatAuthentication" :
                 result = ((org.apache.coyote.ajp.AbstractAjpProtocol)o).getTomcatAuthentication();
                 break;
         }
@@ -1252,14 +1252,14 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getAprRequired method found on this class
-            case "pollTime" : 
+            case "pollTime" :
                 result = ((org.apache.coyote.http11.Http11AprProtocol)o).getPollTime();
                 break;
             //no getNamePrefix method found on this class
-            case "deferAccept" : 
+            case "deferAccept" :
                 result = ((org.apache.coyote.http11.Http11AprProtocol)o).getDeferAccept();
                 break;
-            case "sendfileSize" : 
+            case "sendfileSize" :
                 result = ((org.apache.coyote.http11.Http11AprProtocol)o).getSendfileSize();
                 break;
         }
@@ -1285,14 +1285,14 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCoyoteHttp11Http11NioProtocol(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "selectorTimeout" : 
+            case "selectorTimeout" :
                 result = ((org.apache.coyote.http11.Http11NioProtocol)o).getSelectorTimeout();
                 break;
             //no getNamePrefix method found on this class
-            case "pollerThreadCount" : 
+            case "pollerThreadCount" :
                 result = ((org.apache.coyote.http11.Http11NioProtocol)o).getPollerThreadCount();
                 break;
-            case "pollerThreadPriority" : 
+            case "pollerThreadPriority" :
                 result = ((org.apache.coyote.http11.Http11NioProtocol)o).getPollerThreadPriority();
                 break;
         }
@@ -1307,10 +1307,10 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getSslImplementationShortName method found on this class
-            case "sslImplementationName" : 
+            case "sslImplementationName" :
                 result = ((org.apache.coyote.http11.AbstractHttp11JsseProtocol)o).getSslImplementationName();
                 break;
-            case "sniParseLimit" : 
+            case "sniParseLimit" :
                 result = ((org.apache.coyote.http11.AbstractHttp11JsseProtocol)o).getSniParseLimit();
                 break;
         }
@@ -1324,198 +1324,198 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCoyoteHttp11AbstractHttp11Protocol(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "crlFile" : 
+            case "crlFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getCrlFile();
                 break;
-            case "truststorePass" : 
+            case "truststorePass" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTruststorePass();
                 break;
-            case "maxExtensionSize" : 
+            case "maxExtensionSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getMaxExtensionSize();
                 break;
-            case "sslProtocol" : 
+            case "sslProtocol" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSslProtocol();
                 break;
-            case "compressionMinSize" : 
+            case "compressionMinSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getCompressionMinSize();
                 break;
-            case "truststoreFile" : 
+            case "truststoreFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTruststoreFile();
                 break;
-            case "server" : 
+            case "server" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getServer();
                 break;
-            case "SSLVerifyDepth" : 
+            case "SSLVerifyDepth" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLVerifyDepth();
                 break;
-            case "rejectIllegalHeader" : 
+            case "rejectIllegalHeader" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getRejectIllegalHeader();
                 break;
-            case "keystoreProvider" : 
+            case "keystoreProvider" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getKeystoreProvider();
                 break;
-            case "SSLCARevocationPath" : 
+            case "SSLCARevocationPath" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCARevocationPath();
                 break;
-            case "disableUploadTimeout" : 
+            case "disableUploadTimeout" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getDisableUploadTimeout();
                 break;
-            case "allowedTrailerHeaders" : 
+            case "allowedTrailerHeaders" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getAllowedTrailerHeaders();
                 break;
-            case "useKeepAliveResponseHeader" : 
+            case "useKeepAliveResponseHeader" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getUseKeepAliveResponseHeader();
                 break;
-            case "ciphers" : 
+            case "ciphers" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getCiphers();
                 break;
-            case "maxSavePostSize" : 
+            case "maxSavePostSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getMaxSavePostSize();
                 break;
-            case "SSLCACertificatePath" : 
+            case "SSLCACertificatePath" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCACertificatePath();
                 break;
             //no getProtocolName method found on this class
-            case "allowHostHeaderMismatch" : 
+            case "allowHostHeaderMismatch" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getAllowHostHeaderMismatch();
                 break;
-            case "useSendfile" : 
+            case "useSendfile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getUseSendfile();
                 break;
-            case "compressibleMimeType" : 
+            case "compressibleMimeType" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getCompressibleMimeType();
                 break;
-            case "noCompressionUserAgents" : 
+            case "noCompressionUserAgents" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getNoCompressionUserAgents();
                 break;
-            case "SSLCertificateKeyFile" : 
+            case "SSLCertificateKeyFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCertificateKeyFile();
                 break;
-            case "sslEnabledProtocols" : 
+            case "sslEnabledProtocols" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSslEnabledProtocols();
                 break;
-            case "keystoreFile" : 
+            case "keystoreFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getKeystoreFile();
                 break;
-            case "truststoreAlgorithm" : 
+            case "truststoreAlgorithm" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTruststoreAlgorithm();
                 break;
-            case "SSLCACertificateFile" : 
+            case "SSLCACertificateFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCACertificateFile();
                 break;
-            case "connectionUploadTimeout" : 
+            case "connectionUploadTimeout" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getConnectionUploadTimeout();
                 break;
-            case "relaxedQueryChars" : 
+            case "relaxedQueryChars" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getRelaxedQueryChars();
                 break;
-            case "trustManagerClassName" : 
+            case "trustManagerClassName" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTrustManagerClassName();
                 break;
-            case "restrictedUserAgents" : 
+            case "restrictedUserAgents" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getRestrictedUserAgents();
                 break;
-            case "keyAlias" : 
+            case "keyAlias" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getKeyAlias();
                 break;
-            case "defaultSSLHostConfigName" : 
+            case "defaultSSLHostConfigName" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getDefaultSSLHostConfigName();
                 break;
-            case "useServerCipherSuitesOrder" : 
+            case "useServerCipherSuitesOrder" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getUseServerCipherSuitesOrder();
                 break;
-            case "SSLHonorCipherOrder" : 
+            case "SSLHonorCipherOrder" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLHonorCipherOrder();
                 break;
-            case "secure" : 
+            case "secure" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSecure();
                 break;
-            case "keyPass" : 
+            case "keyPass" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getKeyPass();
                 break;
-            case "sessionCacheSize" : 
+            case "sessionCacheSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSessionCacheSize();
                 break;
-            case "SSLVerifyClient" : 
+            case "SSLVerifyClient" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLVerifyClient();
                 break;
-            case "compression" : 
+            case "compression" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getCompression();
                 break;
-            case "keystorePass" : 
+            case "keystorePass" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getKeystorePass();
                 break;
-            case "trustMaxCertLength" : 
+            case "trustMaxCertLength" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTrustMaxCertLength();
                 break;
-            case "serverRemoveAppProvidedValues" : 
+            case "serverRemoveAppProvidedValues" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getServerRemoveAppProvidedValues();
                 break;
-            case "algorithm" : 
+            case "algorithm" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getAlgorithm();
                 break;
-            case "truststoreType" : 
+            case "truststoreType" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTruststoreType();
                 break;
             //no getCompressionLevel method found on this class
-            case "maxTrailerSize" : 
+            case "maxTrailerSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getMaxTrailerSize();
                 break;
-            case "SSLProtocol" : 
+            case "SSLProtocol" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLProtocol();
                 break;
-            case "SSLEnabled" : 
+            case "SSLEnabled" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).isSSLEnabled();
                 break;
-            case "relaxedPathChars" : 
+            case "relaxedPathChars" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getRelaxedPathChars();
                 break;
-            case "SSLPassword" : 
+            case "SSLPassword" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLPassword();
                 break;
-            case "keystoreType" : 
+            case "keystoreType" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getKeystoreType();
                 break;
-            case "maxSwallowSize" : 
+            case "maxSwallowSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getMaxSwallowSize();
                 break;
-            case "rejectIllegalHeaderName" : 
+            case "rejectIllegalHeaderName" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getRejectIllegalHeaderName();
                 break;
-            case "SSLCipherSuite" : 
+            case "SSLCipherSuite" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCipherSuite();
                 break;
-            case "truststoreProvider" : 
+            case "truststoreProvider" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getTruststoreProvider();
                 break;
-            case "clientAuth" : 
+            case "clientAuth" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getClientAuth();
                 break;
-            case "maxHttpHeaderSize" : 
+            case "maxHttpHeaderSize" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getMaxHttpHeaderSize();
                 break;
-            case "noCompressionStrongETag" : 
+            case "noCompressionStrongETag" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getNoCompressionStrongETag();
                 break;
-            case "SSLCertificateFile" : 
+            case "SSLCertificateFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCertificateFile();
                 break;
-            case "maxKeepAliveRequests" : 
+            case "maxKeepAliveRequests" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getMaxKeepAliveRequests();
                 break;
-            case "SSLDisableSessionTickets" : 
+            case "SSLDisableSessionTickets" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLDisableSessionTickets();
                 break;
-            case "SSLCARevocationFile" : 
+            case "SSLCARevocationFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCARevocationFile();
                 break;
-            case "sessionTimeout" : 
+            case "sessionTimeout" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSessionTimeout();
                 break;
-            case "SSLDisableCompression" : 
+            case "SSLDisableCompression" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLDisableCompression();
                 break;
-            case "SSLCertificateChainFile" : 
+            case "SSLCertificateChainFile" :
                 result = ((org.apache.coyote.http11.AbstractHttp11Protocol)o).getSSLCertificateChainFile();
                 break;
         }
@@ -1529,78 +1529,78 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCoyoteAbstractProtocol(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "nameIndex" : 
+            case "nameIndex" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getNameIndex();
                 break;
             //no getAprRequired method found on this class
             //no getProtocolName method found on this class
             //no getPaused method found on this class
             //no getSendfileSupported method found on this class
-            case "acceptCount" : 
+            case "acceptCount" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getAcceptCount();
                 break;
-            case "portOffset" : 
+            case "portOffset" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getPortOffset();
                 break;
-            case "connectionTimeout" : 
+            case "connectionTimeout" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getConnectionTimeout();
                 break;
-            case "maxConnections" : 
+            case "maxConnections" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getMaxConnections();
                 break;
-            case "tcpNoDelay" : 
+            case "tcpNoDelay" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getTcpNoDelay();
                 break;
-            case "maxThreads" : 
+            case "maxThreads" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getMaxThreads();
                 break;
-            case "connectionCount" : 
+            case "connectionCount" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getConnectionCount();
                 break;
-            case "connectionLinger" : 
+            case "connectionLinger" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getConnectionLinger();
                 break;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getPortWithOffset();
                 break;
             //no getNamePrefix method found on this class
-            case "name" : 
+            case "name" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getName();
                 break;
-            case "minSpareThreads" : 
+            case "minSpareThreads" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getMinSpareThreads();
                 break;
-            case "keepAliveTimeout" : 
+            case "keepAliveTimeout" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getKeepAliveTimeout();
                 break;
-            case "clientCertProvider" : 
+            case "clientCertProvider" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getClientCertProvider();
                 break;
-            case "localPort" : 
+            case "localPort" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getLocalPort();
                 break;
-            case "port" : 
+            case "port" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getPort();
                 break;
-            case "domain" : 
+            case "domain" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getDomain();
                 break;
-            case "threadPriority" : 
+            case "threadPriority" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getThreadPriority();
                 break;
-            case "acceptorThreadCount" : 
+            case "acceptorThreadCount" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getAcceptorThreadCount();
                 break;
-            case "processorCache" : 
+            case "processorCache" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getProcessorCache();
                 break;
-            case "acceptorThreadPriority" : 
+            case "acceptorThreadPriority" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getAcceptorThreadPriority();
                 break;
-            case "address" : 
+            case "address" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getAddress();
                 break;
-            case "maxHeaderCount" : 
+            case "maxHeaderCount" :
                 result = ((org.apache.coyote.AbstractProtocol)o).getMaxHeaderCount();
                 break;
         }
@@ -1617,73 +1617,73 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilNetSocketProperties(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "soLingerOn" : 
+            case "soLingerOn" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getSoLingerOn();
                 break;
-            case "directBuffer" : 
+            case "directBuffer" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getDirectBuffer();
                 break;
-            case "soKeepAlive" : 
+            case "soKeepAlive" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getSoKeepAlive();
                 break;
-            case "txBufSize" : 
+            case "txBufSize" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getTxBufSize();
                 break;
-            case "soTimeout" : 
+            case "soTimeout" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getSoTimeout();
                 break;
-            case "ooBInline" : 
+            case "ooBInline" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getOoBInline();
                 break;
-            case "rxBufSize" : 
+            case "rxBufSize" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getRxBufSize();
                 break;
-            case "appWriteBufSize" : 
+            case "appWriteBufSize" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getAppWriteBufSize();
                 break;
-            case "bufferPool" : 
+            case "bufferPool" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getBufferPool();
                 break;
-            case "appReadBufSize" : 
+            case "appReadBufSize" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getAppReadBufSize();
                 break;
-            case "directBufferPool" : 
+            case "directBufferPool" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getDirectBufferPool();
                 break;
-            case "bufferPoolSize" : 
+            case "bufferPoolSize" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getBufferPoolSize();
                 break;
-            case "directSslBuffer" : 
+            case "directSslBuffer" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getDirectSslBuffer();
                 break;
-            case "soLingerTime" : 
+            case "soLingerTime" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getSoLingerTime();
                 break;
-            case "performanceConnectionTime" : 
+            case "performanceConnectionTime" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getPerformanceConnectionTime();
                 break;
-            case "soReuseAddress" : 
+            case "soReuseAddress" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getSoReuseAddress();
                 break;
-            case "unlockTimeout" : 
+            case "unlockTimeout" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getUnlockTimeout();
                 break;
-            case "performanceBandwidth" : 
+            case "performanceBandwidth" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getPerformanceBandwidth();
                 break;
-            case "performanceLatency" : 
+            case "performanceLatency" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getPerformanceLatency();
                 break;
-            case "tcpNoDelay" : 
+            case "tcpNoDelay" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getTcpNoDelay();
                 break;
-            case "processorCache" : 
+            case "processorCache" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getProcessorCache();
                 break;
-            case "eventCache" : 
+            case "eventCache" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getEventCache();
                 break;
-            case "timeoutInterval" : 
+            case "timeoutInterval" :
                 result = ((org.apache.tomcat.util.net.SocketProperties)o).getTimeoutInterval();
                 break;
         }
@@ -1698,14 +1698,14 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getEnabled method found on this class
-            case "maxSelectors" : 
+            case "maxSelectors" :
                 result = ((org.apache.tomcat.util.net.NioSelectorPool)o).getMaxSelectors();
                 break;
-            case "sharedSelectorTimeout" : 
+            case "sharedSelectorTimeout" :
                 result = ((org.apache.tomcat.util.net.NioSelectorPool)o).getSharedSelectorTimeout();
                 break;
             //no getShared method found on this class
-            case "maxSpareSelectors" : 
+            case "maxSpareSelectors" :
                 result = ((org.apache.tomcat.util.net.NioSelectorPool)o).getMaxSpareSelectors();
                 break;
         }
@@ -1719,10 +1719,10 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProperty(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "name" : 
+            case "name" :
                 result = ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Property)o).getName();
                 break;
-            case "value" : 
+            case "value" :
                 result = ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Property)o).getValue();
                 break;
         }
@@ -1747,16 +1747,16 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProvider(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "appContext" : 
+            case "appContext" :
                 result = ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).getAppContext();
                 break;
-            case "className" : 
+            case "className" :
                 result = ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).getClassName();
                 break;
-            case "description" : 
+            case "description" :
                 result = ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).getDescription();
                 break;
-            case "layer" : 
+            case "layer" :
                 result = ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).getLayer();
                 break;
         }
@@ -1770,22 +1770,22 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilNetNioEndpoint(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "pollerThreadPriority" : 
+            case "pollerThreadPriority" :
                 result = ((org.apache.tomcat.util.net.NioEndpoint)o).getPollerThreadPriority();
                 break;
-            case "keepAliveCount" : 
+            case "keepAliveCount" :
                 result = ((org.apache.tomcat.util.net.NioEndpoint)o).getKeepAliveCount();
                 break;
-            case "pollerThreadCount" : 
+            case "pollerThreadCount" :
                 result = ((org.apache.tomcat.util.net.NioEndpoint)o).getPollerThreadCount();
                 break;
-            case "selectorTimeout" : 
+            case "selectorTimeout" :
                 result = ((org.apache.tomcat.util.net.NioEndpoint)o).getSelectorTimeout();
                 break;
-            case "useInheritedChannel" : 
+            case "useInheritedChannel" :
                 result = ((org.apache.tomcat.util.net.NioEndpoint)o).getUseInheritedChannel();
                 break;
-            case "deferAccept" : 
+            case "deferAccept" :
                 result = ((org.apache.tomcat.util.net.NioEndpoint)o).getDeferAccept();
                 break;
         }
@@ -1799,10 +1799,10 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilNetNio2Endpoint(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "keepAliveCount" : 
+            case "keepAliveCount" :
                 result = ((org.apache.tomcat.util.net.Nio2Endpoint)o).getKeepAliveCount();
                 break;
-            case "deferAccept" : 
+            case "deferAccept" :
                 result = ((org.apache.tomcat.util.net.Nio2Endpoint)o).getDeferAccept();
                 break;
             //no getInline method found on this class
@@ -1818,11 +1818,11 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilNetAbstractJsseEndpoint(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "sslImplementationName" : 
+            case "sslImplementationName" :
                 result = ((org.apache.tomcat.util.net.AbstractJsseEndpoint)o).getSslImplementationName();
                 break;
             //no getAlpnSupported method found on this class
-            case "sniParseLimit" : 
+            case "sniParseLimit" :
                 result = ((org.apache.tomcat.util.net.AbstractJsseEndpoint)o).getSniParseLimit();
                 break;
         }
@@ -1837,33 +1837,33 @@ public class XReflectionIntrospectionUtils {
         Object result = null;
         switch (name) {
             //no getRootPool method found on this class
-            case "pollTime" : 
+            case "pollTime" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getPollTime();
                 break;
             //no getServerSockPool method found on this class
-            case "sendfileSize" : 
+            case "sendfileSize" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getSendfileSize();
                 break;
             //no getAlpnSupported method found on this class
-            case "keepAliveCount" : 
+            case "keepAliveCount" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getKeepAliveCount();
                 break;
-            case "ipv6v6only" : 
+            case "ipv6v6only" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getIpv6v6only();
                 break;
-            case "maxConnections" : 
+            case "maxConnections" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getMaxConnections();
                 break;
-            case "deferAccept" : 
+            case "deferAccept" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getDeferAccept();
                 break;
             //no getServerSock method found on this class
             //no getSslContext method found on this class
             //no getUseSendFileSet method found on this class
-            case "sendfileCount" : 
+            case "sendfileCount" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getSendfileCount();
                 break;
-            case "useSendfile" : 
+            case "useSendfile" :
                 result = ((org.apache.tomcat.util.net.AprEndpoint)o).getUseSendfile();
                 break;
         }
@@ -1877,95 +1877,95 @@ public class XReflectionIntrospectionUtils {
     public static Object getPropertyForOrgApacheTomcatUtilNetAbstractEndpoint(Object o, String name) {
         Object result = null;
         switch (name) {
-            case "useAsyncIO" : 
+            case "useAsyncIO" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getUseAsyncIO();
                 break;
-            case "localPort" : 
+            case "localPort" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getLocalPort();
                 break;
-            case "useSendfile" : 
+            case "useSendfile" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getUseSendfile();
                 break;
-            case "maxThreads" : 
+            case "maxThreads" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getMaxThreads();
                 break;
-            case "acceptorThreadCount" : 
+            case "acceptorThreadCount" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getAcceptorThreadCount();
                 break;
-            case "connectionTimeout" : 
+            case "connectionTimeout" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getConnectionTimeout();
                 break;
-            case "tcpNoDelay" : 
+            case "tcpNoDelay" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getTcpNoDelay();
                 break;
-            case "acceptorThreadPriority" : 
+            case "acceptorThreadPriority" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getAcceptorThreadPriority();
                 break;
-            case "connectionLinger" : 
+            case "connectionLinger" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getConnectionLinger();
                 break;
-            case "address" : 
+            case "address" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getAddress();
                 break;
-            case "currentThreadCount" : 
+            case "currentThreadCount" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getCurrentThreadCount();
                 break;
-            case "name" : 
+            case "name" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getName();
                 break;
-            case "daemon" : 
+            case "daemon" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getDaemon();
                 break;
             //no getInternalExecutor method found on this class
-            case "minSpareThreads" : 
+            case "minSpareThreads" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getMinSpareThreads();
                 break;
             //no getAlpnSupported method found on this class
-            case "maxKeepAliveRequests" : 
+            case "maxKeepAliveRequests" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getMaxKeepAliveRequests();
                 break;
-            case "port" : 
+            case "port" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getPort();
                 break;
-            case "portOffset" : 
+            case "portOffset" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getPortOffset();
                 break;
-            case "domain" : 
+            case "domain" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getDomain();
                 break;
-            case "defaultSSLHostConfigName" : 
+            case "defaultSSLHostConfigName" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getDefaultSSLHostConfigName();
                 break;
-            case "maxConnections" : 
+            case "maxConnections" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getMaxConnections();
                 break;
-            case "threadPriority" : 
+            case "threadPriority" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getThreadPriority();
                 break;
             //no getRunning method found on this class
-            case "bindOnInit" : 
+            case "bindOnInit" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getBindOnInit();
                 break;
-            case "connectionCount" : 
+            case "connectionCount" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getConnectionCount();
                 break;
-            case "acceptCount" : 
+            case "acceptCount" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getAcceptCount();
                 break;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getPortWithOffset();
                 break;
-            case "currentThreadsBusy" : 
+            case "currentThreadsBusy" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getCurrentThreadsBusy();
                 break;
-            case "keepAliveTimeout" : 
+            case "keepAliveTimeout" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getKeepAliveTimeout();
                 break;
             //no getPaused method found on this class
-            case "executorTerminationTimeoutMillis" : 
+            case "executorTerminationTimeoutMillis" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).getExecutorTerminationTimeoutMillis();
                 break;
-            case "SSLEnabled" : 
+            case "SSLEnabled" :
                 result = ((org.apache.tomcat.util.net.AbstractEndpoint)o).isSSLEnabled();
                 break;
             //no getDeferAccept method found on this class
@@ -1984,75 +1984,75 @@ public class XReflectionIntrospectionUtils {
         Class<?> checkThisClass = o.getClass();
         while (checkThisClass != Object.class) {
             switch (checkThisClass.getName()) {
-                case "org.apache.tomcat.util.descriptor.web.ContextResource" : 
+                case "org.apache.tomcat.util.descriptor.web.ContextResource" :
                     return setPropertyForOrgApacheTomcatUtilDescriptorWebContextResource(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.descriptor.web.ResourceBase" : 
+                case "org.apache.tomcat.util.descriptor.web.ResourceBase" :
                     return setPropertyForOrgApacheTomcatUtilDescriptorWebResourceBase(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.modeler.ParameterInfo" : 
+                case "org.apache.tomcat.util.modeler.ParameterInfo" :
                     return setPropertyForOrgApacheTomcatUtilModelerParameterInfo(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.modeler.OperationInfo" : 
+                case "org.apache.tomcat.util.modeler.OperationInfo" :
                     return setPropertyForOrgApacheTomcatUtilModelerOperationInfo(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.modeler.AttributeInfo" : 
+                case "org.apache.tomcat.util.modeler.AttributeInfo" :
                     return setPropertyForOrgApacheTomcatUtilModelerAttributeInfo(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.modeler.FeatureInfo" : 
+                case "org.apache.tomcat.util.modeler.FeatureInfo" :
                     return setPropertyForOrgApacheTomcatUtilModelerFeatureInfo(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.core.AprLifecycleListener" : 
+                case "org.apache.catalina.core.AprLifecycleListener" :
                     return setPropertyForOrgApacheCatalinaCoreAprLifecycleListener(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.modeler.ManagedBean" : 
+                case "org.apache.tomcat.util.modeler.ManagedBean" :
                     return setPropertyForOrgApacheTomcatUtilModelerManagedBean(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.filters.RestCsrfPreventionFilter" : 
+                case "org.apache.catalina.filters.RestCsrfPreventionFilter" :
                     return setPropertyForOrgApacheCatalinaFiltersRestCsrfPreventionFilter(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.filters.AddDefaultCharsetFilter" : 
+                case "org.apache.catalina.filters.AddDefaultCharsetFilter" :
                     return setPropertyForOrgApacheCatalinaFiltersAddDefaultCharsetFilter(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.connector.Connector" : 
+                case "org.apache.catalina.connector.Connector" :
                     return setPropertyForOrgApacheCatalinaConnectorConnector(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.valves.AccessLogValve" : 
+                case "org.apache.catalina.valves.AccessLogValve" :
                     return setPropertyForOrgApacheCatalinaValvesAccessLogValve(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.core.StandardServer" : 
+                case "org.apache.catalina.core.StandardServer" :
                     return setPropertyForOrgApacheCatalinaCoreStandardServer(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.realm.UserDatabaseRealm" : 
+                case "org.apache.catalina.realm.UserDatabaseRealm" :
                     return setPropertyForOrgApacheCatalinaRealmUserDatabaseRealm(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.core.StandardService" : 
+                case "org.apache.catalina.core.StandardService" :
                     return setPropertyForOrgApacheCatalinaCoreStandardService(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.core.StandardContext" : 
+                case "org.apache.catalina.core.StandardContext" :
                     return setPropertyForOrgApacheCatalinaCoreStandardContext(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.core.StandardHost" : 
+                case "org.apache.catalina.core.StandardHost" :
                     return setPropertyForOrgApacheCatalinaCoreStandardHost(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.core.StandardEngine" : 
+                case "org.apache.catalina.core.StandardEngine" :
                     return setPropertyForOrgApacheCatalinaCoreStandardEngine(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.loader.ParallelWebappClassLoader" : 
+                case "org.apache.catalina.loader.ParallelWebappClassLoader" :
                     return setPropertyForOrgApacheCatalinaLoaderParallelWebappClassLoader(o, name, value, invokeSetProperty);
-                case "java.net.URLClassLoader" : 
+                case "java.net.URLClassLoader" :
                     return setPropertyForJavaNetURLClassLoader(o, name, value, invokeSetProperty);
-                case "java.security.SecureClassLoader" : 
+                case "java.security.SecureClassLoader" :
                     return setPropertyForJavaSecuritySecureClassLoader(o, name, value, invokeSetProperty);
-                case "org.apache.coyote.ajp.AjpNioProtocol" : 
+                case "org.apache.coyote.ajp.AjpNioProtocol" :
                     return setPropertyForOrgApacheCoyoteAjpAjpNioProtocol(o, name, value, invokeSetProperty);
-                case "org.apache.coyote.ajp.AjpNio2Protocol" : 
+                case "org.apache.coyote.ajp.AjpNio2Protocol" :
                     return setPropertyForOrgApacheCoyoteAjpAjpNio2Protocol(o, name, value, invokeSetProperty);
-                case "org.apache.coyote.ajp.AjpAprProtocol" : 
+                case "org.apache.coyote.ajp.AjpAprProtocol" :
                     return setPropertyForOrgApacheCoyoteAjpAjpAprProtocol(o, name, value, invokeSetProperty);
-                case "org.apache.coyote.http11.Http11AprProtocol" : 
+                case "org.apache.coyote.http11.Http11AprProtocol" :
                     return setPropertyForOrgApacheCoyoteHttp11Http11AprProtocol(o, name, value, invokeSetProperty);
-                case "org.apache.coyote.http11.Http11Nio2Protocol" : 
+                case "org.apache.coyote.http11.Http11Nio2Protocol" :
                     return setPropertyForOrgApacheCoyoteHttp11Http11Nio2Protocol(o, name, value, invokeSetProperty);
-                case "org.apache.coyote.http11.Http11NioProtocol" : 
+                case "org.apache.coyote.http11.Http11NioProtocol" :
                     return setPropertyForOrgApacheCoyoteHttp11Http11NioProtocol(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.net.SocketProperties" : 
+                case "org.apache.tomcat.util.net.SocketProperties" :
                     return setPropertyForOrgApacheTomcatUtilNetSocketProperties(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.net.NioSelectorPool" : 
+                case "org.apache.tomcat.util.net.NioSelectorPool" :
                     return setPropertyForOrgApacheTomcatUtilNetNioSelectorPool(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Property" : 
+                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Property" :
                     return setPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProperty(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.authenticator.jaspic.SimpleAuthConfigProvider" : 
+                case "org.apache.catalina.authenticator.jaspic.SimpleAuthConfigProvider" :
                     return setPropertyForOrgApacheCatalinaAuthenticatorJaspicSimpleAuthConfigProvider(o, name, value, invokeSetProperty);
-                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Provider" : 
+                case "org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations$Provider" :
                     return setPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProvider(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.net.NioEndpoint" : 
+                case "org.apache.tomcat.util.net.NioEndpoint" :
                     return setPropertyForOrgApacheTomcatUtilNetNioEndpoint(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.net.Nio2Endpoint" : 
+                case "org.apache.tomcat.util.net.Nio2Endpoint" :
                     return setPropertyForOrgApacheTomcatUtilNetNio2Endpoint(o, name, value, invokeSetProperty);
-                case "org.apache.tomcat.util.net.AprEndpoint" : 
+                case "org.apache.tomcat.util.net.AprEndpoint" :
                     return setPropertyForOrgApacheTomcatUtilNetAprEndpoint(o, name, value, invokeSetProperty);
             }
             checkThisClass = checkThisClass.getSuperclass();
@@ -2061,17 +2061,17 @@ public class XReflectionIntrospectionUtils {
     }
     public static boolean setPropertyForOrgApacheTomcatUtilDescriptorWebContextResource(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "scope" : 
+            case "scope" :
                 ((org.apache.tomcat.util.descriptor.web.ContextResource)o).setScope(value);
                 return true;
-            case "closeMethod" : 
+            case "closeMethod" :
                 ((org.apache.tomcat.util.descriptor.web.ContextResource)o).setCloseMethod(value);
                 return true;
             //no setCloseMethodConfigured method found on this class
-            case "auth" : 
+            case "auth" :
                 ((org.apache.tomcat.util.descriptor.web.ContextResource)o).setAuth(value);
                 return true;
-            case "singleton" : 
+            case "singleton" :
                 ((org.apache.tomcat.util.descriptor.web.ContextResource)o).setSingleton(Boolean.valueOf(value));
                 return true;
         }
@@ -2080,16 +2080,16 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilDescriptorWebResourceBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "lookupName" : 
+            case "lookupName" :
                 ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).setLookupName(value);
                 return true;
-            case "description" : 
+            case "description" :
                 ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).setDescription(value);
                 return true;
-            case "name" : 
+            case "name" :
                 ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).setName(value);
                 return true;
-            case "type" : 
+            case "type" :
                 ((org.apache.tomcat.util.descriptor.web.ResourceBase)o).setType(value);
                 return true;
         }
@@ -2108,13 +2108,13 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilModelerOperationInfo(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "role" : 
+            case "role" :
                 ((org.apache.tomcat.util.modeler.OperationInfo)o).setRole(value);
                 return true;
-            case "returnType" : 
+            case "returnType" :
                 ((org.apache.tomcat.util.modeler.OperationInfo)o).setReturnType(value);
                 return true;
-            case "impact" : 
+            case "impact" :
                 ((org.apache.tomcat.util.modeler.OperationInfo)o).setImpact(value);
                 return true;
         }
@@ -2123,22 +2123,22 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilModelerAttributeInfo(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "writeable" : 
+            case "writeable" :
                 ((org.apache.tomcat.util.modeler.AttributeInfo)o).setWriteable(Boolean.valueOf(value));
                 return true;
-            case "getMethod" : 
+            case "getMethod" :
                 ((org.apache.tomcat.util.modeler.AttributeInfo)o).setGetMethod(value);
                 return true;
-            case "setMethod" : 
+            case "setMethod" :
                 ((org.apache.tomcat.util.modeler.AttributeInfo)o).setSetMethod(value);
                 return true;
-            case "readable" : 
+            case "readable" :
                 ((org.apache.tomcat.util.modeler.AttributeInfo)o).setReadable(Boolean.valueOf(value));
                 return true;
-            case "displayName" : 
+            case "displayName" :
                 ((org.apache.tomcat.util.modeler.AttributeInfo)o).setDisplayName(value);
                 return true;
-            case "is" : 
+            case "is" :
                 ((org.apache.tomcat.util.modeler.AttributeInfo)o).setIs(Boolean.valueOf(value));
                 return true;
         }
@@ -2147,13 +2147,13 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilModelerFeatureInfo(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "type" : 
+            case "type" :
                 ((org.apache.tomcat.util.modeler.FeatureInfo)o).setType(value);
                 return true;
-            case "description" : 
+            case "description" :
                 ((org.apache.tomcat.util.modeler.FeatureInfo)o).setDescription(value);
                 return true;
-            case "name" : 
+            case "name" :
                 ((org.apache.tomcat.util.modeler.FeatureInfo)o).setName(value);
                 return true;
         }
@@ -2165,22 +2165,22 @@ public class XReflectionIntrospectionUtils {
             //no setInstanceCreated method found on this class
             //no setAprInitialized method found on this class
             //no setAprAvailable method found on this class
-            case "FIPSMode" : 
+            case "FIPSMode" :
                 ((org.apache.catalina.core.AprLifecycleListener)o).setFIPSMode(value);
                 return true;
-            case "SSLRandomSeed" : 
+            case "SSLRandomSeed" :
                 ((org.apache.catalina.core.AprLifecycleListener)o).setSSLRandomSeed(value);
                 return true;
             //no setFIPSModeActive method found on this class
-            case "useOpenSSL" : 
+            case "useOpenSSL" :
                 ((org.apache.catalina.core.AprLifecycleListener)o).setUseOpenSSL(Boolean.valueOf(value));
                 return true;
             //no setSslInitialized method found on this class
             //no setFipsModeActive method found on this class
-            case "useAprConnector" : 
+            case "useAprConnector" :
                 ((org.apache.catalina.core.AprLifecycleListener)o).setUseAprConnector(Boolean.valueOf(value));
                 return true;
-            case "SSLEngine" : 
+            case "SSLEngine" :
                 ((org.apache.catalina.core.AprLifecycleListener)o).setSSLEngine(value);
                 return true;
         }
@@ -2189,22 +2189,22 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilModelerManagedBean(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "className" : 
+            case "className" :
                 ((org.apache.tomcat.util.modeler.ManagedBean)o).setClassName(value);
                 return true;
-            case "domain" : 
+            case "domain" :
                 ((org.apache.tomcat.util.modeler.ManagedBean)o).setDomain(value);
                 return true;
-            case "type" : 
+            case "type" :
                 ((org.apache.tomcat.util.modeler.ManagedBean)o).setType(value);
                 return true;
-            case "name" : 
+            case "name" :
                 ((org.apache.tomcat.util.modeler.ManagedBean)o).setName(value);
                 return true;
-            case "group" : 
+            case "group" :
                 ((org.apache.tomcat.util.modeler.ManagedBean)o).setGroup(value);
                 return true;
-            case "description" : 
+            case "description" :
                 ((org.apache.tomcat.util.modeler.ManagedBean)o).setDescription(value);
                 return true;
         }
@@ -2213,7 +2213,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaFiltersRestCsrfPreventionFilter(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "pathsAcceptingParams" : 
+            case "pathsAcceptingParams" :
                 ((org.apache.catalina.filters.RestCsrfPreventionFilter)o).setPathsAcceptingParams(value);
                 return true;
             //no setPathsDelimiter method found on this class
@@ -2223,10 +2223,10 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaFiltersCsrfPreventionFilterBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "denyStatus" : 
+            case "denyStatus" :
                 ((org.apache.catalina.filters.CsrfPreventionFilterBase)o).setDenyStatus(Integer.valueOf(value));
                 return true;
-            case "randomClass" : 
+            case "randomClass" :
                 ((org.apache.catalina.filters.CsrfPreventionFilterBase)o).setRandomClass(value);
                 return true;
             //no setConfigProblemFatal method found on this class
@@ -2236,7 +2236,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaFiltersAddDefaultCharsetFilter(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "encoding" : 
+            case "encoding" :
                 ((org.apache.catalina.filters.AddDefaultCharsetFilter)o).setEncoding(value);
                 return true;
         }
@@ -2252,91 +2252,91 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaConnectorConnector(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "asyncTimeout" : 
+            case "asyncTimeout" :
                 ((org.apache.catalina.connector.Connector)o).setAsyncTimeout(Long.valueOf(value));
                 return true;
-            case "discardFacades" : 
+            case "discardFacades" :
                 ((org.apache.catalina.connector.Connector)o).setDiscardFacades(Boolean.valueOf(value));
                 return true;
-            case "useBodyEncodingForURI" : 
+            case "useBodyEncodingForURI" :
                 ((org.apache.catalina.connector.Connector)o).setUseBodyEncodingForURI(Boolean.valueOf(value));
                 return true;
-            case "enableLookups" : 
+            case "enableLookups" :
                 ((org.apache.catalina.connector.Connector)o).setEnableLookups(Boolean.valueOf(value));
                 return true;
-            case "localPort" : 
+            case "localPort" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "parseBodyMethods" : 
+            case "parseBodyMethods" :
                 ((org.apache.catalina.connector.Connector)o).setParseBodyMethods(value);
                 return true;
-            case "objectNameKeyProperties" : 
+            case "objectNameKeyProperties" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "maxParameterCount" : 
+            case "maxParameterCount" :
                 ((org.apache.catalina.connector.Connector)o).setMaxParameterCount(Integer.valueOf(value));
                 return true;
-            case "allowTrace" : 
+            case "allowTrace" :
                 ((org.apache.catalina.connector.Connector)o).setAllowTrace(Boolean.valueOf(value));
                 return true;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "redirectPort" : 
+            case "redirectPort" :
                 ((org.apache.catalina.connector.Connector)o).setRedirectPort(Integer.valueOf(value));
                 return true;
-            case "URIEncoding" : 
+            case "URIEncoding" :
                 ((org.apache.catalina.connector.Connector)o).setURIEncoding(value);
                 return true;
-            case "protocol" : 
+            case "protocol" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "maxSavePostSize" : 
+            case "maxSavePostSize" :
                 ((org.apache.catalina.connector.Connector)o).setMaxSavePostSize(Integer.valueOf(value));
                 return true;
-            case "useIPVHosts" : 
+            case "useIPVHosts" :
                 ((org.apache.catalina.connector.Connector)o).setUseIPVHosts(Boolean.valueOf(value));
                 return true;
-            case "protocolHandlerClassName" : 
+            case "protocolHandlerClassName" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "encodedSolidusHandling" : 
+            case "encodedSolidusHandling" :
                 ((org.apache.catalina.connector.Connector)o).setEncodedSolidusHandling(value);
                 return true;
-            case "domainInternal" : 
+            case "domainInternal" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "maxPostSize" : 
+            case "maxPostSize" :
                 ((org.apache.catalina.connector.Connector)o).setMaxPostSize(Integer.valueOf(value));
                 return true;
-            case "scheme" : 
+            case "scheme" :
                 ((org.apache.catalina.connector.Connector)o).setScheme(value);
                 return true;
-            case "secure" : 
+            case "secure" :
                 ((org.apache.catalina.connector.Connector)o).setSecure(Boolean.valueOf(value));
                 return true;
-            case "proxyName" : 
+            case "proxyName" :
                 ((org.apache.catalina.connector.Connector)o).setProxyName(value);
                 return true;
-            case "maxCookieCount" : 
+            case "maxCookieCount" :
                 ((org.apache.catalina.connector.Connector)o).setMaxCookieCount(Integer.valueOf(value));
                 return true;
-            case "proxyPort" : 
+            case "proxyPort" :
                 ((org.apache.catalina.connector.Connector)o).setProxyPort(Integer.valueOf(value));
                 return true;
-            case "portOffset" : 
+            case "portOffset" :
                 ((org.apache.catalina.connector.Connector)o).setPortOffset(Integer.valueOf(value));
                 return true;
-            case "xpoweredBy" : 
+            case "xpoweredBy" :
                 ((org.apache.catalina.connector.Connector)o).setXpoweredBy(Boolean.valueOf(value));
                 return true;
-            case "executorName" : 
+            case "executorName" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
-            case "port" : 
+            case "port" :
                 ((org.apache.catalina.connector.Connector)o).setPort(Integer.valueOf(value));
                 return true;
-            case "redirectPortWithOffset" : 
+            case "redirectPortWithOffset" :
                 ((org.apache.catalina.connector.Connector)o).setProperty(name, value);
                 return true;
         }
@@ -2349,37 +2349,37 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaValvesAccessLogValve(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "rotatable" : 
+            case "rotatable" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setRotatable(Boolean.valueOf(value));
                 return true;
-            case "prefix" : 
+            case "prefix" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setPrefix(value);
                 return true;
             //no setCheckForOldLogs method found on this class
-            case "checkExists" : 
+            case "checkExists" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setCheckExists(Boolean.valueOf(value));
                 return true;
-            case "buffered" : 
+            case "buffered" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setBuffered(Boolean.valueOf(value));
                 return true;
             //no setRotationLastChecked method found on this class
-            case "suffix" : 
+            case "suffix" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setSuffix(value);
                 return true;
-            case "directory" : 
+            case "directory" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setDirectory(value);
                 return true;
-            case "encoding" : 
+            case "encoding" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setEncoding(value);
                 return true;
             //no setDateStamp method found on this class
-            case "maxDays" : 
+            case "maxDays" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setMaxDays(Integer.valueOf(value));
                 return true;
-            case "renameOnRotate" : 
+            case "renameOnRotate" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setRenameOnRotate(Boolean.valueOf(value));
                 return true;
-            case "fileDateFormat" : 
+            case "fileDateFormat" :
                 ((org.apache.catalina.valves.AccessLogValve)o).setFileDateFormat(value);
                 return true;
         }
@@ -2388,33 +2388,33 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaValvesAbstractAccessLogValve(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "locale" : 
+            case "locale" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setLocale(value);
                 return true;
-            case "conditionUnless" : 
+            case "conditionUnless" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setConditionUnless(value);
                 return true;
-            case "requestAttributesEnabled" : 
+            case "requestAttributesEnabled" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setRequestAttributesEnabled(Boolean.valueOf(value));
                 return true;
-            case "enabled" : 
+            case "enabled" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setEnabled(Boolean.valueOf(value));
                 return true;
             //no setTlsAttributeRequired method found on this class
-            case "condition" : 
+            case "condition" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setCondition(value);
                 return true;
-            case "maxLogMessageBufferSize" : 
+            case "maxLogMessageBufferSize" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setMaxLogMessageBufferSize(Integer.valueOf(value));
                 return true;
-            case "ipv6Canonical" : 
+            case "ipv6Canonical" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setIpv6Canonical(Boolean.valueOf(value));
                 return true;
             //no setLocaleName method found on this class
-            case "pattern" : 
+            case "pattern" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setPattern(value);
                 return true;
-            case "conditionIf" : 
+            case "conditionIf" :
                 ((org.apache.catalina.valves.AbstractAccessLogValve)o).setConditionIf(value);
                 return true;
         }
@@ -2424,7 +2424,7 @@ public class XReflectionIntrospectionUtils {
     public static boolean setPropertyForOrgApacheCatalinaValvesValveBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
             //no setDomainInternal method found on this class
-            case "asyncSupported" : 
+            case "asyncSupported" :
                 ((org.apache.catalina.valves.ValveBase)o).setAsyncSupported(Boolean.valueOf(value));
                 return true;
             //no setObjectNameKeyProperties method found on this class
@@ -2434,32 +2434,32 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaCoreStandardServer(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "periodicEventDelay" : 
+            case "periodicEventDelay" :
                 ((org.apache.catalina.core.StandardServer)o).setPeriodicEventDelay(Integer.valueOf(value));
                 return true;
             //no setDomainInternal method found on this class
-            case "portOffset" : 
+            case "portOffset" :
                 ((org.apache.catalina.core.StandardServer)o).setPortOffset(Integer.valueOf(value));
                 return true;
-            case "utilityThreads" : 
+            case "utilityThreads" :
                 ((org.apache.catalina.core.StandardServer)o).setUtilityThreads(Integer.valueOf(value));
                 return true;
             //no setStopAwait method found on this class
             //no setServerBuilt method found on this class
             //no setServerNumber method found on this class
             //no setServerInfo method found on this class
-            case "port" : 
+            case "port" :
                 ((org.apache.catalina.core.StandardServer)o).setPort(Integer.valueOf(value));
                 return true;
-            case "shutdown" : 
+            case "shutdown" :
                 ((org.apache.catalina.core.StandardServer)o).setShutdown(value);
                 return true;
             //no setPortWithOffset method found on this class
             //no setObjectNameKeyProperties method found on this class
-            case "address" : 
+            case "address" :
                 ((org.apache.catalina.core.StandardServer)o).setAddress(value);
                 return true;
-            case "utilityThreadsAsDaemon" : 
+            case "utilityThreadsAsDaemon" :
                 ((org.apache.catalina.core.StandardServer)o).setUtilityThreadsAsDaemon(Boolean.valueOf(value));
                 return true;
         }
@@ -2468,7 +2468,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaRealmUserDatabaseRealm(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "resourceName" : 
+            case "resourceName" :
                 ((org.apache.catalina.realm.UserDatabaseRealm)o).setResourceName(value);
                 return true;
         }
@@ -2478,24 +2478,24 @@ public class XReflectionIntrospectionUtils {
     public static boolean setPropertyForOrgApacheCatalinaRealmRealmBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
             //no setObjectNameKeyProperties method found on this class
-            case "stripRealmForGss" : 
+            case "stripRealmForGss" :
                 ((org.apache.catalina.realm.RealmBase)o).setStripRealmForGss(Boolean.valueOf(value));
                 return true;
             //no setDomainInternal method found on this class
-            case "allRolesMode" : 
+            case "allRolesMode" :
                 ((org.apache.catalina.realm.RealmBase)o).setAllRolesMode(value);
                 return true;
-            case "x509UsernameRetrieverClassName" : 
+            case "x509UsernameRetrieverClassName" :
                 ((org.apache.catalina.realm.RealmBase)o).setX509UsernameRetrieverClassName(value);
                 return true;
-            case "transportGuaranteeRedirectStatus" : 
+            case "transportGuaranteeRedirectStatus" :
                 ((org.apache.catalina.realm.RealmBase)o).setTransportGuaranteeRedirectStatus(Integer.valueOf(value));
                 return true;
             //no setRealmSuffix method found on this class
-            case "validate" : 
+            case "validate" :
                 ((org.apache.catalina.realm.RealmBase)o).setValidate(Boolean.valueOf(value));
                 return true;
-            case "realmPath" : 
+            case "realmPath" :
                 ((org.apache.catalina.realm.RealmBase)o).setRealmPath(value);
                 return true;
         }
@@ -2506,7 +2506,7 @@ public class XReflectionIntrospectionUtils {
         switch (name) {
             //no setDomainInternal method found on this class
             //no setObjectNameKeyProperties method found on this class
-            case "name" : 
+            case "name" :
                 ((org.apache.catalina.core.StandardService)o).setName(value);
                 return true;
         }
@@ -2515,243 +2515,243 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaCoreStandardContext(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "charsetMapperClass" : 
+            case "charsetMapperClass" :
                 ((org.apache.catalina.core.StandardContext)o).setCharsetMapperClass(value);
                 return true;
-            case "skipMemoryLeakChecksOnJvmShutdown" : 
+            case "skipMemoryLeakChecksOnJvmShutdown" :
                 ((org.apache.catalina.core.StandardContext)o).setSkipMemoryLeakChecksOnJvmShutdown(Boolean.valueOf(value));
                 return true;
-            case "server" : 
+            case "server" :
                 ((org.apache.catalina.core.StandardContext)o).setServer(value);
                 return true;
-            case "docBase" : 
+            case "docBase" :
                 ((org.apache.catalina.core.StandardContext)o).setDocBase(value);
                 return true;
-            case "allowMultipleLeadingForwardSlashInPath" : 
+            case "allowMultipleLeadingForwardSlashInPath" :
                 ((org.apache.catalina.core.StandardContext)o).setAllowMultipleLeadingForwardSlashInPath(Boolean.valueOf(value));
                 return true;
-            case "sendRedirectBody" : 
+            case "sendRedirectBody" :
                 ((org.apache.catalina.core.StandardContext)o).setSendRedirectBody(Boolean.valueOf(value));
                 return true;
-            case "defaultWebXml" : 
+            case "defaultWebXml" :
                 ((org.apache.catalina.core.StandardContext)o).setDefaultWebXml(value);
                 return true;
-            case "displayName" : 
+            case "displayName" :
                 ((org.apache.catalina.core.StandardContext)o).setDisplayName(value);
                 return true;
             //no setWorkPath method found on this class
-            case "reloadable" : 
+            case "reloadable" :
                 ((org.apache.catalina.core.StandardContext)o).setReloadable(Boolean.valueOf(value));
                 return true;
-            case "effectiveMinorVersion" : 
+            case "effectiveMinorVersion" :
                 ((org.apache.catalina.core.StandardContext)o).setEffectiveMinorVersion(Integer.valueOf(value));
                 return true;
-            case "swallowOutput" : 
+            case "swallowOutput" :
                 ((org.apache.catalina.core.StandardContext)o).setSwallowOutput(Boolean.valueOf(value));
                 return true;
             //no setRequestEncoding method found on this class
-            case "cookies" : 
+            case "cookies" :
                 ((org.apache.catalina.core.StandardContext)o).setCookies(Boolean.valueOf(value));
                 return true;
-            case "clearReferencesThreadLocals" : 
+            case "clearReferencesThreadLocals" :
                 ((org.apache.catalina.core.StandardContext)o).setClearReferencesThreadLocals(Boolean.valueOf(value));
                 return true;
-            case "delegate" : 
+            case "delegate" :
                 ((org.apache.catalina.core.StandardContext)o).setDelegate(Boolean.valueOf(value));
                 return true;
-            case "mapperDirectoryRedirectEnabled" : 
+            case "mapperDirectoryRedirectEnabled" :
                 ((org.apache.catalina.core.StandardContext)o).setMapperDirectoryRedirectEnabled(Boolean.valueOf(value));
                 return true;
             //no setServlet22 method found on this class
-            case "preemptiveAuthentication" : 
+            case "preemptiveAuthentication" :
                 ((org.apache.catalina.core.StandardContext)o).setPreemptiveAuthentication(Boolean.valueOf(value));
                 return true;
-            case "wrapperClass" : 
+            case "wrapperClass" :
                 ((org.apache.catalina.core.StandardContext)o).setWrapperClass(value);
                 return true;
             //no setMinTime method found on this class
-            case "requestCharacterEncoding" : 
+            case "requestCharacterEncoding" :
                 ((org.apache.catalina.core.StandardContext)o).setRequestCharacterEncoding(value);
                 return true;
-            case "fireRequestListenersOnForwards" : 
+            case "fireRequestListenersOnForwards" :
                 ((org.apache.catalina.core.StandardContext)o).setFireRequestListenersOnForwards(Boolean.valueOf(value));
                 return true;
-            case "override" : 
+            case "override" :
                 ((org.apache.catalina.core.StandardContext)o).setOverride(Boolean.valueOf(value));
                 return true;
-            case "tldValidation" : 
+            case "tldValidation" :
                 ((org.apache.catalina.core.StandardContext)o).setTldValidation(Boolean.valueOf(value));
                 return true;
-            case "workDir" : 
+            case "workDir" :
                 ((org.apache.catalina.core.StandardContext)o).setWorkDir(value);
                 return true;
             //no setStartTime method found on this class
             //no setWebXmlValidation method found on this class
-            case "dispatchersUseEncodedPaths" : 
+            case "dispatchersUseEncodedPaths" :
                 ((org.apache.catalina.core.StandardContext)o).setDispatchersUseEncodedPaths(Boolean.valueOf(value));
                 return true;
-            case "allowCasualMultipartParsing" : 
+            case "allowCasualMultipartParsing" :
                 ((org.apache.catalina.core.StandardContext)o).setAllowCasualMultipartParsing(Boolean.valueOf(value));
                 return true;
             //no setRequestCount method found on this class
-            case "addWebinfClassesResources" : 
+            case "addWebinfClassesResources" :
                 ((org.apache.catalina.core.StandardContext)o).setAddWebinfClassesResources(Boolean.valueOf(value));
                 return true;
-            case "j2EEApplication" : 
+            case "j2EEApplication" :
                 ((org.apache.catalina.core.StandardContext)o).setJ2EEApplication(value);
                 return true;
-            case "distributable" : 
+            case "distributable" :
                 ((org.apache.catalina.core.StandardContext)o).setDistributable(Boolean.valueOf(value));
                 return true;
-            case "mapperContextRootRedirectEnabled" : 
+            case "mapperContextRootRedirectEnabled" :
                 ((org.apache.catalina.core.StandardContext)o).setMapperContextRootRedirectEnabled(Boolean.valueOf(value));
                 return true;
-            case "sessionCookiePath" : 
+            case "sessionCookiePath" :
                 ((org.apache.catalina.core.StandardContext)o).setSessionCookiePath(value);
                 return true;
-            case "sessionCookiePathUsesTrailingSlash" : 
+            case "sessionCookiePathUsesTrailingSlash" :
                 ((org.apache.catalina.core.StandardContext)o).setSessionCookiePathUsesTrailingSlash(Boolean.valueOf(value));
                 return true;
-            case "j2EEServer" : 
+            case "j2EEServer" :
                 ((org.apache.catalina.core.StandardContext)o).setJ2EEServer(value);
                 return true;
-            case "startupTime" : 
+            case "startupTime" :
                 ((org.apache.catalina.core.StandardContext)o).setStartupTime(Long.valueOf(value));
                 return true;
-            case "clearReferencesRmiTargets" : 
+            case "clearReferencesRmiTargets" :
                 ((org.apache.catalina.core.StandardContext)o).setClearReferencesRmiTargets(Boolean.valueOf(value));
                 return true;
-            case "xmlNamespaceAware" : 
+            case "xmlNamespaceAware" :
                 ((org.apache.catalina.core.StandardContext)o).setXmlNamespaceAware(Boolean.valueOf(value));
                 return true;
-            case "tldScanTime" : 
+            case "tldScanTime" :
                 ((org.apache.catalina.core.StandardContext)o).setTldScanTime(Long.valueOf(value));
                 return true;
-            case "clearReferencesHttpClientKeepAliveThread" : 
+            case "clearReferencesHttpClientKeepAliveThread" :
                 ((org.apache.catalina.core.StandardContext)o).setClearReferencesHttpClientKeepAliveThread(Boolean.valueOf(value));
                 return true;
             //no setInProgressAsyncCount method found on this class
-            case "validateClientProvidedNewSessionId" : 
+            case "validateClientProvidedNewSessionId" :
                 ((org.apache.catalina.core.StandardContext)o).setValidateClientProvidedNewSessionId(Boolean.valueOf(value));
                 return true;
-            case "replaceWelcomeFiles" : 
+            case "replaceWelcomeFiles" :
                 ((org.apache.catalina.core.StandardContext)o).setReplaceWelcomeFiles(Boolean.valueOf(value));
                 return true;
-            case "useRelativeRedirects" : 
+            case "useRelativeRedirects" :
                 ((org.apache.catalina.core.StandardContext)o).setUseRelativeRedirects(Boolean.valueOf(value));
                 return true;
-            case "sessionCookieDomain" : 
+            case "sessionCookieDomain" :
                 ((org.apache.catalina.core.StandardContext)o).setSessionCookieDomain(value);
                 return true;
-            case "crossContext" : 
+            case "crossContext" :
                 ((org.apache.catalina.core.StandardContext)o).setCrossContext(Boolean.valueOf(value));
                 return true;
-            case "sessionCookieName" : 
+            case "sessionCookieName" :
                 ((org.apache.catalina.core.StandardContext)o).setSessionCookieName(value);
                 return true;
-            case "defaultContextXml" : 
+            case "defaultContextXml" :
                 ((org.apache.catalina.core.StandardContext)o).setDefaultContextXml(value);
                 return true;
-            case "publicId" : 
+            case "publicId" :
                 ((org.apache.catalina.core.StandardContext)o).setPublicId(value);
                 return true;
-            case "denyUncoveredHttpMethods" : 
+            case "denyUncoveredHttpMethods" :
                 ((org.apache.catalina.core.StandardContext)o).setDenyUncoveredHttpMethods(Boolean.valueOf(value));
                 return true;
             //no setEncodedPath method found on this class
-            case "antiResourceLocking" : 
+            case "antiResourceLocking" :
                 ((org.apache.catalina.core.StandardContext)o).setAntiResourceLocking(Boolean.valueOf(value));
                 return true;
             //no setPaused method found on this class
-            case "resourceOnlyServlets" : 
+            case "resourceOnlyServlets" :
                 ((org.apache.catalina.core.StandardContext)o).setResourceOnlyServlets(value);
                 return true;
             //no setNamingContextName method found on this class
-            case "clearReferencesObjectStreamClassCaches" : 
+            case "clearReferencesObjectStreamClassCaches" :
                 ((org.apache.catalina.core.StandardContext)o).setClearReferencesObjectStreamClassCaches(Boolean.valueOf(value));
                 return true;
-            case "useNaming" : 
+            case "useNaming" :
                 ((org.apache.catalina.core.StandardContext)o).setUseNaming(Boolean.valueOf(value));
                 return true;
             //no setComputedFailCtxIfServletStartFails method found on this class
-            case "logEffectiveWebXml" : 
+            case "logEffectiveWebXml" :
                 ((org.apache.catalina.core.StandardContext)o).setLogEffectiveWebXml(Boolean.valueOf(value));
                 return true;
-            case "originalDocBase" : 
+            case "originalDocBase" :
                 ((org.apache.catalina.core.StandardContext)o).setOriginalDocBase(value);
                 return true;
-            case "path" : 
+            case "path" :
                 ((org.apache.catalina.core.StandardContext)o).setPath(value);
                 return true;
-            case "useHttpOnly" : 
+            case "useHttpOnly" :
                 ((org.apache.catalina.core.StandardContext)o).setUseHttpOnly(Boolean.valueOf(value));
                 return true;
-            case "clearReferencesStopTimerThreads" : 
+            case "clearReferencesStopTimerThreads" :
                 ((org.apache.catalina.core.StandardContext)o).setClearReferencesStopTimerThreads(Boolean.valueOf(value));
                 return true;
-            case "responseCharacterEncoding" : 
+            case "responseCharacterEncoding" :
                 ((org.apache.catalina.core.StandardContext)o).setResponseCharacterEncoding(value);
                 return true;
             //no setBaseName method found on this class
             //no setMaxTime method found on this class
             //no setErrorCount method found on this class
-            case "configured" : 
+            case "configured" :
                 ((org.apache.catalina.core.StandardContext)o).setConfigured(Boolean.valueOf(value));
                 return true;
-            case "containerSciFilter" : 
+            case "containerSciFilter" :
                 ((org.apache.catalina.core.StandardContext)o).setContainerSciFilter(value);
                 return true;
-            case "ignoreAnnotations" : 
+            case "ignoreAnnotations" :
                 ((org.apache.catalina.core.StandardContext)o).setIgnoreAnnotations(Boolean.valueOf(value));
                 return true;
             //no setWebXmlNamespaceAware method found on this class
-            case "unloadDelay" : 
+            case "unloadDelay" :
                 ((org.apache.catalina.core.StandardContext)o).setUnloadDelay(Long.valueOf(value));
                 return true;
             //no setResponseEncoding method found on this class
-            case "jndiExceptionOnFailedWrite" : 
+            case "jndiExceptionOnFailedWrite" :
                 ((org.apache.catalina.core.StandardContext)o).setJndiExceptionOnFailedWrite(Boolean.valueOf(value));
                 return true;
             //no setObjectNameKeyProperties method found on this class
-            case "createUploadTargets" : 
+            case "createUploadTargets" :
                 ((org.apache.catalina.core.StandardContext)o).setCreateUploadTargets(Boolean.valueOf(value));
                 return true;
             //no setProcessingTime method found on this class
-            case "clearReferencesStopThreads" : 
+            case "clearReferencesStopThreads" :
                 ((org.apache.catalina.core.StandardContext)o).setClearReferencesStopThreads(Boolean.valueOf(value));
                 return true;
-            case "privileged" : 
+            case "privileged" :
                 ((org.apache.catalina.core.StandardContext)o).setPrivileged(Boolean.valueOf(value));
                 return true;
             //no setWrapperClassName method found on this class
-            case "xmlValidation" : 
+            case "xmlValidation" :
                 ((org.apache.catalina.core.StandardContext)o).setXmlValidation(Boolean.valueOf(value));
                 return true;
-            case "swallowAbortedUploads" : 
+            case "swallowAbortedUploads" :
                 ((org.apache.catalina.core.StandardContext)o).setSwallowAbortedUploads(Boolean.valueOf(value));
                 return true;
-            case "webappVersion" : 
+            case "webappVersion" :
                 ((org.apache.catalina.core.StandardContext)o).setWebappVersion(value);
                 return true;
-            case "xmlBlockExternal" : 
+            case "xmlBlockExternal" :
                 ((org.apache.catalina.core.StandardContext)o).setXmlBlockExternal(Boolean.valueOf(value));
                 return true;
-            case "copyXML" : 
+            case "copyXML" :
                 ((org.apache.catalina.core.StandardContext)o).setCopyXML(Boolean.valueOf(value));
                 return true;
-            case "unpackWAR" : 
+            case "unpackWAR" :
                 ((org.apache.catalina.core.StandardContext)o).setUnpackWAR(Boolean.valueOf(value));
                 return true;
-            case "sessionTimeout" : 
+            case "sessionTimeout" :
                 ((org.apache.catalina.core.StandardContext)o).setSessionTimeout(Integer.valueOf(value));
                 return true;
-            case "renewThreadsWhenStoppingContext" : 
+            case "renewThreadsWhenStoppingContext" :
                 ((org.apache.catalina.core.StandardContext)o).setRenewThreadsWhenStoppingContext(Boolean.valueOf(value));
                 return true;
-            case "effectiveMajorVersion" : 
+            case "effectiveMajorVersion" :
                 ((org.apache.catalina.core.StandardContext)o).setEffectiveMajorVersion(Integer.valueOf(value));
                 return true;
-            case "altDDName" : 
+            case "altDDName" :
                 ((org.apache.catalina.core.StandardContext)o).setAltDDName(value);
                 return true;
         }
@@ -2760,53 +2760,53 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaCoreStandardHost(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "deployOnStartup" : 
+            case "deployOnStartup" :
                 ((org.apache.catalina.core.StandardHost)o).setDeployOnStartup(Boolean.valueOf(value));
                 return true;
-            case "name" : 
+            case "name" :
                 ((org.apache.catalina.core.StandardHost)o).setName(value);
                 return true;
-            case "undeployOldVersions" : 
+            case "undeployOldVersions" :
                 ((org.apache.catalina.core.StandardHost)o).setUndeployOldVersions(Boolean.valueOf(value));
                 return true;
-            case "deployXML" : 
+            case "deployXML" :
                 ((org.apache.catalina.core.StandardHost)o).setDeployXML(Boolean.valueOf(value));
                 return true;
-            case "errorReportValveClass" : 
+            case "errorReportValveClass" :
                 ((org.apache.catalina.core.StandardHost)o).setErrorReportValveClass(value);
                 return true;
-            case "deployIgnore" : 
+            case "deployIgnore" :
                 ((org.apache.catalina.core.StandardHost)o).setDeployIgnore(value);
                 return true;
-            case "workDir" : 
+            case "workDir" :
                 ((org.apache.catalina.core.StandardHost)o).setWorkDir(value);
                 return true;
-            case "xmlBase" : 
+            case "xmlBase" :
                 ((org.apache.catalina.core.StandardHost)o).setXmlBase(value);
                 return true;
-            case "appBase" : 
+            case "appBase" :
                 ((org.apache.catalina.core.StandardHost)o).setAppBase(value);
                 return true;
-            case "createDirs" : 
+            case "createDirs" :
                 ((org.apache.catalina.core.StandardHost)o).setCreateDirs(Boolean.valueOf(value));
                 return true;
-            case "copyXML" : 
+            case "copyXML" :
                 ((org.apache.catalina.core.StandardHost)o).setCopyXML(Boolean.valueOf(value));
                 return true;
-            case "autoDeploy" : 
+            case "autoDeploy" :
                 ((org.apache.catalina.core.StandardHost)o).setAutoDeploy(Boolean.valueOf(value));
                 return true;
-            case "failCtxIfServletStartFails" : 
+            case "failCtxIfServletStartFails" :
                 ((org.apache.catalina.core.StandardHost)o).setFailCtxIfServletStartFails(Boolean.valueOf(value));
                 return true;
             //no setObjectNameKeyProperties method found on this class
-            case "contextClass" : 
+            case "contextClass" :
                 ((org.apache.catalina.core.StandardHost)o).setContextClass(value);
                 return true;
-            case "configClass" : 
+            case "configClass" :
                 ((org.apache.catalina.core.StandardHost)o).setConfigClass(value);
                 return true;
-            case "unpackWARs" : 
+            case "unpackWARs" :
                 ((org.apache.catalina.core.StandardHost)o).setUnpackWARs(Boolean.valueOf(value));
                 return true;
         }
@@ -2815,11 +2815,11 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaCoreStandardEngine(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "defaultHost" : 
+            case "defaultHost" :
                 ((org.apache.catalina.core.StandardEngine)o).setDefaultHost(value);
                 return true;
             //no setObjectNameKeyProperties method found on this class
-            case "jvmRoute" : 
+            case "jvmRoute" :
                 ((org.apache.catalina.core.StandardEngine)o).setJvmRoute(value);
                 return true;
             //no setDomainInternal method found on this class
@@ -2832,18 +2832,18 @@ public class XReflectionIntrospectionUtils {
         switch (name) {
             //no setMBeanKeyProperties method found on this class
             //no setLogName method found on this class
-            case "name" : 
+            case "name" :
                 ((org.apache.catalina.core.ContainerBase)o).setName(value);
                 return true;
             //no setAccessLogScanComplete method found on this class
             //no setDomainInternal method found on this class
-            case "startStopThreads" : 
+            case "startStopThreads" :
                 ((org.apache.catalina.core.ContainerBase)o).setStartStopThreads(Integer.valueOf(value));
                 return true;
-            case "backgroundProcessorDelay" : 
+            case "backgroundProcessorDelay" :
                 ((org.apache.catalina.core.ContainerBase)o).setBackgroundProcessorDelay(Integer.valueOf(value));
                 return true;
-            case "startChildren" : 
+            case "startChildren" :
                 ((org.apache.catalina.core.ContainerBase)o).setStartChildren(Boolean.valueOf(value));
                 return true;
         }
@@ -2852,7 +2852,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaUtilLifecycleMBeanBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "domain" : 
+            case "domain" :
                 ((org.apache.catalina.util.LifecycleMBeanBase)o).setDomain(value);
                 return true;
             //no setObjectNameKeyProperties method found on this class
@@ -2863,7 +2863,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaUtilLifecycleBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "throwOnFailure" : 
+            case "throwOnFailure" :
                 ((org.apache.catalina.util.LifecycleBase)o).setThrowOnFailure(Boolean.valueOf(value));
                 return true;
             //no setStateName method found on this class
@@ -2879,37 +2879,37 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaLoaderWebappClassLoaderBase(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "clearReferencesHttpClientKeepAliveThread" : 
+            case "clearReferencesHttpClientKeepAliveThread" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesHttpClientKeepAliveThread(Boolean.valueOf(value));
                 return true;
             //no setHostName method found on this class
-            case "skipMemoryLeakChecksOnJvmShutdown" : 
+            case "skipMemoryLeakChecksOnJvmShutdown" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setSkipMemoryLeakChecksOnJvmShutdown(Boolean.valueOf(value));
                 return true;
             //no setContextName method found on this class
-            case "clearReferencesObjectStreamClassCaches" : 
+            case "clearReferencesObjectStreamClassCaches" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesObjectStreamClassCaches(Boolean.valueOf(value));
                 return true;
-            case "clearReferencesRmiTargets" : 
+            case "clearReferencesRmiTargets" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesRmiTargets(Boolean.valueOf(value));
                 return true;
-            case "clearReferencesLogFactoryRelease" : 
+            case "clearReferencesLogFactoryRelease" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesLogFactoryRelease(Boolean.valueOf(value));
                 return true;
-            case "clearReferencesThreadLocals" : 
+            case "clearReferencesThreadLocals" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesThreadLocals(Boolean.valueOf(value));
                 return true;
-            case "clearReferencesStopThreads" : 
+            case "clearReferencesStopThreads" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesStopThreads(Boolean.valueOf(value));
                 return true;
             //no setStateName method found on this class
             //no setServiceName method found on this class
-            case "delegate" : 
+            case "delegate" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setDelegate(Boolean.valueOf(value));
                 return true;
             //no setWebappName method found on this class
             //no setHasExternalRepositories method found on this class
-            case "clearReferencesStopTimerThreads" : 
+            case "clearReferencesStopTimerThreads" :
                 ((org.apache.catalina.loader.WebappClassLoaderBase)o).setClearReferencesStopTimerThreads(Boolean.valueOf(value));
                 return true;
         }
@@ -2931,7 +2931,7 @@ public class XReflectionIntrospectionUtils {
     public static boolean setPropertyForJavaLangClassLoader(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
             //no setSclSet method found on this class
-            case "defaultAssertionStatus" : 
+            case "defaultAssertionStatus" :
                 ((java.lang.ClassLoader)o).setDefaultAssertionStatus(Boolean.valueOf(value));
                 return true;
         }
@@ -2940,7 +2940,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteAjpAjpNioProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.ajp.AjpNioProtocol)o).setProperty(name, value);
                 return true;
         }
@@ -2949,7 +2949,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteAjpAjpNio2Protocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.ajp.AjpNio2Protocol)o).setProperty(name, value);
                 return true;
         }
@@ -2958,13 +2958,13 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteAjpAjpAprProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "pollTime" : 
+            case "pollTime" :
                 ((org.apache.coyote.ajp.AjpAprProtocol)o).setPollTime(Integer.valueOf(value));
                 return true;
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.ajp.AjpAprProtocol)o).setProperty(name, value);
                 return true;
-            case "aprRequired" : 
+            case "aprRequired" :
                 ((org.apache.coyote.ajp.AjpAprProtocol)o).setProperty(name, value);
                 return true;
         }
@@ -2973,34 +2973,34 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteAjpAbstractAjpProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "secret" : 
+            case "secret" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setSecret(value);
                 return true;
-            case "desiredBufferSize" : 
+            case "desiredBufferSize" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setProperty(name, value);
                 return true;
-            case "tomcatAuthorization" : 
+            case "tomcatAuthorization" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setTomcatAuthorization(Boolean.valueOf(value));
                 return true;
-            case "requiredSecret" : 
+            case "requiredSecret" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setRequiredSecret(value);
                 return true;
-            case "ajpFlush" : 
+            case "ajpFlush" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setAjpFlush(Boolean.valueOf(value));
                 return true;
-            case "secretRequired" : 
+            case "secretRequired" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setSecretRequired(Boolean.valueOf(value));
                 return true;
-            case "protocolName" : 
+            case "protocolName" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setProperty(name, value);
                 return true;
-            case "allowedRequestAttributesPattern" : 
+            case "allowedRequestAttributesPattern" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setAllowedRequestAttributesPattern(value);
                 return true;
-            case "packetSize" : 
+            case "packetSize" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setPacketSize(Integer.valueOf(value));
                 return true;
-            case "tomcatAuthentication" : 
+            case "tomcatAuthentication" :
                 ((org.apache.coyote.ajp.AbstractAjpProtocol)o).setTomcatAuthentication(Boolean.valueOf(value));
                 return true;
         }
@@ -3009,19 +3009,19 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteHttp11Http11AprProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "aprRequired" : 
+            case "aprRequired" :
                 ((org.apache.coyote.http11.Http11AprProtocol)o).setProperty(name, value);
                 return true;
-            case "pollTime" : 
+            case "pollTime" :
                 ((org.apache.coyote.http11.Http11AprProtocol)o).setPollTime(Integer.valueOf(value));
                 return true;
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.http11.Http11AprProtocol)o).setProperty(name, value);
                 return true;
-            case "deferAccept" : 
+            case "deferAccept" :
                 ((org.apache.coyote.http11.Http11AprProtocol)o).setDeferAccept(Boolean.valueOf(value));
                 return true;
-            case "sendfileSize" : 
+            case "sendfileSize" :
                 ((org.apache.coyote.http11.Http11AprProtocol)o).setSendfileSize(Integer.valueOf(value));
                 return true;
         }
@@ -3030,7 +3030,7 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteHttp11Http11Nio2Protocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.http11.Http11Nio2Protocol)o).setProperty(name, value);
                 return true;
         }
@@ -3039,16 +3039,16 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteHttp11Http11NioProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "selectorTimeout" : 
+            case "selectorTimeout" :
                 ((org.apache.coyote.http11.Http11NioProtocol)o).setSelectorTimeout(Long.valueOf(value));
                 return true;
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.http11.Http11NioProtocol)o).setProperty(name, value);
                 return true;
-            case "pollerThreadCount" : 
+            case "pollerThreadCount" :
                 ((org.apache.coyote.http11.Http11NioProtocol)o).setPollerThreadCount(Integer.valueOf(value));
                 return true;
-            case "pollerThreadPriority" : 
+            case "pollerThreadPriority" :
                 ((org.apache.coyote.http11.Http11NioProtocol)o).setPollerThreadPriority(Integer.valueOf(value));
                 return true;
         }
@@ -3057,13 +3057,13 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteHttp11AbstractHttp11JsseProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "sslImplementationShortName" : 
+            case "sslImplementationShortName" :
                 ((org.apache.coyote.http11.AbstractHttp11JsseProtocol)o).setProperty(name, value);
                 return true;
-            case "sslImplementationName" : 
+            case "sslImplementationName" :
                 ((org.apache.coyote.http11.AbstractHttp11JsseProtocol)o).setSslImplementationName(value);
                 return true;
-            case "sniParseLimit" : 
+            case "sniParseLimit" :
                 ((org.apache.coyote.http11.AbstractHttp11JsseProtocol)o).setSniParseLimit(Integer.valueOf(value));
                 return true;
         }
@@ -3072,202 +3072,202 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteHttp11AbstractHttp11Protocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "crlFile" : 
+            case "crlFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setCrlFile(value);
                 return true;
-            case "truststorePass" : 
+            case "truststorePass" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTruststorePass(value);
                 return true;
-            case "maxExtensionSize" : 
+            case "maxExtensionSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setMaxExtensionSize(Integer.valueOf(value));
                 return true;
-            case "sslProtocol" : 
+            case "sslProtocol" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSslProtocol(value);
                 return true;
-            case "compressionMinSize" : 
+            case "compressionMinSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setCompressionMinSize(Integer.valueOf(value));
                 return true;
-            case "truststoreFile" : 
+            case "truststoreFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTruststoreFile(value);
                 return true;
-            case "server" : 
+            case "server" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setServer(value);
                 return true;
-            case "SSLVerifyDepth" : 
+            case "SSLVerifyDepth" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLVerifyDepth(Integer.valueOf(value));
                 return true;
-            case "rejectIllegalHeader" : 
+            case "rejectIllegalHeader" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setRejectIllegalHeader(Boolean.valueOf(value));
                 return true;
-            case "keystoreProvider" : 
+            case "keystoreProvider" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setKeystoreProvider(value);
                 return true;
-            case "SSLCARevocationPath" : 
+            case "SSLCARevocationPath" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCARevocationPath(value);
                 return true;
-            case "disableUploadTimeout" : 
+            case "disableUploadTimeout" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setDisableUploadTimeout(Boolean.valueOf(value));
                 return true;
-            case "allowedTrailerHeaders" : 
+            case "allowedTrailerHeaders" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setAllowedTrailerHeaders(value);
                 return true;
-            case "useKeepAliveResponseHeader" : 
+            case "useKeepAliveResponseHeader" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setUseKeepAliveResponseHeader(Boolean.valueOf(value));
                 return true;
-            case "ciphers" : 
+            case "ciphers" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setCiphers(value);
                 return true;
-            case "maxSavePostSize" : 
+            case "maxSavePostSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setMaxSavePostSize(Integer.valueOf(value));
                 return true;
-            case "SSLCACertificatePath" : 
+            case "SSLCACertificatePath" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCACertificatePath(value);
                 return true;
-            case "protocolName" : 
+            case "protocolName" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setProperty(name, value);
                 return true;
-            case "allowHostHeaderMismatch" : 
+            case "allowHostHeaderMismatch" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setAllowHostHeaderMismatch(Boolean.valueOf(value));
                 return true;
-            case "useSendfile" : 
+            case "useSendfile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setUseSendfile(Boolean.valueOf(value));
                 return true;
-            case "compressibleMimeType" : 
+            case "compressibleMimeType" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setCompressibleMimeType(value);
                 return true;
-            case "noCompressionUserAgents" : 
+            case "noCompressionUserAgents" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setNoCompressionUserAgents(value);
                 return true;
-            case "SSLCertificateKeyFile" : 
+            case "SSLCertificateKeyFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCertificateKeyFile(value);
                 return true;
-            case "sslEnabledProtocols" : 
+            case "sslEnabledProtocols" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSslEnabledProtocols(value);
                 return true;
-            case "keystoreFile" : 
+            case "keystoreFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setKeystoreFile(value);
                 return true;
-            case "truststoreAlgorithm" : 
+            case "truststoreAlgorithm" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTruststoreAlgorithm(value);
                 return true;
-            case "SSLCACertificateFile" : 
+            case "SSLCACertificateFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCACertificateFile(value);
                 return true;
-            case "connectionUploadTimeout" : 
+            case "connectionUploadTimeout" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setConnectionUploadTimeout(Integer.valueOf(value));
                 return true;
-            case "relaxedQueryChars" : 
+            case "relaxedQueryChars" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setRelaxedQueryChars(value);
                 return true;
-            case "trustManagerClassName" : 
+            case "trustManagerClassName" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTrustManagerClassName(value);
                 return true;
-            case "restrictedUserAgents" : 
+            case "restrictedUserAgents" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setRestrictedUserAgents(value);
                 return true;
-            case "keyAlias" : 
+            case "keyAlias" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setKeyAlias(value);
                 return true;
-            case "defaultSSLHostConfigName" : 
+            case "defaultSSLHostConfigName" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setDefaultSSLHostConfigName(value);
                 return true;
-            case "useServerCipherSuitesOrder" : 
+            case "useServerCipherSuitesOrder" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setUseServerCipherSuitesOrder(Boolean.valueOf(value));
                 return true;
-            case "SSLHonorCipherOrder" : 
+            case "SSLHonorCipherOrder" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLHonorCipherOrder(Boolean.valueOf(value));
                 return true;
-            case "secure" : 
+            case "secure" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSecure(Boolean.valueOf(value));
                 return true;
-            case "keyPass" : 
+            case "keyPass" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setKeyPass(value);
                 return true;
-            case "sessionCacheSize" : 
+            case "sessionCacheSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSessionCacheSize(Integer.valueOf(value));
                 return true;
-            case "SSLVerifyClient" : 
+            case "SSLVerifyClient" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLVerifyClient(value);
                 return true;
-            case "compression" : 
+            case "compression" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setCompression(value);
                 return true;
-            case "keystorePass" : 
+            case "keystorePass" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setKeystorePass(value);
                 return true;
-            case "trustMaxCertLength" : 
+            case "trustMaxCertLength" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTrustMaxCertLength(Integer.valueOf(value));
                 return true;
-            case "serverRemoveAppProvidedValues" : 
+            case "serverRemoveAppProvidedValues" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setServerRemoveAppProvidedValues(Boolean.valueOf(value));
                 return true;
-            case "algorithm" : 
+            case "algorithm" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setAlgorithm(value);
                 return true;
-            case "truststoreType" : 
+            case "truststoreType" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTruststoreType(value);
                 return true;
-            case "compressionLevel" : 
+            case "compressionLevel" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setProperty(name, value);
                 return true;
-            case "maxTrailerSize" : 
+            case "maxTrailerSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setMaxTrailerSize(Integer.valueOf(value));
                 return true;
-            case "SSLProtocol" : 
+            case "SSLProtocol" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLProtocol(value);
                 return true;
-            case "SSLEnabled" : 
+            case "SSLEnabled" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLEnabled(Boolean.valueOf(value));
                 return true;
-            case "relaxedPathChars" : 
+            case "relaxedPathChars" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setRelaxedPathChars(value);
                 return true;
-            case "SSLPassword" : 
+            case "SSLPassword" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLPassword(value);
                 return true;
-            case "keystoreType" : 
+            case "keystoreType" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setKeystoreType(value);
                 return true;
-            case "maxSwallowSize" : 
+            case "maxSwallowSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setMaxSwallowSize(Integer.valueOf(value));
                 return true;
-            case "rejectIllegalHeaderName" : 
+            case "rejectIllegalHeaderName" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setRejectIllegalHeaderName(Boolean.valueOf(value));
                 return true;
-            case "SSLCipherSuite" : 
+            case "SSLCipherSuite" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCipherSuite(value);
                 return true;
-            case "truststoreProvider" : 
+            case "truststoreProvider" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setTruststoreProvider(value);
                 return true;
-            case "clientAuth" : 
+            case "clientAuth" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setClientAuth(value);
                 return true;
-            case "maxHttpHeaderSize" : 
+            case "maxHttpHeaderSize" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setMaxHttpHeaderSize(Integer.valueOf(value));
                 return true;
-            case "noCompressionStrongETag" : 
+            case "noCompressionStrongETag" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setNoCompressionStrongETag(Boolean.valueOf(value));
                 return true;
-            case "SSLCertificateFile" : 
+            case "SSLCertificateFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCertificateFile(value);
                 return true;
-            case "maxKeepAliveRequests" : 
+            case "maxKeepAliveRequests" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setMaxKeepAliveRequests(Integer.valueOf(value));
                 return true;
-            case "SSLDisableSessionTickets" : 
+            case "SSLDisableSessionTickets" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLDisableSessionTickets(Boolean.valueOf(value));
                 return true;
-            case "SSLCARevocationFile" : 
+            case "SSLCARevocationFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCARevocationFile(value);
                 return true;
-            case "sessionTimeout" : 
+            case "sessionTimeout" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSessionTimeout(Integer.valueOf(value));
                 return true;
-            case "SSLDisableCompression" : 
+            case "SSLDisableCompression" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLDisableCompression(Boolean.valueOf(value));
                 return true;
-            case "SSLCertificateChainFile" : 
+            case "SSLCertificateChainFile" :
                 ((org.apache.coyote.http11.AbstractHttp11Protocol)o).setSSLCertificateChainFile(value);
                 return true;
         }
@@ -3276,88 +3276,88 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCoyoteAbstractProtocol(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "nameIndex" : 
+            case "nameIndex" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "aprRequired" : 
+            case "aprRequired" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "protocolName" : 
+            case "protocolName" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "paused" : 
+            case "paused" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "sendfileSupported" : 
+            case "sendfileSupported" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "acceptCount" : 
+            case "acceptCount" :
                 ((org.apache.coyote.AbstractProtocol)o).setAcceptCount(Integer.valueOf(value));
                 return true;
-            case "portOffset" : 
+            case "portOffset" :
                 ((org.apache.coyote.AbstractProtocol)o).setPortOffset(Integer.valueOf(value));
                 return true;
-            case "connectionTimeout" : 
+            case "connectionTimeout" :
                 ((org.apache.coyote.AbstractProtocol)o).setConnectionTimeout(Integer.valueOf(value));
                 return true;
-            case "maxConnections" : 
+            case "maxConnections" :
                 ((org.apache.coyote.AbstractProtocol)o).setMaxConnections(Integer.valueOf(value));
                 return true;
-            case "tcpNoDelay" : 
+            case "tcpNoDelay" :
                 ((org.apache.coyote.AbstractProtocol)o).setTcpNoDelay(Boolean.valueOf(value));
                 return true;
-            case "maxThreads" : 
+            case "maxThreads" :
                 ((org.apache.coyote.AbstractProtocol)o).setMaxThreads(Integer.valueOf(value));
                 return true;
-            case "connectionCount" : 
+            case "connectionCount" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "connectionLinger" : 
+            case "connectionLinger" :
                 ((org.apache.coyote.AbstractProtocol)o).setConnectionLinger(Integer.valueOf(value));
                 return true;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "namePrefix" : 
+            case "namePrefix" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "name" : 
+            case "name" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "minSpareThreads" : 
+            case "minSpareThreads" :
                 ((org.apache.coyote.AbstractProtocol)o).setMinSpareThreads(Integer.valueOf(value));
                 return true;
-            case "keepAliveTimeout" : 
+            case "keepAliveTimeout" :
                 ((org.apache.coyote.AbstractProtocol)o).setKeepAliveTimeout(Integer.valueOf(value));
                 return true;
-            case "clientCertProvider" : 
+            case "clientCertProvider" :
                 ((org.apache.coyote.AbstractProtocol)o).setClientCertProvider(value);
                 return true;
-            case "localPort" : 
+            case "localPort" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "port" : 
+            case "port" :
                 ((org.apache.coyote.AbstractProtocol)o).setPort(Integer.valueOf(value));
                 return true;
-            case "domain" : 
+            case "domain" :
                 ((org.apache.coyote.AbstractProtocol)o).setProperty(name, value);
                 return true;
-            case "threadPriority" : 
+            case "threadPriority" :
                 ((org.apache.coyote.AbstractProtocol)o).setThreadPriority(Integer.valueOf(value));
                 return true;
-            case "acceptorThreadCount" : 
+            case "acceptorThreadCount" :
                 ((org.apache.coyote.AbstractProtocol)o).setAcceptorThreadCount(Integer.valueOf(value));
                 return true;
-            case "processorCache" : 
+            case "processorCache" :
                 ((org.apache.coyote.AbstractProtocol)o).setProcessorCache(Integer.valueOf(value));
                 return true;
-            case "acceptorThreadPriority" : 
+            case "acceptorThreadPriority" :
                 ((org.apache.coyote.AbstractProtocol)o).setAcceptorThreadPriority(Integer.valueOf(value));
                 return true;
-            case "address" : 
+            case "address" :
                 ((org.apache.coyote.AbstractProtocol)o).setAddress(getInetAddress(value));
                 return true;
-            case "maxHeaderCount" : 
+            case "maxHeaderCount" :
                 ((org.apache.coyote.AbstractProtocol)o).setMaxHeaderCount(Integer.valueOf(value));
                 return true;
         }
@@ -3370,73 +3370,73 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetSocketProperties(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "soLingerOn" : 
+            case "soLingerOn" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setSoLingerOn(Boolean.valueOf(value));
                 return true;
-            case "directBuffer" : 
+            case "directBuffer" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setDirectBuffer(Boolean.valueOf(value));
                 return true;
-            case "soKeepAlive" : 
+            case "soKeepAlive" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setSoKeepAlive(Boolean.valueOf(value));
                 return true;
-            case "txBufSize" : 
+            case "txBufSize" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setTxBufSize(Integer.valueOf(value));
                 return true;
-            case "soTimeout" : 
+            case "soTimeout" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setSoTimeout(Integer.valueOf(value));
                 return true;
-            case "ooBInline" : 
+            case "ooBInline" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setOoBInline(Boolean.valueOf(value));
                 return true;
-            case "rxBufSize" : 
+            case "rxBufSize" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setRxBufSize(Integer.valueOf(value));
                 return true;
-            case "appWriteBufSize" : 
+            case "appWriteBufSize" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setAppWriteBufSize(Integer.valueOf(value));
                 return true;
-            case "bufferPool" : 
+            case "bufferPool" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setBufferPool(Integer.valueOf(value));
                 return true;
-            case "appReadBufSize" : 
+            case "appReadBufSize" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setAppReadBufSize(Integer.valueOf(value));
                 return true;
-            case "directBufferPool" : 
+            case "directBufferPool" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setDirectBufferPool(Integer.valueOf(value));
                 return true;
-            case "bufferPoolSize" : 
+            case "bufferPoolSize" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setBufferPoolSize(Integer.valueOf(value));
                 return true;
-            case "directSslBuffer" : 
+            case "directSslBuffer" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setDirectSslBuffer(Boolean.valueOf(value));
                 return true;
-            case "soLingerTime" : 
+            case "soLingerTime" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setSoLingerTime(Integer.valueOf(value));
                 return true;
-            case "performanceConnectionTime" : 
+            case "performanceConnectionTime" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setPerformanceConnectionTime(Integer.valueOf(value));
                 return true;
-            case "soReuseAddress" : 
+            case "soReuseAddress" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setSoReuseAddress(Boolean.valueOf(value));
                 return true;
-            case "unlockTimeout" : 
+            case "unlockTimeout" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setUnlockTimeout(Integer.valueOf(value));
                 return true;
-            case "performanceBandwidth" : 
+            case "performanceBandwidth" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setPerformanceBandwidth(Integer.valueOf(value));
                 return true;
-            case "performanceLatency" : 
+            case "performanceLatency" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setPerformanceLatency(Integer.valueOf(value));
                 return true;
-            case "tcpNoDelay" : 
+            case "tcpNoDelay" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setTcpNoDelay(Boolean.valueOf(value));
                 return true;
-            case "processorCache" : 
+            case "processorCache" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setProcessorCache(Integer.valueOf(value));
                 return true;
-            case "eventCache" : 
+            case "eventCache" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setEventCache(Integer.valueOf(value));
                 return true;
-            case "timeoutInterval" : 
+            case "timeoutInterval" :
                 ((org.apache.tomcat.util.net.SocketProperties)o).setTimeoutInterval(Long.valueOf(value));
                 return true;
         }
@@ -3445,19 +3445,19 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetNioSelectorPool(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "enabled" : 
+            case "enabled" :
                 ((org.apache.tomcat.util.net.NioSelectorPool)o).setEnabled(Boolean.valueOf(value));
                 return true;
-            case "maxSelectors" : 
+            case "maxSelectors" :
                 ((org.apache.tomcat.util.net.NioSelectorPool)o).setMaxSelectors(Integer.valueOf(value));
                 return true;
-            case "sharedSelectorTimeout" : 
+            case "sharedSelectorTimeout" :
                 ((org.apache.tomcat.util.net.NioSelectorPool)o).setSharedSelectorTimeout(Long.valueOf(value));
                 return true;
-            case "shared" : 
+            case "shared" :
                 ((org.apache.tomcat.util.net.NioSelectorPool)o).setShared(Boolean.valueOf(value));
                 return true;
-            case "maxSpareSelectors" : 
+            case "maxSpareSelectors" :
                 ((org.apache.tomcat.util.net.NioSelectorPool)o).setMaxSpareSelectors(Integer.valueOf(value));
                 return true;
         }
@@ -3466,10 +3466,10 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProperty(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "name" : 
+            case "name" :
                 ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Property)o).setName(value);
                 return true;
-            case "value" : 
+            case "value" :
                 ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Property)o).setValue(value);
                 return true;
         }
@@ -3484,16 +3484,16 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheCatalinaAuthenticatorJaspicPersistentProviderRegistrationsProvider(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "appContext" : 
+            case "appContext" :
                 ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).setAppContext(value);
                 return true;
-            case "className" : 
+            case "className" :
                 ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).setClassName(value);
                 return true;
-            case "description" : 
+            case "description" :
                 ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).setDescription(value);
                 return true;
-            case "layer" : 
+            case "layer" :
                 ((org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Provider)o).setLayer(value);
                 return true;
         }
@@ -3506,22 +3506,22 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetNioEndpoint(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "pollerThreadPriority" : 
+            case "pollerThreadPriority" :
                 ((org.apache.tomcat.util.net.NioEndpoint)o).setPollerThreadPriority(Integer.valueOf(value));
                 return true;
-            case "keepAliveCount" : 
+            case "keepAliveCount" :
                 ((org.apache.tomcat.util.net.NioEndpoint)o).setProperty(name, value);
                 return true;
-            case "pollerThreadCount" : 
+            case "pollerThreadCount" :
                 ((org.apache.tomcat.util.net.NioEndpoint)o).setPollerThreadCount(Integer.valueOf(value));
                 return true;
-            case "selectorTimeout" : 
+            case "selectorTimeout" :
                 ((org.apache.tomcat.util.net.NioEndpoint)o).setSelectorTimeout(Long.valueOf(value));
                 return true;
-            case "useInheritedChannel" : 
+            case "useInheritedChannel" :
                 ((org.apache.tomcat.util.net.NioEndpoint)o).setUseInheritedChannel(Boolean.valueOf(value));
                 return true;
-            case "deferAccept" : 
+            case "deferAccept" :
                 ((org.apache.tomcat.util.net.NioEndpoint)o).setProperty(name, value);
                 return true;
         }
@@ -3534,16 +3534,16 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetNio2Endpoint(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "keepAliveCount" : 
+            case "keepAliveCount" :
                 ((org.apache.tomcat.util.net.Nio2Endpoint)o).setProperty(name, value);
                 return true;
-            case "deferAccept" : 
+            case "deferAccept" :
                 ((org.apache.tomcat.util.net.Nio2Endpoint)o).setProperty(name, value);
                 return true;
-            case "inline" : 
+            case "inline" :
                 ((org.apache.tomcat.util.net.Nio2Endpoint)o).setProperty(name, value);
                 return true;
-            case "allClosed" : 
+            case "allClosed" :
                 ((org.apache.tomcat.util.net.Nio2Endpoint)o).setProperty(name, value);
                 return true;
         }
@@ -3552,13 +3552,13 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetAbstractJsseEndpoint(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "sslImplementationName" : 
+            case "sslImplementationName" :
                 ((org.apache.tomcat.util.net.AbstractJsseEndpoint)o).setSslImplementationName(value);
                 return true;
-            case "alpnSupported" : 
+            case "alpnSupported" :
                 ((org.apache.tomcat.util.net.AbstractJsseEndpoint)o).setProperty(name, value);
                 return true;
-            case "sniParseLimit" : 
+            case "sniParseLimit" :
                 ((org.apache.tomcat.util.net.AbstractJsseEndpoint)o).setSniParseLimit(Integer.valueOf(value));
                 return true;
         }
@@ -3567,46 +3567,46 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetAprEndpoint(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "rootPool" : 
+            case "rootPool" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "pollTime" : 
+            case "pollTime" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setPollTime(Integer.valueOf(value));
                 return true;
-            case "serverSockPool" : 
+            case "serverSockPool" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "sendfileSize" : 
+            case "sendfileSize" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setSendfileSize(Integer.valueOf(value));
                 return true;
-            case "alpnSupported" : 
+            case "alpnSupported" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "keepAliveCount" : 
+            case "keepAliveCount" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "ipv6v6only" : 
+            case "ipv6v6only" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setIpv6v6only(Boolean.valueOf(value));
                 return true;
-            case "maxConnections" : 
+            case "maxConnections" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setMaxConnections(Integer.valueOf(value));
                 return true;
-            case "deferAccept" : 
+            case "deferAccept" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setDeferAccept(Boolean.valueOf(value));
                 return true;
-            case "serverSock" : 
+            case "serverSock" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "sslContext" : 
+            case "sslContext" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "useSendFileSet" : 
+            case "useSendFileSet" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "sendfileCount" : 
+            case "sendfileCount" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setProperty(name, value);
                 return true;
-            case "useSendfile" : 
+            case "useSendfile" :
                 ((org.apache.tomcat.util.net.AprEndpoint)o).setUseSendfile(Boolean.valueOf(value));
                 return true;
         }
@@ -3615,106 +3615,106 @@ public class XReflectionIntrospectionUtils {
 
     public static boolean setPropertyForOrgApacheTomcatUtilNetAbstractEndpoint(Object o, String name, String value, boolean invokeSetProperty) {
         switch (name) {
-            case "useAsyncIO" : 
+            case "useAsyncIO" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setUseAsyncIO(Boolean.valueOf(value));
                 return true;
-            case "localPort" : 
+            case "localPort" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "useSendfile" : 
+            case "useSendfile" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setUseSendfile(Boolean.valueOf(value));
                 return true;
-            case "maxThreads" : 
+            case "maxThreads" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setMaxThreads(Integer.valueOf(value));
                 return true;
-            case "acceptorThreadCount" : 
+            case "acceptorThreadCount" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setAcceptorThreadCount(Integer.valueOf(value));
                 return true;
-            case "connectionTimeout" : 
+            case "connectionTimeout" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setConnectionTimeout(Integer.valueOf(value));
                 return true;
-            case "tcpNoDelay" : 
+            case "tcpNoDelay" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setTcpNoDelay(Boolean.valueOf(value));
                 return true;
-            case "acceptorThreadPriority" : 
+            case "acceptorThreadPriority" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setAcceptorThreadPriority(Integer.valueOf(value));
                 return true;
-            case "connectionLinger" : 
+            case "connectionLinger" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setConnectionLinger(Integer.valueOf(value));
                 return true;
-            case "address" : 
+            case "address" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setAddress(getInetAddress(value));
                 return true;
-            case "currentThreadCount" : 
+            case "currentThreadCount" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "name" : 
+            case "name" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setName(value);
                 return true;
-            case "daemon" : 
+            case "daemon" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setDaemon(Boolean.valueOf(value));
                 return true;
-            case "internalExecutor" : 
+            case "internalExecutor" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "minSpareThreads" : 
+            case "minSpareThreads" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setMinSpareThreads(Integer.valueOf(value));
                 return true;
-            case "alpnSupported" : 
+            case "alpnSupported" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "maxKeepAliveRequests" : 
+            case "maxKeepAliveRequests" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setMaxKeepAliveRequests(Integer.valueOf(value));
                 return true;
-            case "port" : 
+            case "port" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setPort(Integer.valueOf(value));
                 return true;
-            case "portOffset" : 
+            case "portOffset" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setPortOffset(Integer.valueOf(value));
                 return true;
-            case "domain" : 
+            case "domain" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setDomain(value);
                 return true;
-            case "defaultSSLHostConfigName" : 
+            case "defaultSSLHostConfigName" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setDefaultSSLHostConfigName(value);
                 return true;
-            case "maxConnections" : 
+            case "maxConnections" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setMaxConnections(Integer.valueOf(value));
                 return true;
-            case "threadPriority" : 
+            case "threadPriority" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setThreadPriority(Integer.valueOf(value));
                 return true;
-            case "running" : 
+            case "running" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "bindOnInit" : 
+            case "bindOnInit" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setBindOnInit(Boolean.valueOf(value));
                 return true;
-            case "connectionCount" : 
+            case "connectionCount" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "acceptCount" : 
+            case "acceptCount" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setAcceptCount(Integer.valueOf(value));
                 return true;
-            case "portWithOffset" : 
+            case "portWithOffset" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "currentThreadsBusy" : 
+            case "currentThreadsBusy" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "keepAliveTimeout" : 
+            case "keepAliveTimeout" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setKeepAliveTimeout(Integer.valueOf(value));
                 return true;
-            case "paused" : 
+            case "paused" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
-            case "executorTerminationTimeoutMillis" : 
+            case "executorTerminationTimeoutMillis" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setExecutorTerminationTimeoutMillis(Long.valueOf(value));
                 return true;
-            case "SSLEnabled" : 
+            case "SSLEnabled" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setSSLEnabled(Boolean.valueOf(value));
                 return true;
-            case "deferAccept" : 
+            case "deferAccept" :
                 ((org.apache.tomcat.util.net.AbstractEndpoint)o).setProperty(name, value);
                 return true;
         }
