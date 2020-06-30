@@ -26,6 +26,7 @@ import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.apache.tomcat.util.res.StringManager;
 import org.apache.tomcat.util.security.PermissionCheck;
+import org.apache.tomcat.util.xreflection.XReflectionIntrospectionUtils;
 
 /**
  * Utils for introspection and reflection
@@ -59,6 +60,16 @@ public final class IntrospectionUtils {
         if (log.isDebugEnabled())
             log.debug("IntrospectionUtils: setProperty(" +
                     o.getClass() + " " + name + "=" + value + ")");
+
+        boolean directSetter = XReflectionIntrospectionUtils.setPropertyInternal(o, name, value, invokeSetProperty);
+        if (directSetter) {
+            return true;
+        } else {
+            RuntimeException x = new RuntimeException("FILIP BOTCHED THIS: Class="+
+                o.getClass().getName()+"; Name="+name+"; Value="+value);
+            x.printStackTrace();
+            System.exit(1);
+        }
 
         String setter = "set" + capitalize(name);
 
@@ -222,6 +233,13 @@ public final class IntrospectionUtils {
     }
 
     public static Object getProperty(Object o, String name) {
+
+        RuntimeException x = new RuntimeException("FILIP2 BOTCHED THIS: Class="+ o.getClass().getName()+"; Name="+name+";");
+        Object result1 = XReflectionIntrospectionUtils.getPropertyInternal(o, name);
+        if (result1 != null) {
+            return result1;
+        }
+        Object result2 = null;
         String getter = "get" + capitalize(name);
         String isGetter = "is" + capitalize(name);
 
@@ -233,10 +251,12 @@ public final class IntrospectionUtils {
             for (Method method : methods) {
                 Class<?> paramT[] = method.getParameterTypes();
                 if (getter.equals(method.getName()) && paramT.length == 0) {
-                    return method.invoke(o, (Object[]) null);
+                    result2 = method.invoke(o, (Object[]) null);
+                    break;
                 }
                 if (isGetter.equals(method.getName()) && paramT.length == 0) {
-                    return method.invoke(o, (Object[]) null);
+                    result2 = method.invoke(o, (Object[]) null);
+                    break;
                 }
 
                 if ("getProperty".equals(method.getName())) {
@@ -245,11 +265,17 @@ public final class IntrospectionUtils {
             }
 
             // Ok, no setXXX found, try a getProperty("name")
-            if (getPropertyMethod != null) {
+            if (result2 == null && getPropertyMethod != null) {
                 Object params[] = new Object[1];
                 params[0] = name;
-                return getPropertyMethod.invoke(o, params);
+                result2 = getPropertyMethod.invoke(o, params);
             }
+
+            if (result2 != null && !x.getMessage().contains("org.apache.naming.TesterInjectionServlet")) {
+                x.printStackTrace();
+                System.exit(1);
+            }
+            return result2;
 
         } catch (IllegalArgumentException | SecurityException | IllegalAccessException e) {
             log.warn(sm.getString("introspectionUtils.getPropertyError", name, o.getClass()), e);
