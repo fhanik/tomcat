@@ -25,6 +25,8 @@ import java.security.Security;
 import java.security.SecurityPermission;
 import java.util.Map;
 
+import org.apache.catalina.authenticator.jaspic.AuthConfigFactoryImpl;
+
 public abstract class AuthConfigFactory {
 
     public static final String DEFAULT_FACTORY_SECURITY_PROPERTY =
@@ -72,8 +74,12 @@ public abstract class AuthConfigFactory {
                             // this class. Note that the Thread context class loader
                             // should not be used since that would trigger a memory leak
                             // in container environments.
-                            Class<?> clazz = Class.forName(className);
-                            return (AuthConfigFactory) clazz.getConstructor().newInstance();
+                            if (className.equals(AuthConfigFactoryImpl.class.getName())) {
+                                return new AuthConfigFactoryImpl();
+                            } else {
+                                Class<?> clazz = Class.forName(className);
+                                return (AuthConfigFactory) clazz.getConstructor().newInstance();
+                            }
                         }
                     });
                 } catch (PrivilegedActionException e) {
