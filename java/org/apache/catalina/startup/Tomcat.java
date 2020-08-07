@@ -1297,7 +1297,7 @@ public class Tomcat {
 
     static {
         // Graal native images don't load any configuration except the VM default
-        if (JreCompat.isGraalAvailable()) {
+        if (JreCompat.graalAvailable) {
             try (InputStream is = new FileInputStream(new File(System.getProperty("java.util.logging.config.file", "conf/logging.properties")))) {
                 LogManager.getLogManager().readConfiguration(is);
             } catch (SecurityException | IOException e) {

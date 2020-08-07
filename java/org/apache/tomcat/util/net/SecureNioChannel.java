@@ -196,9 +196,9 @@ public class SecureNioChannel extends NioChannel {
                         if (sslEngine instanceof SSLUtil.ProtocolInfo) {
                             socketWrapper.setNegotiatedProtocol(
                                     ((SSLUtil.ProtocolInfo) sslEngine).getNegotiatedProtocol());
-                        } else if (JreCompat.isAlpnSupported()) {
+                        } else if (JreCompat.alpnSupported) {
                             socketWrapper.setNegotiatedProtocol(
-                                    JreCompat.getInstance().getApplicationProtocol(sslEngine));
+                                    JreCompat.instance.getApplicationProtocol(sslEngine));
                         }
                     }
                     //we are complete if we have delivered the last package

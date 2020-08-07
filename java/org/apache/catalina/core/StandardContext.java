@@ -333,7 +333,7 @@ public class StandardContext extends ContainerBase
      * Graal cannot actually load a class from the webapp classloader,
      * so delegate by default.
      */
-    private boolean delegate = JreCompat.isGraalAvailable();
+    private boolean delegate = JreCompat.graalAvailable;
 
 
     private boolean denyUncoveredHttpMethods;

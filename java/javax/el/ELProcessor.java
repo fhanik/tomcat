@@ -111,7 +111,7 @@ public class ELProcessor {
 
         // Only returns public methods. Java 9+ access is checked below.
         Method methods[] = clazz.getMethods();
-        JreCompat jreCompat = JreCompat.getInstance();
+        JreCompat jreCompat = JreCompat.instance;
 
         for (Method method : methods) {
             if (!Modifier.isStatic(method.getModifiers())) {
@@ -191,7 +191,7 @@ public class ELProcessor {
         int modifiers = method.getModifiers();
 
         // Check for static, public method and module access for Java 9+
-        JreCompat jreCompat = JreCompat.getInstance();
+        JreCompat jreCompat = JreCompat.instance;
         if (!Modifier.isStatic(modifiers) || !jreCompat.canAcccess(null, method)) {
             throw new NoSuchMethodException(Util.message(context,
                     "elProcessor.defineFunctionInvalidMethod", method.getName(),

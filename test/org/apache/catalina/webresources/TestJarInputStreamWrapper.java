@@ -119,7 +119,7 @@ public class TestJarInputStreamWrapper {
 
     private InputStream getUnwrappedClosedInputStream() throws IOException {
         File file = new File("test/webresources/non-static-resources.jar");
-        JarFile jarFile = JreCompat.getInstance().jarFileNewInstance(file);
+        JarFile jarFile = JreCompat.instance.jarFileNewInstance(file);
         ZipEntry jarEntry = jarFile.getEntry("META-INF/MANIFEST.MF");
         InputStream unwrapped = jarFile.getInputStream(jarEntry);
         unwrapped.close();

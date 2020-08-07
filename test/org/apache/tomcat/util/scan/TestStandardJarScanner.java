@@ -38,7 +38,7 @@ public class TestStandardJarScanner {
 
     @Test
     public void testWebappClassPath() {
-        Assume.assumeFalse("No URLClassLoader with Java 9", JreCompat.isJre9Available());
+        Assume.assumeFalse("No URLClassLoader with Java 9", JreCompat.jre9Available);
 
         StandardJarScanner scanner = new StandardJarScanner();
 

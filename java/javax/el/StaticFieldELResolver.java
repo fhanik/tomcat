@@ -43,7 +43,7 @@ public class StaticFieldELResolver extends ELResolver {
             try {
                 Field field = clazz.getField(name);
                 int modifiers = field.getModifiers();
-                JreCompat jreCompat = JreCompat.getInstance();
+                JreCompat jreCompat = JreCompat.instance;
                 if (Modifier.isStatic(modifiers) &&
                         Modifier.isPublic(modifiers) &&
                         jreCompat.canAcccess(null, field)) {
@@ -157,7 +157,7 @@ public class StaticFieldELResolver extends ELResolver {
             try {
                 Field field = clazz.getField(name);
                 int modifiers = field.getModifiers();
-                JreCompat jreCompat = JreCompat.getInstance();
+                JreCompat jreCompat = JreCompat.instance;
                 if (Modifier.isStatic(modifiers) &&
                         Modifier.isPublic(modifiers) &&
                         jreCompat.canAcccess(null, field)) {

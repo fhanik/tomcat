@@ -304,7 +304,7 @@ public abstract class AbstractArchiveResourceSet extends AbstractResourceSet {
     protected JarFile openJarFile() throws IOException {
         synchronized (archiveLock) {
             if (archive == null) {
-                archive = JreCompat.getInstance().jarFileNewInstance(getBase());
+                archive = JreCompat.instance.jarFileNewInstance(getBase());
             }
             archiveUseCount++;
             return archive;

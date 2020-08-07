@@ -639,7 +639,7 @@ public class WebappLoader extends LifecycleMBeanBase
             return false;
         } else {
             // Ignore Graal "unknown" classloader
-            if (!JreCompat.isGraalAvailable()) {
+            if (!JreCompat.graalAvailable) {
                 log.info(sm.getString("webappLoader.unknownClassLoader", loader, loader.getClass()));
             }
             return false;

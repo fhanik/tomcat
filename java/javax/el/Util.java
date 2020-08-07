@@ -540,7 +540,7 @@ class Util {
      * making changes keep the code in sync.
      */
     static Method getMethod(Class<?> type, Object base, Method m) {
-        JreCompat jreCompat = JreCompat.getInstance();
+        JreCompat jreCompat = JreCompat.instance;
         // If base is null, method MUST be static
         // If base is non-null, method may be static or non-static
         if (m == null ||
@@ -600,7 +600,7 @@ class Util {
 
         Constructor<?> constructor = wrapper.unWrap();
 
-        JreCompat jreCompat = JreCompat.getInstance();
+        JreCompat jreCompat = JreCompat.instance;
         if (!Modifier.isPublic(clazz.getModifiers()) || !jreCompat.canAcccess(null, constructor)) {
             throw new MethodNotFoundException(message(
                     null, "util.method.notfound", clazz, methodName,

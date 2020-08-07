@@ -161,7 +161,7 @@ public abstract class AbstractInputStreamJar implements Jar {
         jarInputStream = createJarInputStream();
         // Only perform multi-release processing on first access
         if (multiRelease == null) {
-            if (JreCompat.isJre9Available()) {
+            if (JreCompat.jre9Available) {
                 Manifest manifest = jarInputStream.getManifest();
                 if (manifest == null) {
                     multiRelease = Boolean.FALSE;
@@ -236,7 +236,7 @@ public abstract class AbstractInputStreamJar implements Jar {
 
 
     private void populateMrMap() throws IOException {
-        int targetVersion = JreCompat.getInstance().jarFileRuntimeMajorVersion();
+        int targetVersion = JreCompat.instance.jarFileRuntimeMajorVersion();
 
         Map<String,Integer> mrVersions = new HashMap<>();
 

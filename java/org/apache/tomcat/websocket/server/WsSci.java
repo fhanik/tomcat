@@ -62,7 +62,7 @@ public class WsSci implements ServletContainerInitializer {
             String wsPackage = ContainerProvider.class.getName();
             wsPackage = wsPackage.substring(0, wsPackage.lastIndexOf('.') + 1);
             for (Class<?> clazz : clazzes) {
-                JreCompat jreCompat = JreCompat.getInstance();
+                JreCompat jreCompat = JreCompat.instance;
                 int modifiers = clazz.getModifiers();
                 if (!Modifier.isPublic(modifiers) ||
                         Modifier.isAbstract(modifiers) ||

@@ -20,7 +20,7 @@ import java.io.IOException;
 
 class GraalCompat extends Jre9Compat {
 
-    private static final boolean GRAAL;
+    static final boolean GRAAL;
 
     static {
         boolean result = false;
@@ -33,11 +33,6 @@ class GraalCompat extends Jre9Compat {
             // Should never happen
         }
         GRAAL = result || System.getProperty("org.graalvm.nativeimage.imagecode") != null;
-    }
-
-    static boolean isSupported() {
-        // This property does not exist for a native image
-        return GRAAL;
     }
 
     @Override

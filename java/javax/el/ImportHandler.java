@@ -481,7 +481,7 @@ public class ImportHandler {
 
         // Class must be public, non-abstract, not an interface and (for
         // Java 9+) in an exported package
-        JreCompat jreCompat = JreCompat.getInstance();
+        JreCompat jreCompat = JreCompat.instance;
         int modifiers = clazz.getModifiers();
         if (!Modifier.isPublic(modifiers) || Modifier.isAbstract(modifiers) ||
                 Modifier.isInterface(modifiers) || !jreCompat.isExported(clazz)) {

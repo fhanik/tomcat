@@ -259,7 +259,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                 // Trigger the creation of the AWT (AWT-Windows, AWT-XAWT,
                 // etc.) thread.
                 // Note this issue is fixed in Java 8 update 05 onwards.
-                if (awtThreadProtection && !JreCompat.isJre9Available()) {
+                if (awtThreadProtection && !JreCompat.jre9Available) {
                     java.awt.Toolkit.getDefaultToolkit();
                 }
 
@@ -277,7 +277,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                  *
                  * Fixed in Java 9 onwards (from early access build 130)
                  */
-                if (gcDaemonProtection && !JreCompat.isJre9Available()) {
+                if (gcDaemonProtection && !JreCompat.jre9Available) {
                     try {
                         Class<?> clazz = Class.forName("sun.misc.GC");
                         Method method = clazz.getDeclaredMethod(
@@ -313,7 +313,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                  *
                  * Fixed in Java 9 onwards (from early access build 133)
                  */
-                if (tokenPollerProtection && !JreCompat.isJre9Available()) {
+                if (tokenPollerProtection && !JreCompat.jre9Available) {
                     java.security.Security.getProviders();
                 }
 
@@ -337,7 +337,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                 // Set the default URL caching policy to not to cache
                 if (urlCacheProtection) {
                     try {
-                        JreCompat.getInstance().disableCachingForJarUrlConnections();
+                        JreCompat.instance.disableCachingForJarUrlConnections();
                     } catch (IOException e) {
                         log.error(sm.getString("jreLeakListener.jarUrlConnCacheFail"), e);
                     }
@@ -346,7 +346,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                 /*
                  * Fixed in Java 9 onwards (from early access build 133)
                  */
-                if (xmlParsingProtection && !JreCompat.isJre9Available()) {
+                if (xmlParsingProtection && !JreCompat.jre9Available) {
                     // There are two known issues with XML parsing that affect
                     // Java 8+. The issues both relate to cached Exception
                     // instances that retain a link to the TCCL via the
@@ -376,7 +376,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                 /*
                  * Fixed in Java 9 onwards (from early access build 130)
                  */
-                if (ldapPoolProtection && !JreCompat.isJre9Available()) {
+                if (ldapPoolProtection && !JreCompat.jre9Available) {
                     try {
                         Class.forName("com.sun.jndi.ldap.LdapPoolManager");
                     } catch (ClassNotFoundException e) {
@@ -394,7 +394,7 @@ public class JreMemoryLeakPreventionListener implements LifecycleListener {
                  * Present in Java 7 onwards
                  * Fixed in Java 9 (from early access build 156)
                  */
-                if (forkJoinCommonPoolProtection && !JreCompat.isJre9Available()) {
+                if (forkJoinCommonPoolProtection && !JreCompat.jre9Available) {
                     // Don't override any explicitly set property
                     if (System.getProperty(FORK_JOIN_POOL_THREAD_FACTORY_PROPERTY) == null) {
                         System.setProperty(FORK_JOIN_POOL_THREAD_FACTORY_PROPERTY,

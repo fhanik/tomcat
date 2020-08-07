@@ -63,7 +63,7 @@ public class TestImportHandlerStandardPackages {
             // when the tests are run on a newer JRE.
             // The latest version of the JRE where this test is known to pass is
             // - OpenJDK 14 EA 27
-            if (!JreCompat.isJre9Available()) {
+            if (!JreCompat.jre9Available) {
                 return;
             }
             getJavaBaseClasses().filter(c -> (c.startsWith("java/lang/")))

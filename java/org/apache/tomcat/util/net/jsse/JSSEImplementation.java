@@ -52,6 +52,6 @@ public class JSSEImplementation extends SSLImplementation {
 
     @Override
     public boolean isAlpnSupported() {
-        return JreCompat.isAlpnSupported();
+        return JreCompat.alpnSupported;
     }
 }

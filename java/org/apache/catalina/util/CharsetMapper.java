@@ -70,7 +70,7 @@ public class CharsetMapper {
      *  resource could not be loaded for any reason.
      */
     public CharsetMapper(String name) {
-        if (JreCompat.isGraalAvailable()) {
+        if (JreCompat.graalAvailable) {
             map.put("en", "ISO-8859-1");
         } else {
             try (InputStream stream = this.getClass().getResourceAsStream(name)) {

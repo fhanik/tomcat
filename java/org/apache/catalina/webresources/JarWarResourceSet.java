@@ -118,7 +118,7 @@ public class JarWarResourceSet extends AbstractArchiveResourceSet {
                         }
                         Manifest m = jarIs.getManifest();
                         setManifest(m);
-                        if (m != null && JreCompat.isJre9Available()) {
+                        if (m != null && JreCompat.jre9Available) {
                             String value = m.getMainAttributes().getValue("Multi-Release");
                             if (value != null) {
                                 multiRelease = Boolean.parseBoolean(value);
@@ -166,7 +166,7 @@ public class JarWarResourceSet extends AbstractArchiveResourceSet {
 
     protected void processArchivesEntriesForMultiRelease() {
 
-        int targetVersion = JreCompat.getInstance().jarFileRuntimeMajorVersion();
+        int targetVersion = JreCompat.instance.jarFileRuntimeMajorVersion();
 
         Map<String,VersionedJarEntry> versionedEntries = new HashMap<>();
         Iterator<Entry<String,JarEntry>> iter = archiveEntries.entrySet().iterator();

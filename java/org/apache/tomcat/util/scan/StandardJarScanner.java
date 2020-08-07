@@ -272,13 +272,13 @@ public class StandardJarScanner implements JarScanner {
             classLoader = classLoader.getParent();
         }
 
-        if (JreCompat.isJre9Available()) {
+        if (JreCompat.jre9Available) {
             // The application and platform class loaders are not
             // instances of URLClassLoader. Use the class path in this
             // case.
             addClassPath(classPathUrlsToProcess);
             // Also add any modules
-            JreCompat.getInstance().addBootModulePath(classPathUrlsToProcess);
+            JreCompat.instance.addBootModulePath(classPathUrlsToProcess);
             processURLs(scanType, callback, processedURLs, false, classPathUrlsToProcess);
         }
     }

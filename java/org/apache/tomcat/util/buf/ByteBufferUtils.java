@@ -42,7 +42,7 @@ public class ByteBufferUtils {
         Method cleanMethodLocal = null;
         Object unsafeLocal = null;
         Method invokeCleanerMethodLocal = null;
-        if (JreCompat.isJre9Available()) {
+        if (JreCompat.jre9Available) {
             try {
                 Class<?> clazz = Class.forName("sun.misc.Unsafe");
                 Field theUnsafe = clazz.getDeclaredField("theUnsafe");

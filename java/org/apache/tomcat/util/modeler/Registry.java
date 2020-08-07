@@ -136,7 +136,7 @@ public class Registry implements RegistryMBean, MBeanRegistration {
      */
     public static synchronized Registry getRegistry(Object key, Object guard) {
         if (registry == null) {
-            if (JreCompat.isGraalAvailable()) {
+            if (JreCompat.graalAvailable) {
                 disableRegistry();
             } else {
                 registry = new Registry();

@@ -27,10 +27,10 @@ import java.lang.reflect.AccessibleObject;
  */
 public class JreCompat {
 
-    private static final JreCompat instance;
+    public static final JreCompat instance;
 
     static {
-        if (Jre9Compat.isSupported()) {
+        if (Jre9Compat.supported) {
             instance = new Jre9Compat();
         } else {
             instance = new JreCompat();

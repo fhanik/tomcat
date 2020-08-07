@@ -31,6 +31,8 @@ class Jre9Compat extends JreCompat {
     private static final Method canAccessMethod;
 
 
+    static final boolean supported;
+
     static {
         Method m1 = null;
         try {
@@ -39,12 +41,11 @@ class Jre9Compat extends JreCompat {
             // Expected for Java 8
         }
         canAccessMethod = m1;
+        supported = canAccessMethod != null;
     }
 
 
-    public static boolean isSupported() {
-        return canAccessMethod != null;
-    }
+
 
 
     @Override

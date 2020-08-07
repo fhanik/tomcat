@@ -32,6 +32,8 @@ class Jre9Compat extends JreCompat {
     private static final Method getModuleMethod;
     private static final Method isExportedMethod;
 
+    static final boolean supported;
+
     static {
         Method m1 = null;
         Method m2 = null;
@@ -52,12 +54,10 @@ class Jre9Compat extends JreCompat {
         canAccessMethod = m1;
         getModuleMethod = m2;
         isExportedMethod = m3;
+        supported = canAccessMethod != null;
     }
 
 
-    public static boolean isSupported() {
-        return canAccessMethod != null;
-    }
 
 
     @Override

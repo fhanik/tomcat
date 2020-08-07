@@ -26,7 +26,7 @@ public class ParallelWebappClassLoader extends WebappClassLoaderBase {
     private static final Log log = LogFactory.getLog(ParallelWebappClassLoader.class);
 
     static {
-        if (!JreCompat.isGraalAvailable()) {
+        if (!JreCompat.graalAvailable) {
             if (!ClassLoader.registerAsParallelCapable()) {
                 log.warn(sm.getString("webappClassLoaderParallel.registrationFailed"));
             }

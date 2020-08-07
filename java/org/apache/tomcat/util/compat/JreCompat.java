@@ -38,25 +38,27 @@ import org.apache.tomcat.util.res.StringManager;
  */
 public class JreCompat {
 
-    private static final int RUNTIME_MAJOR_VERSION = 8;
+    public static final int RUNTIME_MAJOR_VERSION = 8;
 
-    private static final JreCompat instance;
-    private static final boolean graalAvailable;
-    private static final boolean jre11Available;
-    private static final boolean jre9Available;
-    private static final StringManager sm = StringManager.getManager(JreCompat.class);
+    public static final JreCompat instance;
+    public static final boolean graalAvailable;
+    public static final boolean jre11Available;
+    public static final boolean jre9Available;
+    public static final StringManager sm = StringManager.getManager(JreCompat.class);
 
-    protected static final Method setApplicationProtocolsMethod;
-    protected static final Method getApplicationProtocolMethod;
+    public static final Method setApplicationProtocolsMethod;
+    public static final Method getApplicationProtocolMethod;
+
+    public static final boolean alpnSupported;
 
     static {
         // This is Tomcat 9 with a minimum Java version of Java 8.
         // Look for the highest supported JVM first
-        if (GraalCompat.isSupported()) {
+        if (GraalCompat.GRAAL) {
             instance = new GraalCompat();
             graalAvailable = true;
-            jre9Available = Jre9Compat.isSupported();
-        } else if (Jre9Compat.isSupported()) {
+            jre9Available = Jre9Compat.supported;
+        } else if (Jre9Compat.supported) {
             instance = new Jre9Compat();
             graalAvailable = false;
             jre9Available = true;
@@ -77,33 +79,8 @@ public class JreCompat {
         }
         setApplicationProtocolsMethod = m1;
         getApplicationProtocolMethod = m2;
+        alpnSupported = setApplicationProtocolsMethod != null && getApplicationProtocolMethod != null;
     }
-
-
-    public static JreCompat getInstance() {
-        return instance;
-    }
-
-
-    public static boolean isGraalAvailable() {
-        return graalAvailable;
-    }
-
-
-    public static boolean isAlpnSupported() {
-        return setApplicationProtocolsMethod != null && getApplicationProtocolMethod != null;
-    }
-
-
-    public static boolean isJre9Available() {
-        return jre9Available;
-    }
-
-
-    public static boolean isJre11Available() {
-        return jre11Available;
-    }
-
 
     // Java 8 implementation of Java 9 methods
 

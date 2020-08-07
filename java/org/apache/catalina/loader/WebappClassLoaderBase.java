@@ -137,7 +137,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
     private static final String CLASS_FILE_SUFFIX = ".class";
 
     static {
-        if (!JreCompat.isGraalAvailable()) {
+        if (!JreCompat.graalAvailable) {
             ClassLoader.registerAsParallelCapable();
         }
         JVM_THREAD_GROUP_NAMES.add(JVM_THREAD_GROUP_SYSTEM);
@@ -1217,7 +1217,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
     @Override
     public Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
 
-        synchronized (JreCompat.isGraalAvailable() ? this : getClassLoadingLock(name)) {
+        synchronized (JreCompat.graalAvailable ? this : getClassLoadingLock(name)) {
             if (log.isDebugEnabled())
                 log.debug("loadClass(" + name + ", " + resolve + ")");
             Class<?> clazz = null;
@@ -1236,7 +1236,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
             }
 
             // (0.1) Check our previously loaded class cache
-            clazz = JreCompat.isGraalAvailable() ? null : findLoadedClass(name);
+            clazz = JreCompat.graalAvailable ? null : findLoadedClass(name);
             if (clazz != null) {
                 if (log.isDebugEnabled())
                     log.debug("  Returning class from cache");
@@ -1614,7 +1614,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
             }
         }
 
-        if (!JreCompat.isGraalAvailable()) {
+        if (!JreCompat.graalAvailable) {
             // De-register any remaining JDBC drivers
             clearReferencesJdbc();
         }
@@ -1623,12 +1623,12 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
         clearReferencesThreads();
 
         // Clear any references retained in the serialization caches
-        if (clearReferencesObjectStreamClassCaches && !JreCompat.isGraalAvailable()) {
+        if (clearReferencesObjectStreamClassCaches && !JreCompat.graalAvailable) {
             clearReferencesObjectStreamClassCaches();
         }
 
         // Check for leaks triggered by ThreadLocals loaded by this class loader
-        if (clearReferencesThreadLocals && !JreCompat.isGraalAvailable()) {
+        if (clearReferencesThreadLocals && !JreCompat.graalAvailable) {
             checkThreadLocalsForLeaks();
         }
 
@@ -1974,7 +1974,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                 }
             }
         } catch (Throwable t) {
-            JreCompat jreCompat = JreCompat.getInstance();
+            JreCompat jreCompat = JreCompat.instance;
             if (jreCompat.isInstanceOfInaccessibleObjectException(t)) {
                 // Must be running on Java 9 without the necessary command line
                 // options.
@@ -2236,7 +2236,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
             log.warn(sm.getString("webappClassLoader.clearRmiFail",
                     getContextName()), e);
         } catch (Exception e) {
-            JreCompat jreCompat = JreCompat.getInstance();
+            JreCompat jreCompat = JreCompat.instance;
             if (jreCompat.isInstanceOfInaccessibleObjectException(e)) {
                 // Must be running on Java 9 without the necessary command line
                 // options.
@@ -2326,7 +2326,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
         if (clazz != null)
             return clazz;
 
-        synchronized (JreCompat.isGraalAvailable() ? this : getClassLoadingLock(name)) {
+        synchronized (JreCompat.graalAvailable ? this : getClassLoadingLock(name)) {
             clazz = entry.loadedClass;
             if (clazz != null)
                 return clazz;

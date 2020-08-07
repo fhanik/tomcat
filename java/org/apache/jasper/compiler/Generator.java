@@ -1370,7 +1370,7 @@ class Generator {
                     // Check the bean is public, not an interface, not abstract
                     // and (for Java 9+) in an exported module
                     int modifiers = bean.getModifiers();
-                    JreCompat jreCompat = JreCompat.getInstance();
+                    JreCompat jreCompat = JreCompat.instance;
                     if (!Modifier.isPublic(modifiers) ||
                             Modifier.isInterface(modifiers) ||
                             Modifier.isAbstract(modifiers) ||

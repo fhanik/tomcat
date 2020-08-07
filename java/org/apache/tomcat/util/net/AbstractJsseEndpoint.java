@@ -123,7 +123,7 @@ public abstract class AbstractJsseEndpoint<S,U> extends AbstractEndpoint<S,U> {
 
         SSLParameters sslParameters = engine.getSSLParameters();
         sslParameters.setUseCipherSuitesOrder(sslHostConfig.getHonorCipherOrder());
-        if (JreCompat.isAlpnSupported() && clientRequestedApplicationProtocols != null
+        if (JreCompat.alpnSupported && clientRequestedApplicationProtocols != null
                 && clientRequestedApplicationProtocols.size() > 0
                 && negotiableProtocols.size() > 0) {
             // Only try to negotiate if both client and server have at least
@@ -134,7 +134,7 @@ public abstract class AbstractJsseEndpoint<S,U> extends AbstractEndpoint<S,U> {
             commonProtocols.retainAll(clientRequestedApplicationProtocols);
             if (commonProtocols.size() > 0) {
                 String[] commonProtocolsArray = commonProtocols.toArray(new String[0]);
-                JreCompat.getInstance().setApplicationProtocols(sslParameters, commonProtocolsArray);
+                JreCompat.instance.setApplicationProtocols(sslParameters, commonProtocolsArray);
             }
         }
         switch (sslHostConfig.getCertificateVerification()) {

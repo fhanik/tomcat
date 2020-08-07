@@ -62,10 +62,10 @@ public class JarFileUrlJar implements Jar {
             } catch (URISyntaxException e) {
                 throw new IOException(e);
             }
-            jarFile = JreCompat.getInstance().jarFileNewInstance(f);
+            jarFile = JreCompat.instance.jarFileNewInstance(f);
             jarFileURL = url;
         }
-        multiRelease = JreCompat.getInstance().jarFileIsMultiRelease(jarFile);
+        multiRelease = JreCompat.instance.jarFileIsMultiRelease(jarFile);
     }
 
 
